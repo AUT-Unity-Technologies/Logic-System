@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Object = UnityEngine.Object;
 
 namespace LogicSystem
@@ -8,12 +9,16 @@ namespace LogicSystem
     public class TestComponent : CBase
     {
 
-        public Output onSpawn; 
+        public Output onSpawn;
 
-        public List<TestObject> test;
+        //public GuidReference guidReference;
+        
+        //public List<TestObject> test;
+
+        //public UnityEvent ev;
         
         [Input()]
-        public void TestOuptut()
+        public void TestInput()
         {
             
         }
@@ -31,7 +36,7 @@ namespace LogicSystem
     public class Binding
     {
         public GuidReference targetEntity;
-        public MonoBehaviour target;
+        public CBase target;
         public string input;
     }
 

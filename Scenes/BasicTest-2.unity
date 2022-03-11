@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 141003444}
   - component: {fileID: 141003443}
   - component: {fileID: 141003442}
+  - component: {fileID: 141003445}
   m_Layer: 0
   m_Name: TestTarget-2 (1)
   m_TagString: Untagged
@@ -156,8 +157,14 @@ MonoBehaviour:
   onSpawn:
     targets:
     - targetEntity:
-        serializedGuid: 388e5af141847f43ab8333390830817e
-        cachedName: TestSource
+        serializedGuid: cc9b2bf6200952438c68baf6f8c63186
+        cachedName: TestTarget-2 (1)
+        cachedScene: {fileID: 102900000, guid: a3f9f08c3a4d33e4895a318737754e1b, type: 3}
+      target: {fileID: 0}
+      input: 
+    - targetEntity:
+        serializedGuid: 0f7fa05e2e687e40b5ed2d0226d31fc6
+        cachedName: TestTarget
         cachedScene: {fileID: 102900000, guid: 7fd045ca55deec54eab44765c4afd431, type: 3}
       target: {fileID: 0}
       input: 
@@ -167,11 +174,6 @@ MonoBehaviour:
         cachedScene: {fileID: 102900000, guid: 7fd045ca55deec54eab44765c4afd431, type: 3}
       target: {fileID: 0}
       input: 
-  test:
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
 --- !u!114 &141003443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +202,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &141003445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141003441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e077323a8b4581a54978c76976a683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSpawn:
+    targets: []
 --- !u!1001 &519923493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -385,7 +401,7 @@ PrefabInstance:
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
@@ -624,7 +640,7 @@ PrefabInstance:
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
@@ -920,22 +936,23 @@ MonoBehaviour:
   onSpawn:
     targets:
     - targetEntity:
-        serializedGuid: 388e5af141847f43ab8333390830817e
-        cachedName: TestSource
+        serializedGuid: cc9b2bf6200952438c68baf6f8c63186
+        cachedName: TestTarget-2 (1)
+        cachedScene: {fileID: 102900000, guid: a3f9f08c3a4d33e4895a318737754e1b, type: 3}
+      target: {fileID: 0}
+      input: 
+    - targetEntity:
+        serializedGuid: 0f7fa05e2e687e40b5ed2d0226d31fc6
+        cachedName: TestTarget
         cachedScene: {fileID: 102900000, guid: 7fd045ca55deec54eab44765c4afd431, type: 3}
       target: {fileID: 0}
       input: 
     - targetEntity:
-        serializedGuid: 388e5af141847f43ab8333390830817e
-        cachedName: TestPrefab
+        serializedGuid: 539c2dba58b068488cc58947730bfb54
+        cachedName: SubEntitiy
         cachedScene: {fileID: 102900000, guid: a3f9f08c3a4d33e4895a318737754e1b, type: 3}
       target: {fileID: 0}
       input: 
-  test:
-  - a: 1
-    b: 1
-  - a: 0
-    b: 1
 --- !u!114 &1829970074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,7 +1166,7 @@ PrefabInstance:
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}

@@ -59,6 +59,22 @@ public class GuidReference : ISerializationCallbackReceiver
         private set {}
     }
 
+    //TODO Actually cache the entity
+    public Entity entity
+    {
+        get
+        {
+            if( isCacheSet )
+            {
+                return gameObject.GetComponent<Entity>();
+            }
+
+            //cachedReference = GuidManager.ResolveGuid( guid, addDelegate, removeDelegate );
+            //isCacheSet = true;
+            return gameObject.GetComponent<Entity>();
+        }
+    }
+
     public GuidReference() { }
 
     public GuidReference(Entity target)

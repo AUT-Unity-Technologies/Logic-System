@@ -2,6 +2,8 @@
 using UnityEngine;
 using LogicSystem;
 using LogicSystem.Editor;
+using Packages.ObjectPicker;
+using UnityEngine.SceneManagement;
 using WaresoftEditor.Common;
 
 // Using a property drawer to allow any class to have a field of type GuidRefernce and still get good UX
@@ -34,18 +36,16 @@ public class GuidReferenceDrawer : PropertyDrawer
         // prefab override logic works on the entire property.
         EditorGUI.BeginProperty(position, label, property);
         
-        
         position.height = EditorGUIUtility.singleLineHeight;
         
         // Draw prefix label, returning the new rect we can draw in
         var guidCompPosition = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
-        float step = guidCompPosition.width / 10;
-        guidCompPosition.width = step * 4;
         
+        //float step = guidCompPosition.width / 10;
+        guidCompPosition.width = (guidCompPosition.width / 2 ) - EditorGUIUtility.singleLineHeight;
+
         var scenePos = new Rect(guidCompPosition);
         scenePos.x += scenePos.width;
-        
-        
         
         
         System.Guid currentGuid;
@@ -86,22 +86,56 @@ public class GuidReferenceDrawer : PropertyDrawer
         }
 
         var changed = EditorGUI.EndChangeCheck();
-        
-        
+
+
         if (true)
         {
-            float buttonWidth = 55.0f;
             
+
             Rect clearButtonRect = new Rect(scenePos);
             clearButtonRect.xMin = scenePos.xMax;
-            clearButtonRect.width += EditorGUIUtility.singleLineHeight;
+            clearButtonRect.width = EditorGUIUtility.singleLineHeight;
 
-            if (GUI.Button(clearButtonRect, new GUIContent(IOConfig.CloseThick,"Remove Cross Scene Reference"), EditorStyles.iconButton))
+            if (GUI.Button(clearButtonRect, new GUIContent(IOConfig.CloseThick, "Remove Cross Scene Reference"), EditorStyles.miniButtonLeft))
             {
                 ClearPreviousGuid();
             }
+
+            Rect pickButtonRect = new Rect(scenePos);
+            pickButtonRect.xMin = clearButtonRect.xMax;
+            pickButtonRect.width = EditorGUIUtility.singleLineHeight;
+
+            EditorGUI.BeginDisabledGroup(SceneObjectPicker.IsPicking);
+
+            if (GUI.Button(pickButtonRect, new GUIContent(IOConfig.PickerIcon, "Remove Cross Scene Reference"), EditorStyles.miniButtonRight))
+            {
+                var root = property;
+
+                SceneObjectPicker.Instance.StartPicking<Entity>(typeof(Entity), default(Scene), (entity) =>
+                {
+                    var guidProp = root.FindPropertyRelative("serializedGuid");
+                    var nameProp = root.FindPropertyRelative("cachedName");
+                    var sceneProp = root.FindPropertyRelative("cachedScene");
+
+                    nameProp.stringValue = entity.name;
+                    string scenePath = entity.gameObject.scene.path;
+                    sceneProp.objectReferenceValue = AssetDatabase.LoadAssetAtPath<SceneAsset>(scenePath);
+
+                    byteArray = entity.GetGuid().ToByteArray();
+                    int arraySize = guidProp.arraySize;
+                    for (int i = 0; i < arraySize; ++i)
+                    {
+                        var byteProp = guidProp.GetArrayElementAtIndex(i);
+                        byteProp.intValue = byteArray[i];
+                    }
+
+                    root.serializedObject.ApplyModifiedProperties();
+                });
+            }
+            
+            EditorGUI.EndDisabledGroup();
         }
-        
+
         if (currentGuidComponent != null && component == null)
         {
             ClearPreviousGuid();

@@ -23,5 +23,21 @@ namespace LogicSystem.Editor
                 return sCloseThick;
             }
         }
+        
+        private static Texture2D sPickerIcon = null;
+        internal static Texture2D PickerIcon
+        {
+            get
+            {
+                if (sPickerIcon == null)
+                    sPickerIcon = AssetDatabase.LoadAssetAtPath<Texture2D>(
+                        kPackageRoot
+                        + "/Editor/EditorResources/SceneViewPickerIcon.psd");
+                ;
+                if (sPickerIcon != null)
+                    sPickerIcon.hideFlags = HideFlags.DontSaveInEditor;
+                return sPickerIcon;
+            }
+        }
     }
 }
