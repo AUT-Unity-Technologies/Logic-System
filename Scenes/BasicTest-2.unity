@@ -134,9 +134,8 @@ GameObject:
   - component: {fileID: 141003444}
   - component: {fileID: 141003443}
   - component: {fileID: 141003442}
-  - component: {fileID: 141003445}
   m_Layer: 0
-  m_Name: TestTarget-2 (1)
+  m_Name: Test Entity Name
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -154,26 +153,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e077323a8b4581a54978c76976a683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: asdffff
   onSpawn:
     targets:
     - targetEntity:
         serializedGuid: cc9b2bf6200952438c68baf6f8c63186
         cachedName: TestTarget-2 (1)
         cachedScene: {fileID: 102900000, guid: a3f9f08c3a4d33e4895a318737754e1b, type: 3}
-      target: {fileID: 0}
-      input: 
+      target: asdffff
+      input: Toggle
     - targetEntity:
-        serializedGuid: 0f7fa05e2e687e40b5ed2d0226d31fc6
-        cachedName: TestTarget
-        cachedScene: {fileID: 102900000, guid: 7fd045ca55deec54eab44765c4afd431, type: 3}
-      target: {fileID: 0}
-      input: 
-    - targetEntity:
-        serializedGuid: 0f7fa05e2e687e40b5ed2d0226d31fc6
-        cachedName: TestTarget
-        cachedScene: {fileID: 102900000, guid: 7fd045ca55deec54eab44765c4afd431, type: 3}
-      target: {fileID: 0}
-      input: 
+        serializedGuid: cc9b2bf6200952438c68baf6f8c63186
+        cachedName: TestTarget-2 (1)
+        cachedScene: {fileID: 102900000, guid: a3f9f08c3a4d33e4895a318737754e1b, type: 3}
+      target: asdffff
+      input: Toggle
 --- !u!114 &141003443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,27 +189,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 141003441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -108.75, y: 0, z: -22}
+  m_LocalPosition: {x: -3.0360339, y: 0, z: -2.582924}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &141003445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 141003441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2e077323a8b4581a54978c76976a683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onSpawn:
-    targets: []
 --- !u!1001 &519923493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -406,7 +386,7 @@ PrefabInstance:
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -108.75
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
@@ -416,7 +396,7 @@ PrefabInstance:
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25
+      value: -5.582924
       objectReference: {fileID: 0}
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
@@ -645,7 +625,7 @@ PrefabInstance:
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -106.75
+      value: -1.0360363
       objectReference: {fileID: 0}
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
@@ -655,7 +635,7 @@ PrefabInstance:
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25
+      value: -5.582923
       objectReference: {fileID: 0}
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
@@ -903,6 +883,73 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
+--- !u!1 &1699826548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1699826551}
+  - component: {fileID: 1699826550}
+  - component: {fileID: 1699826552}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1699826550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699826548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e592737f12d74dd1a9564ee0e466f048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializedGuid: 61a32cbd11cf544cb0620785bcdd6503
+--- !u!4 &1699826551
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699826548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7, y: -8.959006, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1699826552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699826548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d33ab30be2748589ce127cda85968f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: 
+  onMapLoad:
+    targets:
+    - targetEntity:
+        serializedGuid: 388e5af141847f43ab8333390830817e
+        cachedName: TestSource
+        cachedScene: {fileID: 102900000, guid: 7fd045ca55deec54eab44765c4afd431, type: 3}
+      target: 
+      input: TestInput
 --- !u!1 &1829970072
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +961,7 @@ GameObject:
   - component: {fileID: 1829970075}
   - component: {fileID: 1829970074}
   - component: {fileID: 1829970073}
+  - component: {fileID: 1829970076}
   m_Layer: 0
   m_Name: TestTarget-2
   m_TagString: Untagged
@@ -933,25 +981,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e077323a8b4581a54978c76976a683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: asd
   onSpawn:
     targets:
     - targetEntity:
         serializedGuid: cc9b2bf6200952438c68baf6f8c63186
         cachedName: TestTarget-2 (1)
         cachedScene: {fileID: 102900000, guid: a3f9f08c3a4d33e4895a318737754e1b, type: 3}
-      target: {fileID: 0}
+      target: 
       input: 
     - targetEntity:
         serializedGuid: 0f7fa05e2e687e40b5ed2d0226d31fc6
         cachedName: TestTarget
         cachedScene: {fileID: 102900000, guid: 7fd045ca55deec54eab44765c4afd431, type: 3}
-      target: {fileID: 0}
+      target: 
       input: 
     - targetEntity:
-        serializedGuid: 539c2dba58b068488cc58947730bfb54
-        cachedName: SubEntitiy
+        serializedGuid: beee260740b9ea4582ba623ffda5ba0a
+        cachedName: TestTarget-2
         cachedScene: {fileID: 102900000, guid: a3f9f08c3a4d33e4895a318737754e1b, type: 3}
-      target: {fileID: 0}
+      target: 
       input: 
 --- !u!114 &1829970074
 MonoBehaviour:
@@ -974,13 +1023,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829970072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -106.75, y: 0, z: -21.75}
+  m_LocalPosition: {x: -0.7860338, y: 0, z: -1.0829239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1829970076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829970072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e077323a8b4581a54978c76976a683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: other onr
+  onSpawn:
+    targets:
+    - targetEntity:
+        serializedGuid: 00000000000000000000000000000000
+        cachedName: 
+        cachedScene: {fileID: 0}
+      target: 
+      input: 
 --- !u!1001 &7592993029203640097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1171,7 +1241,7 @@ PrefabInstance:
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -107.75
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
@@ -1181,7 +1251,7 @@ PrefabInstance:
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25
+      value: -5.582924
       objectReference: {fileID: 0}
     - target: {fileID: 7592993029667009755, guid: 59a4334395a82ba4188396ea1e5b4d46,
         type: 3}

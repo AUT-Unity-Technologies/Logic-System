@@ -2,18 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using com.dpeter99.framework.src;
+using com.dpeter99.utils.Basic;
 using LogicSystem;
+using UnityEngine.SceneManagement;
 
 namespace LogicSystem
 {
     // Class to handle registering and accessing objects by GUID
-    public class GuidManager
+    [Manager()]
+    public class EntityManager : Singleton<EntityManager>, IModule
     {
         // for each GUID we need to know the Game Object it references
         // and an event to store all the callbacks that need to know when it is destroyed
-        private struct GuidInfo
+        public struct GuidInfo
         {
+            public Scene sourceScene;
+            
             public GameObject go;
+            public Entity entity;
 
             public event Action<GameObject> OnAdd;
             public event Action OnRemove;
@@ -21,6 +30,10 @@ namespace LogicSystem
             public GuidInfo(Entity comp)
             {
                 go = comp.gameObject;
+                entity = comp;
+
+                sourceScene = go.scene;
+                
                 OnRemove = null;
                 OnAdd = null;
             }
@@ -43,72 +56,54 @@ namespace LogicSystem
         }
 
         // Singleton interface
-        static GuidManager Instance;
+        //static EntityManager Instance;
 
-        // All the public API is static so you need not worry about creating an instance
-        public static bool Add(Entity guidComponent)
+        static EntityManager()
         {
-            if (Instance == null)
-            {
-                Instance = new GuidManager();
-            }
+            maker = () => new EntityManager();
+        }
+        
+        public EntityManager()
+        {
+            guidToObjectMap = new Dictionary<System.Guid, GuidInfo>();
+        }
 
-            return Instance.InternalAdd(guidComponent);
+        
+        // All the public API is static so you need not worry about creating an instance
+        public static bool Add(Entity entity)
+        {
+            return Instance.InternalAdd(entity);
         }
 
         public static void Remove(System.Guid guid)
         {
-            if (Instance == null)
-            {
-                Instance = new GuidManager();
-            }
-
             Instance.InternalRemove(guid);
         }
 
         public static GameObject ResolveGuid(System.Guid guid, Action<GameObject> onAddCallback, Action onRemoveCallback)
         {
-            if (Instance == null)
-            {
-                Instance = new GuidManager();
-            }
-
             return Instance.ResolveGuidInternal(guid, onAddCallback, onRemoveCallback);
         }
 
         public static GameObject ResolveGuid(System.Guid guid, Action onDestroyCallback)
         {
-            if (Instance == null)
-            {
-                Instance = new GuidManager();
-            }
-
             return Instance.ResolveGuidInternal(guid, null, onDestroyCallback);
         }
 
         public static GameObject ResolveGuid(System.Guid guid)
         {
-            if (Instance == null)
-            {
-                Instance = new GuidManager();
-            }
-
             return Instance.ResolveGuidInternal(guid, null, null);
         }
 
         // instance data
         private Dictionary<System.Guid, GuidInfo> guidToObjectMap;
 
-        private GuidManager()
-        {
-            guidToObjectMap = new Dictionary<System.Guid, GuidInfo>();
-        }
 
-        private bool InternalAdd(Entity guidComponent)
+        private bool InternalAdd(Entity entity)
         {
-            Guid guid = guidComponent.GetGuid();
+            Guid guid = entity.GetGuid();
 
-            GuidInfo info = new GuidInfo(guidComponent);
+            GuidInfo info = new GuidInfo(entity);
 
             if (!guidToObjectMap.ContainsKey(guid))
             {
@@ -117,21 +112,21 @@ namespace LogicSystem
             }
 
             GuidInfo existingInfo = guidToObjectMap[guid];
-            if (existingInfo.go != null && existingInfo.go != guidComponent.gameObject)
+            if (existingInfo.go != null && existingInfo.go != entity.gameObject)
             {
                 // normally, a duplicate GUID is a big problem, means you won't necessarily be referencing what you expect
                 if (Application.isPlaying)
                 {
-                    Debug.AssertFormat(false, guidComponent,
+                    Debug.AssertFormat(false, entity,
                         "Guid Collision Detected between {0} and {1}.\nAssigning new Guid. Consider tracking runtime instances using a direct reference or other method.",
-                        (guidToObjectMap[guid].go != null ? guidToObjectMap[guid].go.name : "NULL"), (guidComponent != null ? guidComponent.name : "NULL"));
+                        (guidToObjectMap[guid].go != null ? guidToObjectMap[guid].go.name : "NULL"), (entity != null ? entity.name : "NULL"));
                 }
                 else
                 {
                     // however, at editor time, copying an object with a GUID will duplicate the GUID resulting in a collision and repair.
                     // we warn about this just for pedantry reasons, and so you can detect if you are unexpectedly copying these components
-                    Debug.LogWarningFormat(guidComponent, "Guid Collision Detected while creating {0}.\nAssigning new Guid.",
-                        (guidComponent != null ? guidComponent.name : "NULL"));
+                    Debug.LogWarningFormat(entity, "Guid Collision Detected while creating {0}.\nAssigning new Guid.",
+                        (entity != null ? entity.name : "NULL"));
                 }
 
                 return false;
@@ -191,6 +186,11 @@ namespace LogicSystem
             guidToObjectMap.Add(guid, info);
 
             return null;
+        }
+
+        public static IEnumerable<GuidInfo> GetAllEntites()
+        {
+            return Instance.guidToObjectMap.Values;
         }
     }
 }

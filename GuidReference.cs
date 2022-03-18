@@ -51,7 +51,7 @@ public class GuidReference : ISerializationCallbackReceiver
                 return cachedReference;
             }
 
-            cachedReference = GuidManager.ResolveGuid( guid, addDelegate, removeDelegate );
+            cachedReference = EntityManager.ResolveGuid( guid, addDelegate, removeDelegate );
             isCacheSet = true;
             return cachedReference;
         }

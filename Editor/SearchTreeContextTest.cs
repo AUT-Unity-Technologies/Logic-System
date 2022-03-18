@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEditor;
@@ -11,10 +12,12 @@ namespace LogicSystem.Editor
     public class SearchTreeContextTest : ScriptableObject, ISearchWindowProvider
     {
         private Entity _entity;
+        private Action<string> _onSetIndexCallback;
         
-        public void Init(Entity entity)
+        public void Init(Entity entity, Action<string> callback)
         {
             _entity = entity;
+            _onSetIndexCallback = callback;
         }
 
         public List<SearchTreeEntry> CreateSearchTree(SearchWindowContext context)
@@ -28,8 +31,9 @@ namespace LogicSystem.Editor
 
             foreach (var component in components)
             {
-                var comp_content = EditorGUIUtility.ObjectContent(component, typeof(CBase));
-                comp_content.text = component.GetType().Name;
+                //var comp_content = EditorGUIUtility.ObjectContent(component, typeof(CBase));
+                var comp_content = new GUIContent(component.name);
+                comp_content.text = component.name;
                 tree.Add(new SearchTreeGroupEntry(comp_content,1));
 
                 var querry =
@@ -42,7 +46,6 @@ namespace LogicSystem.Editor
 
                 List<string> groups = new();
 
-                
                 
                 foreach (var methodInfo in querry)
                 {
@@ -60,6 +63,7 @@ namespace LogicSystem.Editor
                     
                     var searchTreeEntry = new SearchTreeEntry(new GUIContent(methodInfo.Name));
                     searchTreeEntry.level = level ;
+                    searchTreeEntry.userData = component.name + "#" + methodInfo.Name;
                     tree.Add(searchTreeEntry);
                 }
                 
@@ -70,6 +74,7 @@ namespace LogicSystem.Editor
 
         public bool OnSelectEntry(SearchTreeEntry SearchTreeEntry, SearchWindowContext context)
         {
+            _onSetIndexCallback.Invoke((string)SearchTreeEntry.userData);
             return true;
         }
 

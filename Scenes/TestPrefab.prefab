@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3211350902539509529}
-  - component: {fileID: 1674677248229240642}
-  - component: {fileID: 1115242188054383261}
   m_Layer: 0
   m_Name: SubEntitiy
   m_TagString: Untagged
@@ -33,40 +31,6 @@ Transform:
   m_Father: {fileID: 7592993029667009755}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1674677248229240642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5386393092569536283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e592737f12d74dd1a9564ee0e466f048, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializedGuid: 
---- !u!114 &1115242188054383261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5386393092569536283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2e077323a8b4581a54978c76976a683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  test:
-    targets:
-    - targetEntity: {fileID: 7592993029667009752}
-      target: {fileID: 0}
-      input: 
-  refer:
-    serializedGuid: 00000000000000000000000000000000
-    cachedName: TestPrefab
-    cachedScene: {fileID: 0}
 --- !u!1 &7592993029667009753
 GameObject:
   m_ObjectHideFlags: 0

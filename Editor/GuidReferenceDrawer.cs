@@ -57,7 +57,7 @@ public class GuidReferenceDrawer : PropertyDrawer
         ParseGUIDFromProp(out byteArray);
 
         currentGuid = new System.Guid(byteArray);
-        currentGO = GuidManager.ResolveGuid(currentGuid);
+        currentGO = EntityManager.ResolveGuid(currentGuid);
         Entity currentGuidComponent = currentGO != null ? currentGO.GetComponent<Entity>() : null;
 
         Entity component = null;

@@ -19,8 +19,8 @@ public class NestablePropertyDrawer : PropertyDrawer
 	private static readonly Regex matchArrayElement = new Regex(@"^data\[(\d+)\]$");
 	protected virtual void Initialize(SerializedProperty prop)
 	{
-		if (initialized && false)
-			return;
+		//if (initialized)
+		//	return;
 
 		SerializedObject serializedObject = prop.serializedObject;
 		string path = prop.propertyPath;

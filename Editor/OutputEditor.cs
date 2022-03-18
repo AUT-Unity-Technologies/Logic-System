@@ -31,12 +31,7 @@ namespace LogicSystem.Editor
             
             var targets = property.FindPropertyRelative("targets");
             
-            if (list == null)
-            {
-                list = new ReorderableList(targets, true, true, true);
-            }
-            
-            //var list = GetList(targets);
+            var list = GetList(targets);
             
             float height = 0;
             height += EditorGUIUtility.singleLineHeight;
@@ -51,11 +46,8 @@ namespace LogicSystem.Editor
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             var targets = property.FindPropertyRelative("targets");
-            
-            if (list == null)
-            {
-                list = new ReorderableList(targets, true, true, true);
-            }
+
+            var list = GetList(targets);
             
             var line = position;
             line.height = LINE_HEIGHT;
@@ -65,7 +57,7 @@ namespace LogicSystem.Editor
             property.isExpanded = EditorGUI.Foldout(line, property.isExpanded, property.name);
             line.y += LINE_HEIGHT;
 
-            
+            EditorGUI.BeginChangeCheck();
             
             if (property.isExpanded)
             {
@@ -75,8 +67,27 @@ namespace LogicSystem.Editor
                 list.DoList(line, new GUIContent("Targets"));
             }
 
-            
+            if (EditorGUI.EndChangeCheck())
+            {
+                property.serializedObject.ApplyModifiedProperties();
+            }
+
             EditorGUI.EndProperty();
+        }
+
+        public ReorderableList GetList(SerializedProperty targets)
+        {
+            if (list == null)
+            {
+                list = new ReorderableList(targets, true, true, true);
+                /*list.onAddCallback += reorderableList =>
+                {
+                    Debug.Log("asd");
+                    targets.InsertArrayElementAtIndex(targets.arraySize);
+                };*/
+            }
+
+            return list;
         }
         
     }
@@ -118,11 +129,16 @@ namespace LogicSystem.Editor
             pos.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
              
 
-            if (GUI.Button(pos,"asd"))
+            if (GUI.Button(pos,propertyObject.target +"#"+propertyObject.input))
             {
-                //var data = ScriptableObject.CreateInstance<SearchTreeContextTest>();
-                var data = new SearchTreeContextTest();
-                data.Init(this.propertyObject.targetEntity.entity);
+                var data = ScriptableObject.CreateInstance<SearchTreeContextTest>();
+                //var data = new SearchTreeContextTest();
+                Debug.Log(this.propertyObject.targetEntity.entity.name);
+                data.Init(this.propertyObject.targetEntity.entity,s =>
+                {
+                    this.propertyObject.target = s.Split("#")[0];
+                    this.propertyObject.input = s.Split("#")[1];
+                });
                 //data.hideFlags = HideFlags.HideAndDontSave;
                 
                 SearchWindow.Open(new SearchWindowContext( EditorGUIUtility.GUIToScreenPoint(new Vector2(pos.xMax,pos.yMax))),data);

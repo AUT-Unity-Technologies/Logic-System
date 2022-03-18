@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.Events;
 using Object = UnityEngine.Object;
@@ -11,12 +12,6 @@ namespace LogicSystem
 
         public Output onSpawn;
 
-        //public GuidReference guidReference;
-        
-        //public List<TestObject> test;
-
-        //public UnityEvent ev;
-        
         [Input()]
         public void TestInput()
         {
@@ -30,13 +25,18 @@ namespace LogicSystem
     {
         
         public List<Binding> targets = new List<Binding>();
+
+        public void Call()
+        {
+            InGameDebugUI.Log("asd");
+        }
     }
 
     [Serializable]
     public class Binding
     {
         public GuidReference targetEntity;
-        public CBase target;
+        public string target;
         public string input;
     }
 

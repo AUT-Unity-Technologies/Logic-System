@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Event = LogicSystem.EventSystem.Event;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -18,7 +20,8 @@ namespace LogicSystem
         // Unity's serialization system doesn't know about System.Guid, so we convert to a byte array
         // Fun fact, we tried using strings at first, but that allocated memory and was twice as slow
         [SerializeField] private byte[] serializedGuid;
-
+        
+        
         // When de-serializing or creating this component, we want to either restore our serialized GUID
         // or create a new one.
         void CreateGuid()
@@ -58,7 +61,7 @@ namespace LogicSystem
             {
                 //TODO: Add to a manager
                 
-                if (!GuidManager.Add(this))
+                if (!EntityManager.Add(this))
                 {
                     // if registration fails, we probably have a duplicate or invalid GUID, get us a new one.
                     serializedGuid = null;
@@ -167,8 +170,30 @@ namespace LogicSystem
         // let the manager know we are gone, so other objects no longer find this
         public void OnDestroy()
         {
-            //GuidManager.Remove(guid);
+            EntityManager.Remove(guid);
         }
 
+        [NonSerialized]
+        public List<CBase> components = new();
+
+        public void AddComponent(CBase cBase)
+        {
+            components.Add(cBase);
+        }
+
+        public void RemoveComponent(CBase cBase)
+        {
+            components.Remove(cBase);
+        }
+
+        public void UpdateComponentName(CBase cBase)
+        {
+            
+        }
+
+        public void ProcessEvent(Event ev)
+        {
+            this.components.Find(c => c.name == ev.target.target);
+        }
     }
 }

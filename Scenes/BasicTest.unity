@@ -162,7 +162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287910657}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -105.75, y: 0, z: -23.699448}
+  m_LocalPosition: {x: -9, y: 0, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -181,15 +181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e077323a8b4581a54978c76976a683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test:
-    targets:
-    - targetEntity: {fileID: 1287910659}
-      target: {fileID: 0}
-      input: 
-  refer:
-    serializedGuid: 24bbe634f5e70844a9afa08fefa76e4a
-    cachedName: TestPrefab
-    cachedScene: {fileID: 102900000, guid: a3f9f08c3a4d33e4895a318737754e1b, type: 3}
+  _name: SooooCustom
+  onSpawn:
+    targets: []
 --- !u!1 &1684152841
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684152841}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -104.732285, y: 0, z: -22.25}
+  m_LocalPosition: {x: -7.9822807, y: 0, z: -2.5505528}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -248,9 +242,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e077323a8b4581a54978c76976a683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test:
+  _name: 
+  onSpawn:
     targets: []
-  refer:
-    serializedGuid: 00000000000000000000000000000000
-    cachedName: TestPrefab
-    cachedScene: {fileID: 102900000, guid: a3f9f08c3a4d33e4895a318737754e1b, type: 3}
