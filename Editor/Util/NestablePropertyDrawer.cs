@@ -4,7 +4,7 @@ using System;
 using System.Collections;
 using System.Reflection;
 using System.Text.RegularExpressions;
-
+/*
 /// <summary>
 /// Courtesy of
 /// https://gist.github.com/v01pe/79db7566e2feff7ffab87676e220fd20
@@ -101,4 +101,4 @@ public class NestablePropertyDrawer : PropertyDrawer
 		return false;
 	}
 }
-
+*/

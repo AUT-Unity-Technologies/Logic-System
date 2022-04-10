@@ -34,10 +34,11 @@ namespace LogicSystem.EventSystem
         {
             //Debug.Log("Hi!");
             var curr = Time.frameCount;
-            while (events.Peek().targetTime < curr)
+            
+            while (events.Count > 0 && events.Peek().targetTime < curr)
             {
                 var ev = events.Dequeue();
-                //Debug.Log("New Event found?");
+                Debug.Log(ev.ToString(),this);
                 ev.target.targetEntity.entity.ProcessEvent(ev);
             }
         }

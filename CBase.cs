@@ -13,7 +13,7 @@ namespace LogicSystem
         
         [SerializeField]
         private string _name;
-        public string name
+        public string Name
         {
             get
             {
@@ -33,6 +33,10 @@ namespace LogicSystem
 
         private void OnEnable()
         {
+            if (Name == null)
+            {
+                Name = this.GetType().Name;
+            }
             var ent = gameObject.GetComponent<Entity>();
             if (ent != null)
             {

@@ -8,5 +8,12 @@ namespace LogicSystem.EventSystem
         public int targetTime;
 
         public Binding target;
+
+        public override string ToString()
+        {
+            return
+                "() => " +
+                target.targetEntity.entity.name + "::" + target.target + "::" + target.input;
+        }
     }
 }

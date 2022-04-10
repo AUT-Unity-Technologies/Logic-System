@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Event = LogicSystem.EventSystem.Event;
 
@@ -193,7 +194,20 @@ namespace LogicSystem
 
         public void ProcessEvent(Event ev)
         {
-            this.components.Find(c => c.name == ev.target.target);
+            var comp = this.components.Find(c => c.Name == ev.target.target);
+            if (comp != null)
+            {
+                var method =
+                    comp.GetType()
+                        .GetMethods()
+                        .FirstOrDefault(m => m.Name == ev.target.input);
+
+                if (method != null)
+                {
+                    method.Invoke(comp, new[] { ev });
+                }
+
+            }
         }
     }
 }

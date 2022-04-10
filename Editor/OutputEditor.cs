@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Cinemachine.Editor;
 using LogicSystem.Editor.Util;
 using Packages.ObjectPicker;
 using UnityEditor;
@@ -94,15 +95,16 @@ namespace LogicSystem.Editor
     
     
     [CustomPropertyDrawer(typeof(Binding))]
-    public class BindingEditor : NestablePropertyDrawer
+    public class BindingEditor : PropertyDrawer
     {
+        private static Binding def = new();
         
-        protected new Binding propertyObject { get { return (Binding)base.propertyObject; } }
+        //protected new Binding propertyObject { get { return (Binding)base.propertyObject; } }
         private SerializedProperty stringField = null;
 
-        protected override void Initialize(SerializedProperty prop)
+        protected void Initialize(SerializedProperty prop)
         {
-            base.Initialize(prop);
+            //base.Initialize(prop);
 
             if (stringField == null)
                 stringField = prop.FindPropertyRelative("field");
@@ -116,32 +118,51 @@ namespace LogicSystem.Editor
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            base.OnGUI(position,property,label);
+            //base.OnGUI(position,property,label);
             
             var targetEnt = property.FindPropertyRelative("targetEntity");
-            //var targetEntRef = targetEnt.GetSerializedObject() as GuidReference;
+            
+            var guid = GuidReferenceHelpers.GetGuidFromProperty(targetEnt);
+            var go = EntityManager.ResolveGuid(guid);
+            var entity = go.GetComponent<Entity>();
 
+
+            var target = property.FindPropertyRelative(() => def.target);
+            var input = property.FindPropertyRelative(() => def.input);
+            
+            
             var pos = new Rect(position);
             pos.height = EditorGUIUtility.singleLineHeight;
 
             EditorGUI.PropertyField(pos, targetEnt,GUIContent.none);
             
             pos.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
-             
 
-            if (GUI.Button(pos,propertyObject.target +"#"+propertyObject.input))
+            var componentRect = new Rect(pos);
+            componentRect.width = pos.width / 2;
+
+            GUIHelpers.DoBasicPreview<string>(componentRect, target);
+
+            var targetRect = new Rect(pos);
+            targetRect.x += pos.width / 2;
+            targetRect.width = pos.width / 2;
+            
+            if (GUI.Button(targetRect,target.stringValue +"#"+input.stringValue))
             {
                 var data = ScriptableObject.CreateInstance<SearchTreeContextTest>();
                 //var data = new SearchTreeContextTest();
-                Debug.Log(this.propertyObject.targetEntity.entity.name);
-                data.Init(this.propertyObject.targetEntity.entity,s =>
-                {
-                    this.propertyObject.target = s.Split("#")[0];
-                    this.propertyObject.input = s.Split("#")[1];
-                });
-                //data.hideFlags = HideFlags.HideAndDontSave;
                 
-                SearchWindow.Open(new SearchWindowContext( EditorGUIUtility.GUIToScreenPoint(new Vector2(pos.xMax,pos.yMax))),data);
+                Debug.Log(entity.name);
+                data.Init(entity,s =>
+                {
+                    target.stringValue = s.Split("#")[0];
+                    input.stringValue = s.Split("#")[1];
+
+                    target.serializedObject.ApplyModifiedProperties();
+                });
+                data.hideFlags = HideFlags.HideAndDontSave;
+                
+                SearchWindow.Open(new SearchWindowContext( EditorGUIUtility.GUIToScreenPoint(new Vector2(pos.xMax,pos.yMax+pos.height))),data);
             }
 
         }

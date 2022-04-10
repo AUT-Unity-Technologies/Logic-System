@@ -39,5 +39,20 @@ namespace LogicSystem.Editor
                 return sPickerIcon;
             }
         }
+
+        
+        private static Texture2D sArrowOut = null;
+        internal static Texture2D ArrowOut => LoadAsset(ref sArrowOut, kPackageRoot + "/Editor/EditorResources/arrow-right-bold-hexagon-outline.png");
+        
+        
+        private static Texture2D LoadAsset(ref Texture2D asset, string path)
+        {
+            if (asset == null)
+                asset = AssetDatabase.LoadAssetAtPath<Texture2D>(path);
+            ;
+            if (asset != null)
+                asset.hideFlags = HideFlags.DontSaveInEditor;
+            return (Texture2D)asset;
+        }
     }
 }

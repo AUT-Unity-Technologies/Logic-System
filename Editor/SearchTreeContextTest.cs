@@ -32,8 +32,8 @@ namespace LogicSystem.Editor
             foreach (var component in components)
             {
                 //var comp_content = EditorGUIUtility.ObjectContent(component, typeof(CBase));
-                var comp_content = new GUIContent(component.name);
-                comp_content.text = component.name;
+                var comp_content = new GUIContent(component.Name);
+                comp_content.text = component.Name;
                 tree.Add(new SearchTreeGroupEntry(comp_content,1));
 
                 var querry =
@@ -63,7 +63,7 @@ namespace LogicSystem.Editor
                     
                     var searchTreeEntry = new SearchTreeEntry(new GUIContent(methodInfo.Name));
                     searchTreeEntry.level = level ;
-                    searchTreeEntry.userData = component.name + "#" + methodInfo.Name;
+                    searchTreeEntry.userData = component.Name + "#" + methodInfo.Name;
                     tree.Add(searchTreeEntry);
                 }
                 

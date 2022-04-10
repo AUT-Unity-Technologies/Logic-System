@@ -6,9 +6,11 @@ using Packages.ObjectPicker;
 using UnityEngine.SceneManagement;
 using WaresoftEditor.Common;
 
+
 // Using a property drawer to allow any class to have a field of type GuidRefernce and still get good UX
 // If you are writing your own inspector for a class that uses a GuidReference, drawing it with
 // EditorLayout.PropertyField(prop) or similar will get this to show up automatically
+
 [CustomPropertyDrawer(typeof(GuidReference))]
 public class GuidReferenceDrawer : PropertyDrawer
 {
@@ -169,7 +171,7 @@ public class GuidReferenceDrawer : PropertyDrawer
 
         //EditorGUI.ObjectField(scenePos, GUIContent.none, sceneProp.objectReferenceValue, typeof(SceneAsset), false);
         
-        if (DoBasicPreview(scenePos,sceneProp))
+        if (GUIHelpers.DoBasicPreview<SceneAsset>(scenePos,sceneProp))
         {
             EditorGUIUtility.PingObject(sceneProp.objectReferenceValue);
         }
@@ -203,34 +205,5 @@ public class GuidReferenceDrawer : PropertyDrawer
             byteProp.intValue = 0;
         }
     }
-
-
-    private static readonly int s_BasicObjectPreviewHash = nameof (s_BasicObjectPreviewHash).GetHashCode();
     
-    private static readonly GUIContent s_MixedValueContent = EditorGUIUtility.TrTextContent("—", "Mixed Values");
-    
-    public static bool DoBasicPreview(Rect area, SerializedProperty prop)
-    {
-        EditorGUI.BeginProperty(area, GUIContent.none, prop);
-        
-        //int controlId = GUIUtility.GetControlID(s_BasicObjectPreviewHash, FocusType.Keyboard, area);
-        
-        var style = EditorStyles.objectField;
-        
-        var img = new Rect(area);
-        //img.width = EditorGUIUtility.singleLineHeight;
-
-        var content = EditorGUIUtility.ObjectContent(prop.objectReferenceValue, typeof(SceneAsset));
-        
-        if (EditorGUI.showMixedValue || prop.hasMultipleDifferentValues)
-        {
-            content = s_MixedValueContent;
-        }
-        
-        var clicked = GUI.Button(img,content,style);
-
-        EditorGUI.EndProperty();
-        
-        return clicked;
-    }
 }

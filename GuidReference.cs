@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System;
+using System.Runtime.CompilerServices;
 using LogicSystem;
 
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
+
+namespace LogicSystem
+{
 
 // This call is the type used by any other code to hold a reference to an object by GUID
 // If the target object is loaded, it will be returned, otherwise, NULL will be returned
@@ -12,107 +16,109 @@ using UnityEditor;
 // or other methods to track down the specific objects need by any given system
 
 // Ideally this would be a struct, but we need the ISerializationCallbackReciever
-[System.Serializable]
-public class GuidReference : ISerializationCallbackReceiver
-{
-    // cache the referenced Game Object if we find one for performance
-    private GameObject cachedReference;
-    private bool isCacheSet;
-    
-    // store our GUID in a form that Unity can save
-    [SerializeField]
-    private byte[] serializedGuid;
-    private System.Guid guid;
+    [System.Serializable]
+    [assembly: InternalsVisibleTo("LogicSystem.Editor")]
+    public class GuidReference : ISerializationCallbackReceiver
+    {
+        // cache the referenced Game Object if we find one for performance
+        private GameObject cachedReference;
+        private bool isCacheSet;
+
+        // store our GUID in a form that Unity can save
+        [SerializeField] private byte[] serializedGuid;
+        private System.Guid guid;
 
 #if UNITY_EDITOR
-    // decorate with some extra info in Editor so we can inform a user of what that GUID means
-    [SerializeField]
-    private string cachedName;
-    [SerializeField]
-    private SceneAsset cachedScene;
+        // decorate with some extra info in Editor so we can inform a user of what that GUID means
+        [SerializeField] private string cachedName;
+        [SerializeField] private SceneAsset cachedScene;
 #endif
 
-    // Set up events to let users register to cleanup their own cached references on destroy or to cache off values
-    public event Action<GameObject> OnGuidAdded = delegate (GameObject go) { };
-    public event Action OnGuidRemoved = delegate() { };
+        // Set up events to let users register to cleanup their own cached references on destroy or to cache off values
+        public event Action<GameObject> OnGuidAdded = delegate(GameObject go) { };
+        public event Action OnGuidRemoved = delegate() { };
 
-    // create concrete delegates to avoid boxing. 
-    // When called 10,000 times, boxing would allocate ~1MB of GC Memory
-    private Action<GameObject> addDelegate;
-    private Action removeDelegate;
-    
-    // optimized accessor, and ideally the only code you ever call on this class
-    public GameObject gameObject
-    {
-        get
+        // create concrete delegates to avoid boxing. 
+        // When called 10,000 times, boxing would allocate ~1MB of GC Memory
+        private Action<GameObject> addDelegate;
+        private Action removeDelegate;
+
+        // optimized accessor, and ideally the only code you ever call on this class
+        public GameObject gameObject
         {
-            if( isCacheSet )
+            get
             {
+                if (isCacheSet)
+                {
+                    return cachedReference;
+                }
+
+                cachedReference = EntityManager.ResolveGuid(guid, addDelegate, removeDelegate);
+                isCacheSet = true;
                 return cachedReference;
             }
 
-            cachedReference = EntityManager.ResolveGuid( guid, addDelegate, removeDelegate );
-            isCacheSet = true;
-            return cachedReference;
+            private set { }
         }
 
-        private set {}
-    }
-
-    //TODO Actually cache the entity
-    public Entity entity
-    {
-        get
+        //TODO Actually cache the entity
+        public Entity entity
         {
-            if( isCacheSet )
+            get
             {
+                if (isCacheSet)
+                {
+                    return gameObject.GetComponent<Entity>();
+                }
+
+                //cachedReference = GuidManager.ResolveGuid( guid, addDelegate, removeDelegate );
+                //isCacheSet = true;
                 return gameObject.GetComponent<Entity>();
             }
-
-            //cachedReference = GuidManager.ResolveGuid( guid, addDelegate, removeDelegate );
-            //isCacheSet = true;
-            return gameObject.GetComponent<Entity>();
         }
-    }
 
-    public GuidReference() { }
-
-    public GuidReference(Entity target)
-    {
-        guid = target.GetGuid();
-    }
-
-    private void GuidAdded(GameObject go)
-    {
-        cachedReference = go;
-        OnGuidAdded(go);
-    }
-
-    private void GuidRemoved()
-    {
-        cachedReference = null;
-        isCacheSet = false;
-        OnGuidRemoved();
-    }
-
-    //convert system guid to a format unity likes to work with
-    public void OnBeforeSerialize()
-    {
-        serializedGuid = guid.ToByteArray();
-    }
-
-    // convert from byte array to system guid and reset state
-    public void OnAfterDeserialize()
-    {
-        cachedReference = null;
-        isCacheSet = false;
-        if (serializedGuid == null || serializedGuid.Length != 16)
+        public GuidReference()
         {
-            serializedGuid = new byte[16];
         }
-        guid = new System.Guid(serializedGuid);
-        addDelegate = GuidAdded;
-        removeDelegate = GuidRemoved;
 
+        public GuidReference(Entity target)
+        {
+            guid = target.GetGuid();
+        }
+
+        private void GuidAdded(GameObject go)
+        {
+            cachedReference = go;
+            OnGuidAdded(go);
+        }
+
+        private void GuidRemoved()
+        {
+            cachedReference = null;
+            isCacheSet = false;
+            OnGuidRemoved();
+        }
+
+        //convert system guid to a format unity likes to work with
+        public void OnBeforeSerialize()
+        {
+            serializedGuid = guid.ToByteArray();
+        }
+
+        // convert from byte array to system guid and reset state
+        public void OnAfterDeserialize()
+        {
+            cachedReference = null;
+            isCacheSet = false;
+            if (serializedGuid == null || serializedGuid.Length != 16)
+            {
+                serializedGuid = new byte[16];
+            }
+
+            guid = new System.Guid(serializedGuid);
+            addDelegate = GuidAdded;
+            removeDelegate = GuidRemoved;
+
+        }
     }
 }

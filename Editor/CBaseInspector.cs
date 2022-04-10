@@ -12,7 +12,6 @@ namespace LogicSystem.Editor
     [CustomEditor(typeof(CBase),true)]
     public class CBaseInspector : UnityEditor.Editor
     {
-        private UnityEditor.Editor sub;
         private int tab = 0;
         
         List<SerializedProperty> sp;
@@ -46,7 +45,8 @@ namespace LogicSystem.Editor
 
         private void OnDisable()
         {
-            
+            sp.Clear();
+            outputs.Clear();
         }
 
         public override void OnInspectorGUI()
@@ -78,8 +78,15 @@ namespace LogicSystem.Editor
 
         private void DrawProperties()
         {
+            EditorGUI.BeginChangeCheck();
+            
             foreach (SerializedProperty s in sp)
                 EditorGUILayout.PropertyField(s);
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                serializedObject.ApplyModifiedProperties();
+            }
         }
         
         private void DrawOutputs()
