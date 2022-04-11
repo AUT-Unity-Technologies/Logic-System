@@ -457,11 +457,11 @@ MonoBehaviour:
         serializedGuid: 0f7fa05e2e687e40b5ed2d0226d31fc6
         cachedName: TestTarget
         cachedScene: {fileID: 102900000, guid: 7fd045ca55deec54eab44765c4afd431, type: 3}
-      target: TestTarget
+      target: Debug logger
       input: Log
     - targetEntity:
         serializedGuid: 75ea2d904d55c94f8ab21ba7295c07e2
         cachedName: Number log
         cachedScene: {fileID: 102900000, guid: a3f9f08c3a4d33e4895a318737754e1b, type: 3}
-      target: Number log
-      input: Toggle
+      target: DebugLogger
+      input: Log
