@@ -43,7 +43,6 @@ public class GuidReferenceDrawer : PropertyDrawer
         // Draw prefix label, returning the new rect we can draw in
         var guidCompPosition = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
         
-        //float step = guidCompPosition.width / 10;
         guidCompPosition.width = (guidCompPosition.width / 2 ) - EditorGUIUtility.singleLineHeight;
 
         var scenePos = new Rect(guidCompPosition);
