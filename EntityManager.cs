@@ -60,7 +60,7 @@ namespace LogicSystem
 
         static EntityManager()
         {
-            maker = () => new EntityManager();
+           new EntityManager();
         }
         
         public EntityManager()

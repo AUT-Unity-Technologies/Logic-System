@@ -45,6 +45,10 @@ namespace LogicSystem.Editor
         internal static Texture2D ArrowOut => LoadAsset(ref sArrowOut, kPackageRoot + "/Editor/EditorResources/arrow-right-bold-hexagon-outline.png");
         
         
+        private static Texture2D sHexagon = null;
+        internal static Texture2D Hexagon => LoadAsset(ref sHexagon, kPackageRoot + "/Editor/EditorResources/hexagon.png");
+        
+        
         private static Texture2D LoadAsset(ref Texture2D asset, string path)
         {
             if (asset == null)

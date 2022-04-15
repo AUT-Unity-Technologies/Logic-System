@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Cinemachine.Editor;
 using LogicSystem.Editor.Util;
 using Packages.ObjectPicker;
@@ -123,9 +124,13 @@ namespace LogicSystem.Editor
             var targetEnt = property.FindPropertyRelative("targetEntity");
             
             var guid = GuidReferenceHelpers.GetGuidFromProperty(targetEnt);
-            var go = EntityManager.ResolveGuid(guid);
-            var entity = go.GetComponent<Entity>();
 
+            Entity? entity = null;
+            if (guid != Guid.Empty)
+            {
+                var go = EntityManager.ResolveGuid(guid);
+                entity = go.GetComponent<Entity>();
+            }
 
             var target = property.FindPropertyRelative(() => def.target);
             var input = property.FindPropertyRelative(() => def.input);
@@ -147,22 +152,25 @@ namespace LogicSystem.Editor
             targetRect.x += pos.width / 2;
             targetRect.width = pos.width / 2;
             
-            if (GUI.Button(targetRect,target.stringValue +"#"+input.stringValue))
+            if (GUI.Button(targetRect,input.stringValue))
             {
                 var data = ScriptableObject.CreateInstance<SearchTreeContextTest>();
                 //var data = new SearchTreeContextTest();
                 
-                Debug.Log(entity.name);
-                data.Init(entity,s =>
+                Debug.Log(entity?.name);
+                if (entity is not null)
                 {
-                    target.stringValue = s.Split("#")[0];
-                    input.stringValue = s.Split("#")[1];
+                    data.Init(entity, s =>
+                    {
+                        target.stringValue = s.Split("#")[0];
+                        input.stringValue = s.Split("#")[1];
 
-                    target.serializedObject.ApplyModifiedProperties();
-                });
-                data.hideFlags = HideFlags.HideAndDontSave;
-                
-                SearchWindow.Open(new SearchWindowContext( EditorGUIUtility.GUIToScreenPoint(new Vector2(pos.xMax,pos.yMax+pos.height))),data);
+                        target.serializedObject.ApplyModifiedProperties();
+                    });
+                    data.hideFlags = HideFlags.HideAndDontSave;
+
+                    SearchWindow.Open(new SearchWindowContext(EditorGUIUtility.GUIToScreenPoint(new Vector2(pos.xMax, pos.yMax + pos.height))), data);
+                }
             }
 
         }

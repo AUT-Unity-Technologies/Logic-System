@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using Event = LogicSystem.EventSystem.Event;
 
 namespace LogicSystem
 {
@@ -9,7 +10,7 @@ namespace LogicSystem
     [ExecuteInEditMode]
     public class CBase : MonoBehaviour
     {
-        private Entity ent;
+        protected Entity entity;
         
         [SerializeField]
         private string _name;
@@ -21,14 +22,14 @@ namespace LogicSystem
             }
             set
             {
-                ent.UpdateComponentName(this);
+                entity.UpdateComponentName(this);
                 _name = value;
             }
         }
 
         private void Awake()
         {
-            ent = gameObject.GetComponent<Entity>();
+            entity = gameObject.GetComponent<Entity>();
         }
 
         private void OnEnable()
@@ -55,7 +56,7 @@ namespace LogicSystem
 
 
         [Input]
-        public void Toggle()
+        public void Toggle(Event ev)
         {
             this.enabled = !this.enabled;
         }

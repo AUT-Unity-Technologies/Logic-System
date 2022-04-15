@@ -14,7 +14,7 @@ namespace LogicSystem
         
         public List<Binding> targets = new ();
 
-        public void Call()
+        public void Call(Entity source)
         {
             //If we are not in play mode we do not do anything
             if (!Application.isPlaying)
@@ -23,7 +23,7 @@ namespace LogicSystem
             foreach (var target in targets)
             {
                 AppScope.root.GetComponent<EventBus>().AddEvent(
-                    new Event()
+                    new Event(source)
                     {
                         target = target,
                         targetTime = Time.frameCount

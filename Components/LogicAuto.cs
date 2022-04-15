@@ -13,7 +13,7 @@ namespace LogicSystem.Components
 
         private void Start()
         {
-            onMapLoad.Call();
+            onMapLoad.Call(entity);
         }
     }
 }
