@@ -1,0 +1,17 @@
+{
+    "name": "LogicSystem",
+    "rootNamespace": "",
+    "references": [
+        "GUID:af0ac5bc03bcc3f4b8e4e9aaf76ff2cc",
+        "GUID:58671935c1f7c044da1488fe38a1cc03"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -12,7 +12,8 @@ using UnityEngine.SceneManagement;
 namespace LogicSystem
 {
     // Class to handle registering and accessing objects by GUID
-    [Manager()]
+    [Manager]
+    [InstantiateIfMissing]
     public class EntityManager : Singleton<EntityManager>, IModule
     {
         // for each GUID we need to know the Game Object it references
@@ -60,11 +61,12 @@ namespace LogicSystem
 
         static EntityManager()
         {
-           new EntityManager();
+            //new EntityManager();
         }
         
         public EntityManager()
         {
+            Debug.Log("Inst");
             guidToObjectMap = new Dictionary<System.Guid, GuidInfo>();
         }
 

@@ -22,7 +22,8 @@ namespace LogicSystem
 
             foreach (var target in targets)
             {
-                AppScope.root.GetComponent<EventBus>().AddEvent(
+                
+                ModuleProvider.Get<EventBus>().AddEvent(
                     new Event(source)
                     {
                         target = target,
