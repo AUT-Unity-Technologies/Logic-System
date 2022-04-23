@@ -1,0 +1,6 @@
+- name: Getting Started
+  href: getting-started.md
+- name: Manual
+  href: manual/
+- name: Scripting API
+  href: api/

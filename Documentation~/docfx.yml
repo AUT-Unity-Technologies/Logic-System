@@ -1,0 +1,4 @@
+template: https://github.com/docascode/template
+websiteType: static
+globalMetadata:
+  titleSuffix: My Awesome Website

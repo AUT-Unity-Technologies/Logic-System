@@ -6,6 +6,9 @@ using Event = LogicSystem.EventSystem.Event;
 
 namespace LogicSystem
 {
+    /// <summary>
+    /// Base class for all components
+    /// </summary>
     [RequireComponent(typeof(Entity))]
     [ExecuteInEditMode]
     public class CBase : MonoBehaviour

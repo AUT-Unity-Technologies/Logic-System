@@ -12,6 +12,10 @@ using UnityEditor.Experimental.SceneManagement;
 
 namespace LogicSystem
 {
+    /// <summary>
+    /// Marks a Game object that can be referenced cross scenes.
+    /// </summary>
+    /// 
     [ExecuteInEditMode, DisallowMultipleComponent]
     public class Entity : MonoBehaviour, ISerializationCallbackReceiver
     {
@@ -174,24 +178,54 @@ namespace LogicSystem
             EntityManager.Remove(guid);
         }
 
+        /// <summary>
+        /// A list to hold all the components that are attached to this entity.
+        /// This list is used to find the entity when an event is received.
+        /// </summary>
         [NonSerialized]
         public List<CBase> components = new();
 
+        /// <summary>
+        /// Add a component to the entity
+        /// This is needed for a component to get events.
+        /// </summary>
+        /// <param name="cBase">The component to add</param>
         public void AddComponent(CBase cBase)
         {
+            //TODO: Check that the cbase is on the same GO as we are
             components.Add(cBase);
         }
 
+        /// <summary>
+        /// Removes the component from the entity
+        /// This should only be done when the component is destroyed. 
+        /// </summary>
+        /// <param name="cBase"></param>
         public void RemoveComponent(CBase cBase)
         {
             components.Remove(cBase);
         }
 
+        [Obsolete]
         public void UpdateComponentName(CBase cBase)
         {
             
         }
 
+        /// <summary>
+        /// Propagates an event to the entity for processing
+        /// This will dispatch the event to the target component for processing
+        /// For this to work the event's target component needs to be added to the <see cref="AddComponent"/>
+        /// </summary>
+        /// <param name="ev">The event to process</param>
+        /// <example>
+        /// This examples shows how to directly send an event:
+        /// <code>
+        /// Event e = new Event();
+        /// 
+        /// entity.ProcessEvent(e)
+        /// </code>
+        /// </example>
         public void ProcessEvent(Event ev)
         {
             var comp = this.components.Find(c => c.Name == ev.target.target);

@@ -1,0 +1,73 @@
+﻿{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../../..",
+          "files": [
+            "Editor/**/*.cs",
+            "Runtime/**/*.cs",
+            "LogicSystem.csproj"
+          ],
+          "exclude": [
+            "Assets/Plugins/**"
+          ]
+        }
+      ],
+      "filter": "filterConfig.yml",
+      "dest": "api",
+      "disableDefaultFilter": true
+    }
+  ],
+  "build": {
+    "globalMetadata": {
+      "_appTitle": "Example Unity documentation",
+      "_appFooter": "Example Unity documentation",
+      "_enableSearch": true
+    },
+    "content": [
+      {
+        "files": [
+          "toc.yml",
+          "index.md",
+          "getting-started.md"
+        ]
+      },
+      {
+        "src": "api",
+        "files": [
+          "*.yml"
+        ],
+        "dest": "api"
+      },
+      {
+        "src": "manual",
+        "files": [
+          "toc.yml",
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "dest": "manual"
+      }
+    ],
+    "overwrite": [
+      {
+        "src": "overwrite",
+        "files": [
+          "./**/*.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**/images/**/*",
+          "resources/**/*"
+        ]
+      }
+    ],
+    "xref": [ "https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml" ],
+    
+    "dest": "./_site"
+  }
+}

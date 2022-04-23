@@ -1,0 +1,22 @@
+{
+  "name": "hu.bme.aut.logicsystem",
+  "version": "0.0.1",
+  "displayName": "Logic System",
+  "description": "This package provides a quest system.",
+  "unity": "2021.2",
+  "keywords": [
+    "Quest",
+    "System"
+  ],
+  "author": {
+    "name": "BME AUT Szajberpank2076 workgroup",
+    "email": "",
+    "url": ""
+  },
+  "hideInEditor": false,
+  "dependencies": {
+    "com.dpeter99.utils": "0.0.5",
+    "com.dpeter99.module-framework": "0.1.0",
+    "com.malee.reorderablelist": "1.0.1"
+  }
+}
