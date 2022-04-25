@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using com.dpeter99.utils.editor.UnityEditor.Rendering;
 //using Cinemachine.Editor;
 using UnityEditor;
 //using UnityEditor.ShaderGraph.Drawing.Inspector;
@@ -8,6 +9,7 @@ using UnityEngine;
 
 namespace LogicSystem.Editor
 {
+    using CED = CoreEditorDrawer<SerializedHDCamera>;
     
     [CustomEditor(typeof(CBase),true)]
     public class CBaseInspector : UnityEditor.Editor
@@ -95,7 +97,29 @@ namespace LogicSystem.Editor
                 EditorGUILayout.PropertyField(s);
         }
     }
+
+
     
-    
-    
+    public class CBaseUI
+    {
+        public static readonly CED.IDrawer SectionProjectionSettings = CED.FoldoutGroup(
+            //CameraUI.Styles.projectionSettingsHeaderContent,
+            new GUIContent("asd"),
+            Expandable.Projection,
+            k_ExpandedState,
+            FoldoutOption.Indent,
+            CED.Group(
+                CameraUI.Drawer_Projection
+            ),
+            PhysicalCamera.Drawer
+        );
+        
+        public static readonly CED.IDrawer[] Inspector = new[]
+        {
+            SectionProjectionSettings,
+            Rendering.Drawer,
+            Environment.Drawer,
+            Output.Drawer,
+        };
+    }
 }
