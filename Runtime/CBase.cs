@@ -15,6 +15,12 @@ namespace LogicSystem
     {
         protected Entity entity;
         
+        #if UNITY_EDITOR
+        [SerializeField]
+        private uint foldSate;
+        
+        #endif
+        
         [SerializeField]
         private string _name;
         public string Name

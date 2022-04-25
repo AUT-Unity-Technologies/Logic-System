@@ -6,7 +6,7 @@ namespace LogicSystem.Editor
 {
     public class IOConfig
     {
-        public static string kPackageRoot = "Assets/LogicSystem";
+        public static string kPackageRoot = "Packages/hu.bme.aut.logicsystem";
         
         private static Texture2D sCloseThick = null;
         internal static Texture2D CloseThick

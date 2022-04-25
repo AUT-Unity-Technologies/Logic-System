@@ -16,9 +16,13 @@ namespace LogicSystem.Editor
         
         public List<SerializedProperty> props = new ();
         
+        public SerializedProperty foldState { get; private set; }
+        
         public SerializedCBase(SerializedObject target)
         {
             serializedObject = target;
+
+            foldState = serializedObject.FindProperty("foldSate");
             
             var members = target.targetObject.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy);
 

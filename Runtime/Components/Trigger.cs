@@ -10,7 +10,14 @@ namespace LogicSystem.Components
     [RequireComponent(typeof(Collider))]
     public class Trigger : CBase
     {
-        private static Color _visualizerColor = Color.green;
+        private static Color _visualizerColor = new Color(0,1,0,0.25f);
+
+        /// <summary>
+        /// Disables the trigger after first activation of any of the outputs
+        /// </summary>
+        public bool once = false;
+        
+        
         
         /// <summary>
         /// On Start Touch is fired when a object enters the Trigger area. 
@@ -27,6 +34,8 @@ namespace LogicSystem.Components
             if (isActiveAndEnabled)
             {
                 OnStartTouch.Call(entity);
+
+                if (once) enabled = false;
             }
         }
 
@@ -35,6 +44,8 @@ namespace LogicSystem.Components
             if (isActiveAndEnabled)
             {
                 OnEndTouch.Call(entity);
+                
+                if (once) enabled = false;
             }
         }
 

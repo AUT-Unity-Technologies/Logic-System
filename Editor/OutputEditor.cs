@@ -18,7 +18,7 @@ namespace LogicSystem.Editor
     [CustomPropertyDrawer(typeof(Output), true)]
     public class OutputEditor : PropertyDrawer
     {
-        public const float LINE_HEIGHT = 18f;
+        public static float LINE_HEIGHT = EditorGUIUtility.singleLineHeight;
         
         //private static readonly Dictionary<int, ReorderableList> _lists = new ();
         private ReorderableList list;
@@ -34,39 +34,43 @@ namespace LogicSystem.Editor
             var targets = property.FindPropertyRelative("targets");
             
             var list = GetList(targets);
-            
+
             float height = 0;
-            height += EditorGUIUtility.singleLineHeight;
+            //height += EditorGUIUtility.singleLineHeight;
             //height += list.HeaderHeight + list.FooterHeight;
             //height += LINE_HEIGHT * (targets.arraySize+2);
 
             height += list.GetHeight();
             
-            return property.isExpanded ? height : LINE_HEIGHT;
+            return (property.isExpanded ? height : LINE_HEIGHT) + EditorGUIUtility.standardVerticalSpacing;
         }
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
             var targets = property.FindPropertyRelative("targets");
 
+            targets.isExpanded = property.isExpanded;
+            
             var list = GetList(targets);
             
+            
             var line = position;
-            line.height = LINE_HEIGHT;
+            //line.height = LINE_HEIGHT;
 
             EditorGUI.BeginProperty(position, GUIContent.none, property);
             
-            property.isExpanded = EditorGUI.Foldout(line, property.isExpanded, property.name);
-            line.y += LINE_HEIGHT;
+            //property.isExpanded = EditorGUI.Foldout(line, property.isExpanded, property.name);
+            //line.y += LINE_HEIGHT;
 
             EditorGUI.BeginChangeCheck();
             
-            if (property.isExpanded)
+            //if (property.isExpanded)
             {
                 //var list = GetList(targets);
-                line.height = position.height-line.height;
+                line.height = position.height;
                 
-                list.DoList(line, new GUIContent("Targets"));
+                list.DoList(position, new GUIContent(property.name,IOConfig.ArrowOut));
+                
             }
 
             if (EditorGUI.EndChangeCheck())
@@ -74,6 +78,8 @@ namespace LogicSystem.Editor
                 property.serializedObject.ApplyModifiedProperties();
             }
 
+            property.isExpanded = targets.isExpanded;
+            
             EditorGUI.EndProperty();
         }
 

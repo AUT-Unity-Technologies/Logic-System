@@ -86,6 +86,7 @@ namespace LogicSystem.Editor
     public class CBaseUI
     {
         /// <summary>Enum flags to store what parts of the UI are open. This is a bit-filed and easily stored in a int.</summary>
+        [Flags]
         public enum Expandable
         {
             /// <summary> Projection</summary>
@@ -94,13 +95,21 @@ namespace LogicSystem.Editor
             Settings = 1 << 1,
         }
         
-        static readonly ExpandedState<Expandable, CBase> k_ExpandedState = new (Expandable.Settings, "Logic-System");
+        static readonly ExpandedState<Expandable, CBase, SerializedCBase> k_ExpandedState = new (Expandable.Settings, "Logic-System");
+
+        private static readonly ExpandedStateFromProperty<Expandable, SerializedCBase> _ExpandedState = new(
+            accessor: data => data.foldState.GetEnumValue<Expandable>(),
+            setter: (data, expandable) =>
+            {
+                data.foldState.SetEnumValue(expandable);
+                data.foldState.serializedObject.ApplyModifiedProperties();
+            });
         
         public static readonly CED.IDrawer ObjectSettings = CED.FoldoutGroup(
             //CameraUI.Styles.projectionSettingsHeaderContent,
             new GUIContent("Settings"),
             Expandable.Settings,
-            k_ExpandedState,
+            _ExpandedState,
             FoldoutOption.Indent,
             Drawer_Settings
         );
@@ -109,7 +118,7 @@ namespace LogicSystem.Editor
             //CameraUI.Styles.projectionSettingsHeaderContent,
             new GUIContent("Outputs"),
             Expandable.Outputs,
-            k_ExpandedState,
+            _ExpandedState,
             FoldoutOption.Indent,
             Drawer_Outputs
         );
