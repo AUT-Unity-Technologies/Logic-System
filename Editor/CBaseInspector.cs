@@ -9,50 +9,30 @@ using UnityEngine;
 
 namespace LogicSystem.Editor
 {
-    using CED = CoreEditorDrawer<SerializedHDCamera>;
+    using CED = CoreEditorDrawer<SerializedCBase>;
     
     [CustomEditor(typeof(CBase),true)]
     public class CBaseInspector : UnityEditor.Editor
     {
-        private int tab = 0;
+        private SerializedCBase _serializedCBase;
         
-        List<SerializedProperty> sp;
 
-        private List<SerializedProperty> outputs;
+        
         
         private void OnEnable()
         {
-            var members = target.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy);
-
-            sp = new();
-            outputs = new();
-            
-            foreach (var member in members)
-            {
-                var prop = serializedObject.FindProperty(member.Name);
-                if (prop != null)
-                {
-                    if (member.FieldType != typeof(Output))
-                    {
-                        sp.Add(prop);
-                    }
-                    else
-                    {
-                        outputs.Add(prop);
-                    }    
-                }
-                
-            }
+            _serializedCBase = new SerializedCBase(serializedObject);
         }
 
         private void OnDisable()
         {
-            sp.Clear();
-            outputs.Clear();
+            //sp.Clear();
+            //outputs.Clear();
         }
 
         public override void OnInspectorGUI()
         {
+            /*
             //base.OnInspectorGUI();
             EditorGUI.BeginChangeCheck();
 
@@ -73,13 +53,16 @@ namespace LogicSystem.Editor
                     DrawOutputs();
                     break;
             }
+            */
             
-            
+                        
+            CBaseUI.Inspector.Draw(_serializedCBase,this);
             
         }
 
         private void DrawProperties()
         {
+            /*
             EditorGUI.BeginChangeCheck();
             
             foreach (SerializedProperty s in sp)
@@ -89,37 +72,73 @@ namespace LogicSystem.Editor
             {
                 serializedObject.ApplyModifiedProperties();
             }
+            */
         }
         
         private void DrawOutputs()
         {
-            foreach (SerializedProperty s in outputs)
-                EditorGUILayout.PropertyField(s);
+            //foreach (SerializedProperty s in outputs)
+            //    EditorGUILayout.PropertyField(s);
         }
     }
 
 
-    
     public class CBaseUI
     {
-        public static readonly CED.IDrawer SectionProjectionSettings = CED.FoldoutGroup(
+        /// <summary>Enum flags to store what parts of the UI are open. This is a bit-filed and easily stored in a int.</summary>
+        public enum Expandable
+        {
+            /// <summary> Projection</summary>
+            Outputs = 1 << 0,
+            
+            Settings = 1 << 1,
+        }
+        
+        static readonly ExpandedState<Expandable, CBase> k_ExpandedState = new (Expandable.Settings, "Logic-System");
+        
+        public static readonly CED.IDrawer ObjectSettings = CED.FoldoutGroup(
             //CameraUI.Styles.projectionSettingsHeaderContent,
-            new GUIContent("asd"),
-            Expandable.Projection,
+            new GUIContent("Settings"),
+            Expandable.Settings,
             k_ExpandedState,
             FoldoutOption.Indent,
-            CED.Group(
-                CameraUI.Drawer_Projection
-            ),
-            PhysicalCamera.Drawer
+            Drawer_Settings
+        );
+        
+        public static readonly CED.IDrawer ObjectOutputs = CED.FoldoutGroup(
+            //CameraUI.Styles.projectionSettingsHeaderContent,
+            new GUIContent("Outputs"),
+            Expandable.Outputs,
+            k_ExpandedState,
+            FoldoutOption.Indent,
+            Drawer_Outputs
         );
         
         public static readonly CED.IDrawer[] Inspector = new[]
         {
-            SectionProjectionSettings,
-            Rendering.Drawer,
-            Environment.Drawer,
-            Output.Drawer,
+            ObjectSettings,
+            ObjectOutputs
         };
+
+
+        static void Drawer_Settings(SerializedCBase p, UnityEditor.Editor owner)
+        {
+            EditorGUI.BeginChangeCheck();
+            
+            foreach (SerializedProperty s in p.props)
+                EditorGUILayout.PropertyField(s);
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                p.serializedObject.ApplyModifiedProperties();
+            }
+        }
+        
+        static void Drawer_Outputs(SerializedCBase p, UnityEditor.Editor owner)
+        {
+            foreach (SerializedProperty s in p.outputs)
+                EditorGUILayout.PropertyField(s);
+        }
+        
     }
 }
