@@ -1,4 +1,189 @@
 {
+  "api/LogicSystem.Binding.html": {
+    "href": "api/LogicSystem.Binding.html",
+    "title": "Class Binding | Example Unity documentation",
+    "keywords": "Class Binding Inheritance System.Object Binding Namespace : LogicSystem Assembly : cs.temp.dll.dll Syntax public class Binding Fields input Declaration public string input Field Value Type Description System.String target Declaration public string target Field Value Type Description System.String targetEntity Declaration public GuidReference targetEntity Field Value Type Description GuidReference"
+  },
+  "api/LogicSystem.CBase.html": {
+    "href": "api/LogicSystem.CBase.html",
+    "title": "Class CBase | Example Unity documentation",
+    "keywords": "Class CBase Base class for all components Inheritance System.Object CBase DebugLogger LogicAuto MathCount PropDoorRotating PropSwitcher Trigger TestComponent Namespace : LogicSystem Assembly : cs.temp.dll.dll Syntax public class CBase : MonoBehaviour Fields _name Declaration string _name Field Value Type Description System.String entity Declaration protected Entity entity Field Value Type Description Entity Properties Name Declaration public string Name { get; set; } Property Value Type Description System.String Methods Awake() Declaration void Awake() OnDisable() Declaration void OnDisable() OnEnable() Declaration void OnEnable() Toggle(Event) Declaration public void Toggle(Event ev) Parameters Type Name Description Event ev"
+  },
+  "api/LogicSystem.Components.DebugLogger.html": {
+    "href": "api/LogicSystem.Components.DebugLogger.html",
+    "title": "Class DebugLogger | Example Unity documentation",
+    "keywords": "Class DebugLogger Inheritance System.Object CBase DebugLogger Inherited Members CBase.entity CBase._name CBase.Name CBase.Awake() CBase.OnEnable() CBase.OnDisable() CBase.Toggle(Event) Namespace : LogicSystem.Components Assembly : cs.temp.dll.dll Syntax public class DebugLogger : CBase Fields message Declaration public string message Field Value Type Description System.String Methods Log(Event) Declaration public void Log(Event ev) Parameters Type Name Description Event ev"
+  },
+  "api/LogicSystem.Components.html": {
+    "href": "api/LogicSystem.Components.html",
+    "title": "Namespace LogicSystem.Components | Example Unity documentation",
+    "keywords": "Namespace LogicSystem.Components Classes DebugLogger LogicAuto MathCount PropDoorRotating PropSwitcher Trigger This component fires events corresponding to trigger events. To use it you have to add a collider to the Entity, this can be a simple box/sphere collider or a mesh collider. Enums PropDoorRotating.DoorState"
+  },
+  "api/LogicSystem.Components.LogicAuto.html": {
+    "href": "api/LogicSystem.Components.LogicAuto.html",
+    "title": "Class LogicAuto | Example Unity documentation",
+    "keywords": "Class LogicAuto Inheritance System.Object CBase LogicAuto Inherited Members CBase.entity CBase._name CBase.Name CBase.Awake() CBase.OnEnable() CBase.OnDisable() CBase.Toggle(Event) Namespace : LogicSystem.Components Assembly : cs.temp.dll.dll Syntax public class LogicAuto : CBase Fields onMapLoad Declaration public Output onMapLoad Field Value Type Description Output Methods Start() Declaration void Start()"
+  },
+  "api/LogicSystem.Components.MathCount.html": {
+    "href": "api/LogicSystem.Components.MathCount.html",
+    "title": "Class MathCount | Example Unity documentation",
+    "keywords": "Class MathCount Inheritance System.Object CBase MathCount Inherited Members CBase.entity CBase._name CBase.Name CBase.Awake() CBase.OnEnable() CBase.OnDisable() CBase.Toggle(Event) Namespace : LogicSystem.Components Assembly : cs.temp.dll.dll Syntax public class MathCount : CBase Fields _current Declaration int _current Field Value Type Description System.Int32 max Declaration public int max Field Value Type Description System.Int32 min Declaration public int min Field Value Type Description System.Int32 OnHitMax Declaration public Output OnHitMax Field Value Type Description Output OnValueChanged Declaration public Output OnValueChanged Field Value Type Description Output Properties current Declaration public int current { get; set; } Property Value Type Description System.Int32 Methods Decrement(Event) Declaration public void Decrement(Event ev) Parameters Type Name Description Event ev Increment(Event) Declaration public void Increment(Event ev) Parameters Type Name Description Event ev ValueChanged() Declaration void ValueChanged()"
+  },
+  "api/LogicSystem.Components.PropDoorRotating.DoorState.html": {
+    "href": "api/LogicSystem.Components.PropDoorRotating.DoorState.html",
+    "title": "Enum PropDoorRotating.DoorState | Example Unity documentation",
+    "keywords": "Enum PropDoorRotating.DoorState Namespace : LogicSystem.Components Assembly : cs.temp.dll.dll Syntax public enum DoorState Fields Name Description Closed Closing Open Opening"
+  },
+  "api/LogicSystem.Components.PropDoorRotating.html": {
+    "href": "api/LogicSystem.Components.PropDoorRotating.html",
+    "title": "Class PropDoorRotating | Example Unity documentation",
+    "keywords": "Class PropDoorRotating Inheritance System.Object CBase PropDoorRotating Inherited Members CBase.entity CBase._name CBase.Name CBase.Awake() CBase.OnEnable() CBase.OnDisable() CBase.Toggle(Event) Namespace : LogicSystem.Components Assembly : cs.temp.dll.dll Syntax public class PropDoorRotating : CBase Fields doorModel Declaration public GameObject doorModel Field Value Type Description GameObject max Declaration public float max Field Value Type Description System.Single min Declaration public float min Field Value Type Description System.Single state Declaration public PropDoorRotating.DoorState state Field Value Type Description PropDoorRotating.DoorState t Declaration float t Field Value Type Description System.Single target Declaration float target Field Value Type Description System.Single Methods DoOpen() Declaration void DoOpen() Open(Event) Declaration public void Open(Event ev) Parameters Type Name Description Event ev Update() Declaration void Update()"
+  },
+  "api/LogicSystem.Components.PropSwitcher.html": {
+    "href": "api/LogicSystem.Components.PropSwitcher.html",
+    "title": "Class PropSwitcher | Example Unity documentation",
+    "keywords": "Class PropSwitcher Inheritance System.Object CBase PropSwitcher Inherited Members CBase.entity CBase._name CBase.Name CBase.Awake() CBase.OnEnable() CBase.OnDisable() CBase.Toggle(Event) Namespace : LogicSystem.Components Assembly : cs.temp.dll.dll Syntax public class PropSwitcher : CBase Fields material_A Declaration public Material material_A Field Value Type Description Material material_B Declaration public Material material_B Field Value Type Description Material switched Declaration bool switched Field Value Type Description System.Boolean target Declaration public MeshRenderer target Field Value Type Description MeshRenderer Methods Switch(Event) Declaration public void Switch(Event ev) Parameters Type Name Description Event ev"
+  },
+  "api/LogicSystem.Components.Trigger.html": {
+    "href": "api/LogicSystem.Components.Trigger.html",
+    "title": "Class Trigger | Example Unity documentation",
+    "keywords": "Class Trigger This component fires events corresponding to trigger events. To use it you have to add a collider to the Entity, this can be a simple box/sphere collider or a mesh collider. Inheritance System.Object CBase Trigger Inherited Members CBase.entity CBase._name CBase.Name CBase.Awake() CBase.OnEnable() CBase.OnDisable() CBase.Toggle(Event) Namespace : LogicSystem.Components Assembly : cs.temp.dll.dll Syntax public class Trigger : CBase Fields _visualizerColor Declaration static Color _visualizerColor Field Value Type Description Color once Disables the trigger after first activation of any of the outputs Declaration public bool once Field Value Type Description System.Boolean OnEndTouch On End Touch is fired when an object exists the Trigger ( ) area. Declaration public Output OnEndTouch Field Value Type Description Output OnStartTouch On Start Touch is fired when a object enters the Trigger area. Declaration public Output OnStartTouch Field Value Type Description Output Methods OnDrawGizmos() Declaration void OnDrawGizmos() OnTriggerEnter(Collider) Declaration void OnTriggerEnter(Collider other) Parameters Type Name Description Collider other OnTriggerExit(Collider) Declaration void OnTriggerExit(Collider other) Parameters Type Name Description Collider other OnTriggerStay(Collider) Declaration void OnTriggerStay(Collider other) Parameters Type Name Description Collider other"
+  },
+  "api/LogicSystem.Editor.BindingEditor.html": {
+    "href": "api/LogicSystem.Editor.BindingEditor.html",
+    "title": "Class BindingEditor | Example Unity documentation",
+    "keywords": "Class BindingEditor Inheritance System.Object BindingEditor Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public class BindingEditor : PropertyDrawer Fields def Declaration static Binding def Field Value Type Description Binding stringField Declaration SerializedProperty stringField Field Value Type Description SerializedProperty Methods GetPropertyHeight(SerializedProperty, GUIContent) Declaration public override float GetPropertyHeight(SerializedProperty property, GUIContent label) Parameters Type Name Description SerializedProperty property GUIContent label Returns Type Description System.Single Initialize(SerializedProperty) Declaration protected void Initialize(SerializedProperty prop) Parameters Type Name Description SerializedProperty prop OnGUI(Rect, SerializedProperty, GUIContent) Declaration public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) Parameters Type Name Description Rect position SerializedProperty property GUIContent label"
+  },
+  "api/LogicSystem.Editor.CBaseInspector.html": {
+    "href": "api/LogicSystem.Editor.CBaseInspector.html",
+    "title": "Class CBaseInspector | Example Unity documentation",
+    "keywords": "Class CBaseInspector Inheritance System.Object CBaseInspector Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public class CBaseInspector : UnityEditor.Editor Fields _serializedCBase Declaration SerializedCBase _serializedCBase Field Value Type Description SerializedCBase Methods DrawOutputs() Declaration void DrawOutputs() DrawProperties() Declaration void DrawProperties() OnDisable() Declaration void OnDisable() OnEnable() Declaration void OnEnable() OnInspectorGUI() Declaration public override void OnInspectorGUI()"
+  },
+  "api/LogicSystem.Editor.CBaseUI.Expandable.html": {
+    "href": "api/LogicSystem.Editor.CBaseUI.Expandable.html",
+    "title": "Enum CBaseUI.Expandable | Example Unity documentation",
+    "keywords": "Enum CBaseUI.Expandable Enum flags to store what parts of the UI are open. This is a bit-filed and easily stored in a int. Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public enum Expandable Fields Name Description Outputs Projection Settings"
+  },
+  "api/LogicSystem.Editor.CBaseUI.html": {
+    "href": "api/LogicSystem.Editor.CBaseUI.html",
+    "title": "Class CBaseUI | Example Unity documentation",
+    "keywords": "Class CBaseUI Inheritance System.Object CBaseUI Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public class CBaseUI Fields _ExpandedState Declaration static readonly ExpandedStateFromProperty<CBaseUI.Expandable, SerializedCBase> _ExpandedState Field Value Type Description ExpandedStateFromProperty < CBaseUI.Expandable , SerializedCBase > Inspector Declaration public static readonly CoreEditorDrawer<SerializedCBase>.IDrawer[] Inspector Field Value Type Description CoreEditorDrawer.IDrawer <>[] k_ExpandedState Declaration static readonly ExpandedState<CBaseUI.Expandable, CBase, SerializedCBase> k_ExpandedState Field Value Type Description ExpandedState < CBaseUI.Expandable , CBase , SerializedCBase > ObjectOutputs Declaration public static readonly CoreEditorDrawer<SerializedCBase>.IDrawer ObjectOutputs Field Value Type Description CoreEditorDrawer.IDrawer <> ObjectSettings Declaration public static readonly CoreEditorDrawer<SerializedCBase>.IDrawer ObjectSettings Field Value Type Description CoreEditorDrawer.IDrawer <> Methods Drawer_Outputs(SerializedCBase, UnityEditor.Editor) Declaration static void Drawer_Outputs(SerializedCBase p, UnityEditor.Editor owner) Parameters Type Name Description SerializedCBase p UnityEditor.Editor owner Drawer_Settings(SerializedCBase, UnityEditor.Editor) Declaration static void Drawer_Settings(SerializedCBase p, UnityEditor.Editor owner) Parameters Type Name Description SerializedCBase p UnityEditor.Editor owner"
+  },
+  "api/LogicSystem.Editor.EntityDebugger.html": {
+    "href": "api/LogicSystem.Editor.EntityDebugger.html",
+    "title": "Class EntityDebugger | Example Unity documentation",
+    "keywords": "Class EntityDebugger Inheritance System.Object EntityDebugger Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public class EntityDebugger : EditorWindow Fields m_SimpleTreeView Declaration EntityDebugger.SimpleTreeView m_SimpleTreeView Field Value Type Description EntityDebugger.SimpleTreeView m_TreeViewState Declaration TreeViewState m_TreeViewState Field Value Type Description TreeViewState Methods OnEnable() Declaration void OnEnable() OnGUI() Declaration void OnGUI() ShowWindow() Declaration static void ShowWindow()"
+  },
+  "api/LogicSystem.Editor.EntityDebugger.SimpleTreeView.html": {
+    "href": "api/LogicSystem.Editor.EntityDebugger.SimpleTreeView.html",
+    "title": "Class EntityDebugger.SimpleTreeView | Example Unity documentation",
+    "keywords": "Class EntityDebugger.SimpleTreeView Inheritance System.Object EntityDebugger.SimpleTreeView Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax class SimpleTreeView : TreeView Constructors SimpleTreeView(TreeViewState) Declaration public SimpleTreeView(TreeViewState treeViewState) Parameters Type Name Description TreeViewState treeViewState Methods BuildRoot() Declaration protected override TreeViewItem BuildRoot() Returns Type Description TreeViewItem SelectionChanged(IList<Int32>) Declaration protected override void SelectionChanged(IList<int> selectedIds) Parameters Type Name Description System.Collections.Generic.IList < System.Int32 > selectedIds"
+  },
+  "api/LogicSystem.Editor.EntityEditor.html": {
+    "href": "api/LogicSystem.Editor.EntityEditor.html",
+    "title": "Class EntityEditor | Example Unity documentation",
+    "keywords": "Class EntityEditor Inheritance System.Object EntityEditor Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public class EntityEditor : UnityEditor.Editor Fields openComponents Declaration bool openComponents Field Value Type Description System.Boolean Methods BasicGizmo(Entity, GizmoType) Declaration public static void BasicGizmo(Entity node, GizmoType type) Parameters Type Name Description Entity node GizmoType type OnInspectorGUI() Declaration public override void OnInspectorGUI()"
+  },
+  "api/LogicSystem.Editor.GuidReferenceHelpers.html": {
+    "href": "api/LogicSystem.Editor.GuidReferenceHelpers.html",
+    "title": "Class GuidReferenceHelpers | Example Unity documentation",
+    "keywords": "Class GuidReferenceHelpers Inheritance System.Object GuidReferenceHelpers Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public static class GuidReferenceHelpers Fields def Declaration static GuidReference def Field Value Type Description GuidReference Methods GetGuidFromProperty(SerializedProperty) Declaration public static Guid GetGuidFromProperty(SerializedProperty referenceProp) Parameters Type Name Description SerializedProperty referenceProp Returns Type Description System.Guid ParseGUIDFromProp(SerializedProperty, out Byte[]) Declaration public static void ParseGUIDFromProp(SerializedProperty guidProp, out byte[] byteArray) Parameters Type Name Description SerializedProperty guidProp System.Byte [] byteArray"
+  },
+  "api/LogicSystem.Editor.html": {
+    "href": "api/LogicSystem.Editor.html",
+    "title": "Namespace LogicSystem.Editor | Example Unity documentation",
+    "keywords": "Namespace LogicSystem.Editor Classes BindingEditor CBaseInspector CBaseUI EntityDebugger EntityDebugger.SimpleTreeView EntityEditor GuidReferenceHelpers IOConfig OutputEditor SearchTreeContextTest SerializedCBase A abstraction class over the to group the parsing code. This is where we collect all the outputs so we can display them grouped. Enums CBaseUI.Expandable Enum flags to store what parts of the UI are open. This is a bit-filed and easily stored in a int."
+  },
+  "api/LogicSystem.Editor.IOConfig.html": {
+    "href": "api/LogicSystem.Editor.IOConfig.html",
+    "title": "Class IOConfig | Example Unity documentation",
+    "keywords": "Class IOConfig Inheritance System.Object IOConfig Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public class IOConfig Fields kPackageRoot Declaration public static string kPackageRoot Field Value Type Description System.String sArrowOut Declaration static Texture2D sArrowOut Field Value Type Description Texture2D sCloseThick Declaration static Texture2D sCloseThick Field Value Type Description Texture2D sHexagon Declaration static Texture2D sHexagon Field Value Type Description Texture2D sPickerIcon Declaration static Texture2D sPickerIcon Field Value Type Description Texture2D Properties ArrowOut Declaration static Texture2D ArrowOut { } Property Value Type Description Texture2D CloseThick Declaration static Texture2D CloseThick { } Property Value Type Description Texture2D Hexagon Declaration static Texture2D Hexagon { } Property Value Type Description Texture2D PickerIcon Declaration static Texture2D PickerIcon { } Property Value Type Description Texture2D Methods LoadAsset(ref Texture2D, String) Declaration static Texture2D LoadAsset(ref Texture2D asset, string path) Parameters Type Name Description Texture2D asset System.String path Returns Type Description Texture2D"
+  },
+  "api/LogicSystem.Editor.OutputEditor.html": {
+    "href": "api/LogicSystem.Editor.OutputEditor.html",
+    "title": "Class OutputEditor | Example Unity documentation",
+    "keywords": "Class OutputEditor Inheritance System.Object OutputEditor Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public class OutputEditor : PropertyDrawer Fields LINE_HEIGHT Declaration public static float LINE_HEIGHT Field Value Type Description System.Single list Declaration ReorderableList list Field Value Type Description ReorderableList Methods CanCacheInspectorGUI(SerializedProperty) Declaration public override bool CanCacheInspectorGUI(SerializedProperty property) Parameters Type Name Description SerializedProperty property Returns Type Description System.Boolean GetList(SerializedProperty) Declaration public ReorderableList GetList(SerializedProperty targets) Parameters Type Name Description SerializedProperty targets Returns Type Description ReorderableList GetPropertyHeight(SerializedProperty, GUIContent) Declaration public override float GetPropertyHeight(SerializedProperty property, GUIContent label) Parameters Type Name Description SerializedProperty property GUIContent label Returns Type Description System.Single OnGUI(Rect, SerializedProperty, GUIContent) Declaration public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) Parameters Type Name Description Rect position SerializedProperty property GUIContent label"
+  },
+  "api/LogicSystem.Editor.SearchTreeContextTest.html": {
+    "href": "api/LogicSystem.Editor.SearchTreeContextTest.html",
+    "title": "Class SearchTreeContextTest | Example Unity documentation",
+    "keywords": "Class SearchTreeContextTest Inheritance System.Object SearchTreeContextTest Implements ISearchWindowProvider Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public class SearchTreeContextTest : ScriptableObject Fields _entity Declaration Entity _entity Field Value Type Description Entity _onSetIndexCallback Declaration Action<string> _onSetIndexCallback Field Value Type Description Action < System.String > Methods CreateSearchTree(SearchWindowContext) Declaration public List<SearchTreeEntry> CreateSearchTree(SearchWindowContext context) Parameters Type Name Description SearchWindowContext context Returns Type Description System.Collections.Generic.List < SearchTreeEntry > Init(Entity, Action<String>) Declaration public void Init(Entity entity, Action<string> callback) Parameters Type Name Description Entity entity Action < System.String > callback OnSelectEntry(SearchTreeEntry, SearchWindowContext) Declaration public bool OnSelectEntry(SearchTreeEntry SearchTreeEntry, SearchWindowContext context) Parameters Type Name Description SearchTreeEntry SearchTreeEntry SearchWindowContext context Returns Type Description System.Boolean Implements ISearchWindowProvider"
+  },
+  "api/LogicSystem.Editor.SerializedCBase.html": {
+    "href": "api/LogicSystem.Editor.SerializedCBase.html",
+    "title": "Class SerializedCBase | Example Unity documentation",
+    "keywords": "Class SerializedCBase A abstraction class over the to group the parsing code. This is where we collect all the outputs so we can display them grouped. Inheritance System.Object SerializedCBase Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public class SerializedCBase Constructors SerializedCBase(SerializedObject) Declaration public SerializedCBase(SerializedObject target) Parameters Type Name Description SerializedObject target Fields outputs Declaration public List<SerializedProperty> outputs Field Value Type Description System.Collections.Generic.List < SerializedProperty > props Declaration public List<SerializedProperty> props Field Value Type Description System.Collections.Generic.List < SerializedProperty > Properties foldState Declaration public SerializedProperty foldState { get; } Property Value Type Description SerializedProperty serializedObject Declaration public SerializedObject serializedObject { get; } Property Value Type Description SerializedObject"
+  },
+  "api/LogicSystem.Editor.Util.html": {
+    "href": "api/LogicSystem.Editor.Util.html",
+    "title": "Namespace LogicSystem.Editor.Util | Example Unity documentation",
+    "keywords": "Namespace LogicSystem.Editor.Util Classes SerializedPropertyHelper"
+  },
+  "api/LogicSystem.Editor.Util.SerializedPropertyHelper.html": {
+    "href": "api/LogicSystem.Editor.Util.SerializedPropertyHelper.html",
+    "title": "Class SerializedPropertyHelper | Example Unity documentation",
+    "keywords": "Class SerializedPropertyHelper Inheritance System.Object SerializedPropertyHelper Namespace : LogicSystem.Editor.Util Assembly : cs.temp.dll.dll Syntax public static class SerializedPropertyHelper Fields matchArrayElement Declaration static readonly Regex matchArrayElement Field Value Type Description Regex Methods GetChildObject(SerializedObject, String) Declaration public static object GetChildObject(this SerializedObject serializedObject, string path) Parameters Type Name Description SerializedObject serializedObject System.String path Returns Type Description System.Object GetSerializedObject(SerializedProperty) Declaration public static object GetSerializedObject(this SerializedProperty property) Parameters Type Name Description SerializedProperty property Returns Type Description System.Object"
+  },
+  "api/LogicSystem.Entity.html": {
+    "href": "api/LogicSystem.Entity.html",
+    "title": "Class Entity | Example Unity documentation",
+    "keywords": "Class Entity Marks a Game object that can be referenced cross scenes. Inheritance System.Object Entity Implements ISerializationCallbackReceiver Namespace : LogicSystem Assembly : cs.temp.dll.dll Syntax public class Entity : MonoBehaviour Fields components A list to hold all the components that are attached to this entity. This list is used to find the entity when an event is received. Declaration public List<CBase> components Field Value Type Description System.Collections.Generic.List < CBase > guid Declaration Guid guid Field Value Type Description System.Guid serializedGuid Declaration byte[] serializedGuid Field Value Type Description System.Byte [] Methods AddComponent(CBase) Add a component to the entity This is needed for a component to get events. Declaration public void AddComponent(CBase cBase) Parameters Type Name Description CBase cBase The component to add Awake() Declaration void Awake() CreateGuid() Declaration void CreateGuid() GetGuid() Declaration public Guid GetGuid() Returns Type Description System.Guid OnAfterDeserialize() Declaration public void OnAfterDeserialize() OnBeforeSerialize() Declaration public void OnBeforeSerialize() OnDestroy() Declaration public void OnDestroy() OnValidate() Declaration void OnValidate() ProcessEvent(Event) Propagates an event to the entity for processing This will dispatch the event to the target component for processing For this to work the event's target component needs to be added to the AddComponent(CBase) Declaration public void ProcessEvent(Event ev) Parameters Type Name Description Event ev The event to process Examples This examples shows how to directly send an event: Event e = new Event(); entity.ProcessEvent(e) RemoveComponent(CBase) Removes the component from the entity This should only be done when the component is destroyed. Declaration public void RemoveComponent(CBase cBase) Parameters Type Name Description CBase cBase UpdateComponentName(CBase) Declaration public void UpdateComponentName(CBase cBase) Parameters Type Name Description CBase cBase Implements ISerializationCallbackReceiver"
+  },
+  "api/LogicSystem.EntityManager.GuidInfo.html": {
+    "href": "api/LogicSystem.EntityManager.GuidInfo.html",
+    "title": "Struct EntityManager.GuidInfo | Example Unity documentation",
+    "keywords": "Struct EntityManager.GuidInfo Namespace : LogicSystem Assembly : cs.temp.dll.dll Syntax public struct GuidInfo Constructors GuidInfo(Entity) Declaration public GuidInfo(Entity comp) Parameters Type Name Description Entity comp Fields entity Declaration public Entity entity Field Value Type Description Entity go Declaration public GameObject go Field Value Type Description GameObject sourceScene Declaration public Scene sourceScene Field Value Type Description Scene Methods HandleAddCallback() Declaration public void HandleAddCallback() HandleRemoveCallback() Declaration public void HandleRemoveCallback() Events OnAdd Declaration public event Action<GameObject> OnAdd Event Type Type Description Action < GameObject > OnRemove Declaration public event Action OnRemove Event Type Type Description Action"
+  },
+  "api/LogicSystem.EntityManager.html": {
+    "href": "api/LogicSystem.EntityManager.html",
+    "title": "Class EntityManager | Example Unity documentation",
+    "keywords": "Class EntityManager Inheritance System.Object EntityManager Implements IModule Namespace : LogicSystem Assembly : cs.temp.dll.dll Syntax public class EntityManager : Singleton<EntityManager> Constructors .cctor() Declaration static EntityManager() EntityManager() Declaration public EntityManager() Fields guidToObjectMap Declaration Dictionary<Guid, EntityManager.GuidInfo> guidToObjectMap Field Value Type Description System.Collections.Generic.Dictionary < System.Guid , EntityManager.GuidInfo > Methods Add(Entity) Declaration public static bool Add(Entity entity) Parameters Type Name Description Entity entity Returns Type Description System.Boolean GetAllEntites() Declaration public static IEnumerable<EntityManager.GuidInfo> GetAllEntites() Returns Type Description System.Collections.Generic.IEnumerable < EntityManager.GuidInfo > InternalAdd(Entity) Declaration bool InternalAdd(Entity entity) Parameters Type Name Description Entity entity Returns Type Description System.Boolean InternalRemove(Guid) Declaration void InternalRemove(Guid guid) Parameters Type Name Description System.Guid guid Remove(Guid) Declaration public static void Remove(Guid guid) Parameters Type Name Description System.Guid guid ResolveGuid(Guid) Declaration public static GameObject ResolveGuid(Guid guid) Parameters Type Name Description System.Guid guid Returns Type Description GameObject ResolveGuid(Guid, Action) Declaration public static GameObject ResolveGuid(Guid guid, Action onDestroyCallback) Parameters Type Name Description System.Guid guid Action onDestroyCallback Returns Type Description GameObject ResolveGuid(Guid, Action<GameObject>, Action) Declaration public static GameObject ResolveGuid(Guid guid, Action<GameObject> onAddCallback, Action onRemoveCallback) Parameters Type Name Description System.Guid guid Action < GameObject > onAddCallback Action onRemoveCallback Returns Type Description GameObject ResolveGuidInternal(Guid, Action<GameObject>, Action) Declaration GameObject ResolveGuidInternal(Guid guid, Action<GameObject> onAddCallback, Action onRemoveCallback) Parameters Type Name Description System.Guid guid Action < GameObject > onAddCallback Action onRemoveCallback Returns Type Description GameObject Implements IModule"
+  },
+  "api/LogicSystem.EventSystem.Event.html": {
+    "href": "api/LogicSystem.EventSystem.Event.html",
+    "title": "Class Event | Example Unity documentation",
+    "keywords": "Class Event Inheritance System.Object Event Namespace : LogicSystem.EventSystem Assembly : cs.temp.dll.dll Syntax public class Event Constructors Event(Entity) Declaration public Event(Entity trigger) Parameters Type Name Description Entity trigger Fields startTime Declaration public int startTime Field Value Type Description System.Int32 target Declaration public Binding target Field Value Type Description Binding targetTime Declaration public int targetTime Field Value Type Description System.Int32 trigger Declaration public Entity trigger Field Value Type Description Entity Methods ToString() Declaration public override string ToString() Returns Type Description System.String Overrides System.Object.ToString()"
+  },
+  "api/LogicSystem.EventSystem.EventBus.html": {
+    "href": "api/LogicSystem.EventSystem.EventBus.html",
+    "title": "Class EventBus | Example Unity documentation",
+    "keywords": "Class EventBus Inheritance System.Object EventBus Implements IModule Namespace : LogicSystem.EventSystem Assembly : cs.temp.dll.dll Syntax public class EventBus : MonoBehaviour Fields events Declaration PriorityQueue<Event, int> events Field Value Type Description PriorityQueue < Event , System.Int32 > Methods AddEvent(Event) Declaration public void AddEvent(Event e) Parameters Type Name Description Event e Awake() Declaration void Awake() DispatchEvents() Declaration void DispatchEvents() Implements IModule"
+  },
+  "api/LogicSystem.EventSystem.html": {
+    "href": "api/LogicSystem.EventSystem.html",
+    "title": "Namespace LogicSystem.EventSystem | Example Unity documentation",
+    "keywords": "Namespace LogicSystem.EventSystem Classes Event EventBus"
+  },
+  "api/LogicSystem.GuidReference.html": {
+    "href": "api/LogicSystem.GuidReference.html",
+    "title": "Class GuidReference | Example Unity documentation",
+    "keywords": "Class GuidReference Inheritance System.Object GuidReference Namespace : LogicSystem Assembly : cs.temp.dll.dll Syntax [Serializable] public class GuidReference : ISerializationCallbackReceiver Constructors GuidReference() Declaration public GuidReference() GuidReference(Entity) Declaration public GuidReference(Entity target) Parameters Type Name Description Entity target Fields addDelegate Declaration Action<GameObject> addDelegate Field Value Type Description Action < GameObject > cachedReference Declaration GameObject cachedReference Field Value Type Description GameObject guid Declaration Guid guid Field Value Type Description System.Guid isCacheSet Declaration bool isCacheSet Field Value Type Description System.Boolean removeDelegate Declaration Action removeDelegate Field Value Type Description Action serializedGuid Declaration byte[] serializedGuid Field Value Type Description System.Byte [] Properties entity Declaration public Entity entity { get; } Property Value Type Description Entity gameObject Declaration public GameObject gameObject { get; } Property Value Type Description GameObject Methods GuidAdded(GameObject) Declaration void GuidAdded(GameObject go) Parameters Type Name Description GameObject go GuidRemoved() Declaration void GuidRemoved() OnAfterDeserialize() Declaration public void OnAfterDeserialize() OnBeforeSerialize() Declaration public void OnBeforeSerialize() Events OnGuidAdded Declaration public event Action<GameObject> OnGuidAdded Event Type Type Description Action < GameObject > OnGuidRemoved Declaration public event Action OnGuidRemoved Event Type Type Description Action"
+  },
+  "api/LogicSystem.html": {
+    "href": "api/LogicSystem.html",
+    "title": "Namespace LogicSystem | Example Unity documentation",
+    "keywords": "Namespace LogicSystem Classes Binding CBase Base class for all components Entity Marks a Game object that can be referenced cross scenes. EntityManager GuidReference InputAttribute Output TestComponent TestObject Structs EntityManager.GuidInfo"
+  },
+  "api/LogicSystem.InputAttribute.html": {
+    "href": "api/LogicSystem.InputAttribute.html",
+    "title": "Class InputAttribute | Example Unity documentation",
+    "keywords": "Class InputAttribute Inheritance System.Object InputAttribute Namespace : LogicSystem Assembly : cs.temp.dll.dll Syntax public class InputAttribute : Attribute"
+  },
+  "api/LogicSystem.Output.html": {
+    "href": "api/LogicSystem.Output.html",
+    "title": "Class Output | Example Unity documentation",
+    "keywords": "Class Output Inheritance System.Object Output Namespace : LogicSystem Assembly : cs.temp.dll.dll Syntax public class Output Fields targets Declaration public List<Binding> targets Field Value Type Description System.Collections.Generic.List < Binding > Methods Call(Entity) Declaration public void Call(Entity source) Parameters Type Name Description Entity source"
+  },
+  "api/LogicSystem.TestComponent.html": {
+    "href": "api/LogicSystem.TestComponent.html",
+    "title": "Class TestComponent | Example Unity documentation",
+    "keywords": "Class TestComponent Inheritance System.Object CBase TestComponent Inherited Members CBase.entity CBase._name CBase.Name CBase.Awake() CBase.OnEnable() CBase.OnDisable() CBase.Toggle(Event) Namespace : LogicSystem Assembly : cs.temp.dll.dll Syntax public class TestComponent : CBase Fields onSpawn Declaration public Output onSpawn Field Value Type Description Output Methods TestInput() Declaration public void TestInput()"
+  },
+  "api/LogicSystem.TestObject.html": {
+    "href": "api/LogicSystem.TestObject.html",
+    "title": "Class TestObject | Example Unity documentation",
+    "keywords": "Class TestObject Inheritance System.Object TestObject Namespace : LogicSystem Assembly : cs.temp.dll.dll Syntax public class TestObject Fields b Declaration public float b Field Value Type Description System.Single c Declaration public float c Field Value Type Description System.Single"
+  },
   "getting-started.html": {
     "href": "getting-started.html",
     "title": "Getting Started | Example Unity documentation",
