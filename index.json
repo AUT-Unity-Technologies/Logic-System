@@ -1,0 +1,17 @@
+{
+  "getting-started.html": {
+    "href": "getting-started.html",
+    "title": "Getting Started | Example Unity documentation",
+    "keywords": "Getting Started Add an introduction here using markdown ."
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "Home | Example Unity documentation",
+    "keywords": "Welcome Add more content to your home page."
+  },
+  "manual/Components/Component_Trigger.html": {
+    "href": "manual/Components/Component_Trigger.html",
+    "title": "Trigger | Example Unity documentation",
+    "keywords": "Trigger The trigger component can be used to detect when a object (Usually the player) enters an area, or leaves it."
+  }
+}
