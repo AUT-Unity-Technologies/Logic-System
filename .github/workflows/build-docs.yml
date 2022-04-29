@@ -1,26 +1,52 @@
-name: Build Docs
+name: Example documentation
 
-on: 
+on:
   push:
-    branches: 
+    branches:
       - main
 
 jobs:
+  # Build the documentation
   build:
-    runs-on: ubuntu-latest
-    
+    runs-on: windows-latest # Required by DocFX
     steps:
-    - uses: actions/checkout@v2
-      with:
-        submodules: true
+      - name: Checkout
+        uses: actions/checkout@v2
+        # with:
+        #   submodules: true
 
-    - uses: nunit/docfx-action@v1.0.0
-      name: Build Documentation
-      with:
-        args: ./Documentation~/docfx.json
+      - name: Install DocFX
+        run: choco install -y docfx
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs/output
+      - name: Build
+        run: docfx Documentation~/docfx.json
+
+      # Upload the generated documentation
+      - name: Upload site artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: _site
+          path: Documentation~/_site # Must equals the 'build.dest' value on your docfx.json
+
+  # Deploy the generated documentation to the gh-pages branch
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        # with:
+        #   submodules: true
+
+      # Download the generated documentation
+      - name: Download site artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: _site
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: _site
