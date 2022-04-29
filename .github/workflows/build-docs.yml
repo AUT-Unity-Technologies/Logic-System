@@ -3,8 +3,7 @@ name: Build Docs
 on: 
   push:
     branches: 
-      - master
-      - cli-dev
+      - main
 
 jobs:
   build:
