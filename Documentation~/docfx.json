@@ -3,7 +3,7 @@
     {
       "src": [
         {
-          "src": "../../..",
+          "src": "../",
           "files": [
             "Editor/**/*.cs",
             "Runtime/**/*.cs",
