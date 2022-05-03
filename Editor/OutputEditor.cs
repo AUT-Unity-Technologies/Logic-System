@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.UI.WebControls;
 using Cinemachine.Editor;
 using LogicSystem.Editor.Util;
 //using Packages.ObjectPicker;
@@ -56,12 +57,14 @@ namespace LogicSystem.Editor
             
             var line = position;
             //line.height = LINE_HEIGHT;
-
+            
             EditorGUI.BeginProperty(position, GUIContent.none, property);
             
             //property.isExpanded = EditorGUI.Foldout(line, property.isExpanded, property.name);
             //line.y += LINE_HEIGHT;
 
+            
+            
             EditorGUI.BeginChangeCheck();
             
             //if (property.isExpanded)
@@ -140,13 +143,13 @@ namespace LogicSystem.Editor
 
             var target = property.FindPropertyRelative(() => def.target);
             var input = property.FindPropertyRelative(() => def.input);
-            
-            
-            var pos = new Rect(position);
-            pos.height = EditorGUIUtility.singleLineHeight;
 
-            EditorGUI.PropertyField(pos, targetEnt,GUIContent.none);
-            
+            var pos = new Rect(position);
+            {
+                pos.height = EditorGUIUtility.singleLineHeight;
+
+                EditorGUI.PropertyField(pos, targetEnt, new GUIContent(IOConfig.Hexagon));
+            }
             pos.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
 
             var componentRect = new Rect(pos);

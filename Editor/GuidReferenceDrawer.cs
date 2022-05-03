@@ -1,4 +1,6 @@
-﻿using com.dpeter99.utils.editor.ObjectPicker;
+﻿using System.Text;
+using com.dpeter99.utils.editor.ObjectPicker;
+using Editor.InspectorExtensions;
 using UnityEditor;
 using UnityEngine;
 using LogicSystem;
@@ -42,7 +44,7 @@ public class GuidReferenceDrawer : PropertyDrawer
         position.height = EditorGUIUtility.singleLineHeight;
         
         // Draw prefix label, returning the new rect we can draw in
-        var guidCompPosition = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
+        Rect guidCompPosition = EditorGUIHelper.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
         
         guidCompPosition.width = (guidCompPosition.width / 2 ) - EditorGUIUtility.singleLineHeight;
 
@@ -92,8 +94,6 @@ public class GuidReferenceDrawer : PropertyDrawer
 
         if (true)
         {
-            
-
             Rect clearButtonRect = new Rect(scenePos);
             clearButtonRect.xMin = scenePos.xMax;
             clearButtonRect.width = EditorGUIUtility.singleLineHeight;

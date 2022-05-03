@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using com.dpeter99.utils.editor.UnityEditor.Rendering;
+using UnityEditor.Rendering;
 //using Cinemachine.Editor;
 using UnityEditor;
 //using UnityEditor.ShaderGraph.Drawing.Inspector;
@@ -16,8 +16,6 @@ namespace LogicSystem.Editor
     {
         private SerializedCBase _serializedCBase;
         
-
-        
         
         private void OnEnable()
         {
@@ -26,60 +24,13 @@ namespace LogicSystem.Editor
 
         private void OnDisable()
         {
-            //sp.Clear();
-            //outputs.Clear();
         }
 
         public override void OnInspectorGUI()
         {
-            /*
-            //base.OnInspectorGUI();
-            EditorGUI.BeginChangeCheck();
-
-            var name = serializedObject.FindProperty("_name");
-            EditorGUILayout.PropertyField(name);
-
-            if (EditorGUI.EndChangeCheck())
-            {
-                serializedObject.ApplyModifiedProperties();
-            }
-            
-            tab = GUILayout.Toolbar (tab, new string[] {"Object", "Outputs"});
-            switch (tab) {
-                case 0:
-                    DrawProperties();
-                    break;
-                case 1:
-                    DrawOutputs();
-                    break;
-            }
-            */
-            
-                        
             CBaseUI.Inspector.Draw(_serializedCBase,this);
-            
         }
 
-        private void DrawProperties()
-        {
-            /*
-            EditorGUI.BeginChangeCheck();
-            
-            foreach (SerializedProperty s in sp)
-                EditorGUILayout.PropertyField(s);
-
-            if (EditorGUI.EndChangeCheck())
-            {
-                serializedObject.ApplyModifiedProperties();
-            }
-            */
-        }
-        
-        private void DrawOutputs()
-        {
-            //foreach (SerializedProperty s in outputs)
-            //    EditorGUILayout.PropertyField(s);
-        }
     }
 
 

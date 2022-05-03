@@ -24,24 +24,31 @@ namespace LogicSystem.Editor
 
             foldState = serializedObject.FindProperty("foldSate");
             
-            var members = target.targetObject.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy);
+            var members = target.targetObject.GetType().GetMembers(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.FlattenHierarchy);
 
             foreach (var member in members)
             {
                 var prop = serializedObject.FindProperty(member.Name);
                 if (prop != null)
                 {
-                    if (member.FieldType != typeof(Output))
+                    if (member is FieldInfo fieldInfo)
                     {
-                        props.Add(prop);
+                        if (fieldInfo.FieldType == typeof(Output))
+                        {
+                            outputs.Add(prop);
+                        }
+                        else
+                        {
+                            props.Add(prop);
+                        }
                     }
                     else
                     {
-                        outputs.Add(prop);
-                    }    
+                        props.Add(prop);
+                    }
                 }
                 
             }
         }
+        }
     }
-}
