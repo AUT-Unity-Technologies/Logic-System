@@ -47,6 +47,22 @@ namespace LogicSystem.Editor
             Gizmos.DrawIcon(position,  IOConfig.kPackageRoot + "/Editor/EditorResources/hexagon.png", true);
 
             Gizmos.color = selected ? Color.blue :  Color.white;
+
+            foreach (var component in node.components)
+            {
+                foreach (var outputRef in component.Outputs)
+                {
+                    var o = outputRef._g(component);
+                    foreach (var target in o.targets)
+                    {
+                        var end_pos = target.targetEntity.gameObject;
+                        if (end_pos != null)
+                        {
+                            Gizmos.DrawLine(position, end_pos.transform.position);
+                        }
+                    }
+                }
+            }
             
             /*
             foreach (var link in node.graph)
