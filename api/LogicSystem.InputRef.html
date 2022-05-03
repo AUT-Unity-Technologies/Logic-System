@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class CBaseInspector
+    <title>Class InputRef
    | Example Unity documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class CBaseInspector
+    <meta name="title" content="Class InputRef
    | Example Unity documentation ">
     <meta name="generator" content="docfx 2.59.2.0">
     
@@ -78,34 +78,63 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="LogicSystem.Editor.CBaseInspector">
+            <article class="content wrap" id="_content" data-uid="LogicSystem.InputRef">
   
   
-  <h1 id="LogicSystem_Editor_CBaseInspector" data-uid="LogicSystem.Editor.CBaseInspector" class="text-break">Class CBaseInspector
+  <h1 id="LogicSystem_InputRef" data-uid="LogicSystem.InputRef" class="text-break">Class InputRef
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">CBaseInspector</span></div>
+    <div class="level1"><span class="xref">InputRef</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="LogicSystem.Editor.html">LogicSystem.Editor</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LogicSystem.html">LogicSystem</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="LogicSystem_Editor_CBaseInspector_syntax">Syntax</h5>
+  <h5 id="LogicSystem_InputRef_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CBaseInspector : UnityEditor.Editor</code></pre>
+    <pre><code class="lang-csharp hljs">public class InputRef</code></pre>
   </div>
-  <h3 id="fields">Fields
+  <h3 id="constructors">Constructors
   </h3>
   
   
-  <h4 id="LogicSystem_Editor_CBaseInspector__serializedCBase" data-uid="LogicSystem.Editor.CBaseInspector._serializedCBase">_serializedCBase</h4>
+  <a id="LogicSystem_InputRef__ctor_" data-uid="LogicSystem.InputRef.#ctor*"></a>
+  <h4 id="LogicSystem_InputRef__ctor_LogicSystem_InputRef_Input_" data-uid="LogicSystem.InputRef.#ctor(LogicSystem.InputRef.Input)">InputRef(InputRef.Input)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">SerializedCBase _serializedCBase</code></pre>
+    <pre><code class="lang-csharp hljs">public InputRef(InputRef.Input fn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LogicSystem.InputRef.Input.html">InputRef.Input</a></td>
+        <td><span class="parametername">fn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="LogicSystem_InputRef__fn" data-uid="LogicSystem.InputRef._fn">_fn</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly InputRef.Input _fn</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -117,7 +146,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="LogicSystem.Editor.SerializedCBase.html">SerializedCBase</a></td>
+        <td><a class="xref" href="LogicSystem.InputRef.Input.html">InputRef.Input</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -126,34 +155,31 @@
   </h3>
   
   
-  <a id="LogicSystem_Editor_CBaseInspector_OnDisable_" data-uid="LogicSystem.Editor.CBaseInspector.OnDisable*"></a>
-  <h4 id="LogicSystem_Editor_CBaseInspector_OnDisable" data-uid="LogicSystem.Editor.CBaseInspector.OnDisable">OnDisable()</h4>
+  <a id="LogicSystem_InputRef_Call_" data-uid="LogicSystem.InputRef.Call*"></a>
+  <h4 id="LogicSystem_InputRef_Call_Event_" data-uid="LogicSystem.InputRef.Call(Event)">Call(Event)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void OnDisable()</code></pre>
+    <pre><code class="lang-csharp hljs">public void Call(Event ev)</code></pre>
   </div>
-  
-  
-  <a id="LogicSystem_Editor_CBaseInspector_OnEnable_" data-uid="LogicSystem.Editor.CBaseInspector.OnEnable*"></a>
-  <h4 id="LogicSystem_Editor_CBaseInspector_OnEnable" data-uid="LogicSystem.Editor.CBaseInspector.OnEnable">OnEnable()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void OnEnable()</code></pre>
-  </div>
-  
-  
-  <a id="LogicSystem_Editor_CBaseInspector_OnInspectorGUI_" data-uid="LogicSystem.Editor.CBaseInspector.OnInspectorGUI*"></a>
-  <h4 id="LogicSystem_Editor_CBaseInspector_OnInspectorGUI" data-uid="LogicSystem.Editor.CBaseInspector.OnInspectorGUI">OnInspectorGUI()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnInspectorGUI()</code></pre>
-  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Event</span></td>
+        <td><span class="parametername">ev</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           

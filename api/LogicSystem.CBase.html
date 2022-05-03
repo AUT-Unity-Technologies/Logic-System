@@ -108,6 +108,30 @@
   </h3>
   
   
+  <h4 id="LogicSystem_CBase__inputs" data-uid="LogicSystem.CBase._inputs">_inputs</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;InputRef&gt; _inputs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="LogicSystem.InputRef.html">InputRef</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <h4 id="LogicSystem_CBase__name" data-uid="LogicSystem.CBase._name">_name</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -126,6 +150,30 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="LogicSystem_CBase__outputs" data-uid="LogicSystem.CBase._outputs">_outputs</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;OutputRef&gt; _outputs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="LogicSystem.OutputRef.html">OutputRef</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -158,6 +206,31 @@
   </h3>
   
   
+  <a id="LogicSystem_CBase_Inputs_" data-uid="LogicSystem.CBase.Inputs*"></a>
+  <h4 id="LogicSystem_CBase_Inputs" data-uid="LogicSystem.CBase.Inputs">Inputs</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;InputRef&gt; Inputs { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="LogicSystem.InputRef.html">InputRef</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="LogicSystem_CBase_Name_" data-uid="LogicSystem.CBase.Name*"></a>
   <h4 id="LogicSystem_CBase_Name" data-uid="LogicSystem.CBase.Name">Name</h4>
   <div class="markdown level1 summary"></div>
@@ -181,6 +254,31 @@
       </tr>
     </tbody>
   </table>
+  
+  
+  <a id="LogicSystem_CBase_Outputs_" data-uid="LogicSystem.CBase.Outputs*"></a>
+  <h4 id="LogicSystem_CBase_Outputs" data-uid="LogicSystem.CBase.Outputs">Outputs</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;OutputRef&gt; Outputs { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="LogicSystem.OutputRef.html">OutputRef</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
   </h3>
   
@@ -193,6 +291,90 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">void Awake()</code></pre>
   </div>
+  
+  
+  <a id="LogicSystem_CBase_ExtractInputs_" data-uid="LogicSystem.CBase.ExtractInputs*"></a>
+  <h4 id="LogicSystem_CBase_ExtractInputs_LogicSystem_CBase_" data-uid="LogicSystem.CBase.ExtractInputs(LogicSystem.CBase)">ExtractInputs(CBase)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static List&lt;InputRef&gt; ExtractInputs(CBase comp)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LogicSystem.CBase.html">CBase</a></td>
+        <td><span class="parametername">comp</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="LogicSystem.InputRef.html">InputRef</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="LogicSystem_CBase_ExtractOutputs_" data-uid="LogicSystem.CBase.ExtractOutputs*"></a>
+  <h4 id="LogicSystem_CBase_ExtractOutputs_LogicSystem_CBase_" data-uid="LogicSystem.CBase.ExtractOutputs(LogicSystem.CBase)">ExtractOutputs(CBase)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">static List&lt;OutputRef&gt; ExtractOutputs(CBase comp)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="LogicSystem.CBase.html">CBase</a></td>
+        <td><span class="parametername">comp</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.List</span>&lt;<a class="xref" href="LogicSystem.OutputRef.html">OutputRef</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   
   
   <a id="LogicSystem_CBase_OnDisable_" data-uid="LogicSystem.CBase.OnDisable*"></a>

@@ -37,12 +37,24 @@ references:
   commentId: T:LogicSystem.CBase
   fullName: LogicSystem.CBase
   nameWithType: CBase
+- uid: LogicSystem.CBase._inputs
+  name: _inputs
+  href: api/LogicSystem.CBase.html#LogicSystem_CBase__inputs
+  commentId: F:LogicSystem.CBase._inputs
+  fullName: LogicSystem.CBase._inputs
+  nameWithType: CBase._inputs
 - uid: LogicSystem.CBase._name
   name: _name
   href: api/LogicSystem.CBase.html#LogicSystem_CBase__name
   commentId: F:LogicSystem.CBase._name
   fullName: LogicSystem.CBase._name
   nameWithType: CBase._name
+- uid: LogicSystem.CBase._outputs
+  name: _outputs
+  href: api/LogicSystem.CBase.html#LogicSystem_CBase__outputs
+  commentId: F:LogicSystem.CBase._outputs
+  fullName: LogicSystem.CBase._outputs
+  nameWithType: CBase._outputs
 - uid: LogicSystem.CBase.Awake
   name: Awake()
   href: api/LogicSystem.CBase.html#LogicSystem_CBase_Awake
@@ -62,6 +74,45 @@ references:
   commentId: F:LogicSystem.CBase.entity
   fullName: LogicSystem.CBase.entity
   nameWithType: CBase.entity
+- uid: LogicSystem.CBase.ExtractInputs(LogicSystem.CBase)
+  name: ExtractInputs(CBase)
+  href: api/LogicSystem.CBase.html#LogicSystem_CBase_ExtractInputs_LogicSystem_CBase_
+  commentId: M:LogicSystem.CBase.ExtractInputs(LogicSystem.CBase)
+  fullName: LogicSystem.CBase.ExtractInputs(LogicSystem.CBase)
+  nameWithType: CBase.ExtractInputs(CBase)
+- uid: LogicSystem.CBase.ExtractInputs*
+  name: ExtractInputs
+  href: api/LogicSystem.CBase.html#LogicSystem_CBase_ExtractInputs_
+  commentId: Overload:LogicSystem.CBase.ExtractInputs
+  isSpec: "True"
+  fullName: LogicSystem.CBase.ExtractInputs
+  nameWithType: CBase.ExtractInputs
+- uid: LogicSystem.CBase.ExtractOutputs(LogicSystem.CBase)
+  name: ExtractOutputs(CBase)
+  href: api/LogicSystem.CBase.html#LogicSystem_CBase_ExtractOutputs_LogicSystem_CBase_
+  commentId: M:LogicSystem.CBase.ExtractOutputs(LogicSystem.CBase)
+  fullName: LogicSystem.CBase.ExtractOutputs(LogicSystem.CBase)
+  nameWithType: CBase.ExtractOutputs(CBase)
+- uid: LogicSystem.CBase.ExtractOutputs*
+  name: ExtractOutputs
+  href: api/LogicSystem.CBase.html#LogicSystem_CBase_ExtractOutputs_
+  commentId: Overload:LogicSystem.CBase.ExtractOutputs
+  isSpec: "True"
+  fullName: LogicSystem.CBase.ExtractOutputs
+  nameWithType: CBase.ExtractOutputs
+- uid: LogicSystem.CBase.Inputs
+  name: Inputs
+  href: api/LogicSystem.CBase.html#LogicSystem_CBase_Inputs
+  commentId: P:LogicSystem.CBase.Inputs
+  fullName: LogicSystem.CBase.Inputs
+  nameWithType: CBase.Inputs
+- uid: LogicSystem.CBase.Inputs*
+  name: Inputs
+  href: api/LogicSystem.CBase.html#LogicSystem_CBase_Inputs_
+  commentId: Overload:LogicSystem.CBase.Inputs
+  isSpec: "True"
+  fullName: LogicSystem.CBase.Inputs
+  nameWithType: CBase.Inputs
 - uid: LogicSystem.CBase.Name
   name: Name
   href: api/LogicSystem.CBase.html#LogicSystem_CBase_Name
@@ -101,6 +152,19 @@ references:
   isSpec: "True"
   fullName: LogicSystem.CBase.OnEnable
   nameWithType: CBase.OnEnable
+- uid: LogicSystem.CBase.Outputs
+  name: Outputs
+  href: api/LogicSystem.CBase.html#LogicSystem_CBase_Outputs
+  commentId: P:LogicSystem.CBase.Outputs
+  fullName: LogicSystem.CBase.Outputs
+  nameWithType: CBase.Outputs
+- uid: LogicSystem.CBase.Outputs*
+  name: Outputs
+  href: api/LogicSystem.CBase.html#LogicSystem_CBase_Outputs_
+  commentId: Overload:LogicSystem.CBase.Outputs
+  isSpec: "True"
+  fullName: LogicSystem.CBase.Outputs
+  nameWithType: CBase.Outputs
 - uid: LogicSystem.CBase.Toggle(Event)
   name: Toggle(Event)
   href: api/LogicSystem.CBase.html#LogicSystem_CBase_Toggle_Event_
@@ -569,32 +633,6 @@ references:
   commentId: F:LogicSystem.Editor.CBaseInspector._serializedCBase
   fullName: LogicSystem.Editor.CBaseInspector._serializedCBase
   nameWithType: CBaseInspector._serializedCBase
-- uid: LogicSystem.Editor.CBaseInspector.DrawOutputs
-  name: DrawOutputs()
-  href: api/LogicSystem.Editor.CBaseInspector.html#LogicSystem_Editor_CBaseInspector_DrawOutputs
-  commentId: M:LogicSystem.Editor.CBaseInspector.DrawOutputs
-  fullName: LogicSystem.Editor.CBaseInspector.DrawOutputs()
-  nameWithType: CBaseInspector.DrawOutputs()
-- uid: LogicSystem.Editor.CBaseInspector.DrawOutputs*
-  name: DrawOutputs
-  href: api/LogicSystem.Editor.CBaseInspector.html#LogicSystem_Editor_CBaseInspector_DrawOutputs_
-  commentId: Overload:LogicSystem.Editor.CBaseInspector.DrawOutputs
-  isSpec: "True"
-  fullName: LogicSystem.Editor.CBaseInspector.DrawOutputs
-  nameWithType: CBaseInspector.DrawOutputs
-- uid: LogicSystem.Editor.CBaseInspector.DrawProperties
-  name: DrawProperties()
-  href: api/LogicSystem.Editor.CBaseInspector.html#LogicSystem_Editor_CBaseInspector_DrawProperties
-  commentId: M:LogicSystem.Editor.CBaseInspector.DrawProperties
-  fullName: LogicSystem.Editor.CBaseInspector.DrawProperties()
-  nameWithType: CBaseInspector.DrawProperties()
-- uid: LogicSystem.Editor.CBaseInspector.DrawProperties*
-  name: DrawProperties
-  href: api/LogicSystem.Editor.CBaseInspector.html#LogicSystem_Editor_CBaseInspector_DrawProperties_
-  commentId: Overload:LogicSystem.Editor.CBaseInspector.DrawProperties
-  isSpec: "True"
-  fullName: LogicSystem.Editor.CBaseInspector.DrawProperties
-  nameWithType: CBaseInspector.DrawProperties
 - uid: LogicSystem.Editor.CBaseInspector.OnDisable
   name: OnDisable()
   href: api/LogicSystem.Editor.CBaseInspector.html#LogicSystem_Editor_CBaseInspector_OnDisable
@@ -1892,6 +1930,50 @@ references:
   commentId: T:LogicSystem.InputAttribute
   fullName: LogicSystem.InputAttribute
   nameWithType: InputAttribute
+- uid: LogicSystem.InputRef
+  name: InputRef
+  href: api/LogicSystem.InputRef.html
+  commentId: T:LogicSystem.InputRef
+  fullName: LogicSystem.InputRef
+  nameWithType: InputRef
+- uid: LogicSystem.InputRef.#ctor(LogicSystem.InputRef.Input)
+  name: InputRef(InputRef.Input)
+  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef__ctor_LogicSystem_InputRef_Input_
+  commentId: M:LogicSystem.InputRef.#ctor(LogicSystem.InputRef.Input)
+  fullName: LogicSystem.InputRef.InputRef(LogicSystem.InputRef.Input)
+  nameWithType: InputRef.InputRef(InputRef.Input)
+- uid: LogicSystem.InputRef.#ctor*
+  name: InputRef
+  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef__ctor_
+  commentId: Overload:LogicSystem.InputRef.#ctor
+  isSpec: "True"
+  fullName: LogicSystem.InputRef.InputRef
+  nameWithType: InputRef.InputRef
+- uid: LogicSystem.InputRef._fn
+  name: _fn
+  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef__fn
+  commentId: F:LogicSystem.InputRef._fn
+  fullName: LogicSystem.InputRef._fn
+  nameWithType: InputRef._fn
+- uid: LogicSystem.InputRef.Call(Event)
+  name: Call(Event)
+  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef_Call_Event_
+  commentId: M:LogicSystem.InputRef.Call(Event)
+  fullName: LogicSystem.InputRef.Call(Event)
+  nameWithType: InputRef.Call(Event)
+- uid: LogicSystem.InputRef.Call*
+  name: Call
+  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef_Call_
+  commentId: Overload:LogicSystem.InputRef.Call
+  isSpec: "True"
+  fullName: LogicSystem.InputRef.Call
+  nameWithType: InputRef.Call
+- uid: LogicSystem.InputRef.Input
+  name: InputRef.Input
+  href: api/LogicSystem.InputRef.Input.html
+  commentId: T:LogicSystem.InputRef.Input
+  fullName: LogicSystem.InputRef.Input
+  nameWithType: InputRef.Input
 - uid: LogicSystem.Output
   name: Output
   href: api/LogicSystem.Output.html
@@ -1917,6 +1999,40 @@ references:
   commentId: F:LogicSystem.Output.targets
   fullName: LogicSystem.Output.targets
   nameWithType: Output.targets
+- uid: LogicSystem.OutputRef
+  name: OutputRef
+  href: api/LogicSystem.OutputRef.html
+  commentId: T:LogicSystem.OutputRef
+  fullName: LogicSystem.OutputRef
+  nameWithType: OutputRef
+- uid: LogicSystem.OutputRef.#ctor(System.String,Func{System.Object,LogicSystem.Output})
+  name: OutputRef(String, Func<Object, Output>)
+  href: api/LogicSystem.OutputRef.html#LogicSystem_OutputRef__ctor_System_String_Func_System_Object_LogicSystem_Output__
+  commentId: M:LogicSystem.OutputRef.#ctor(System.String,Func{System.Object,LogicSystem.Output})
+  name.vb: OutputRef(String, Func(Of Object, Output))
+  fullName: LogicSystem.OutputRef.OutputRef(System.String, Func<System.Object, LogicSystem.Output>)
+  fullName.vb: LogicSystem.OutputRef.OutputRef(System.String, Func(Of System.Object, LogicSystem.Output))
+  nameWithType: OutputRef.OutputRef(String, Func<Object, Output>)
+  nameWithType.vb: OutputRef.OutputRef(String, Func(Of Object, Output))
+- uid: LogicSystem.OutputRef.#ctor*
+  name: OutputRef
+  href: api/LogicSystem.OutputRef.html#LogicSystem_OutputRef__ctor_
+  commentId: Overload:LogicSystem.OutputRef.#ctor
+  isSpec: "True"
+  fullName: LogicSystem.OutputRef.OutputRef
+  nameWithType: OutputRef.OutputRef
+- uid: LogicSystem.OutputRef._g
+  name: _g
+  href: api/LogicSystem.OutputRef.html#LogicSystem_OutputRef__g
+  commentId: F:LogicSystem.OutputRef._g
+  fullName: LogicSystem.OutputRef._g
+  nameWithType: OutputRef._g
+- uid: LogicSystem.OutputRef.Name
+  name: Name
+  href: api/LogicSystem.OutputRef.html#LogicSystem_OutputRef_Name
+  commentId: F:LogicSystem.OutputRef.Name
+  fullName: LogicSystem.OutputRef.Name
+  nameWithType: OutputRef.Name
 - uid: LogicSystem.TestComponent
   name: TestComponent
   href: api/LogicSystem.TestComponent.html

@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class CBaseInspector
+    <title>Class OutputRef
    | Example Unity documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class CBaseInspector
+    <meta name="title" content="Class OutputRef
    | Example Unity documentation ">
     <meta name="generator" content="docfx 2.59.2.0">
     
@@ -78,34 +78,68 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="LogicSystem.Editor.CBaseInspector">
+            <article class="content wrap" id="_content" data-uid="LogicSystem.OutputRef">
   
   
-  <h1 id="LogicSystem_Editor_CBaseInspector" data-uid="LogicSystem.Editor.CBaseInspector" class="text-break">Class CBaseInspector
+  <h1 id="LogicSystem_OutputRef" data-uid="LogicSystem.OutputRef" class="text-break">Class OutputRef
   </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">CBaseInspector</span></div>
+    <div class="level1"><span class="xref">OutputRef</span></div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="LogicSystem.Editor.html">LogicSystem.Editor</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="LogicSystem.html">LogicSystem</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
-  <h5 id="LogicSystem_Editor_CBaseInspector_syntax">Syntax</h5>
+  <h5 id="LogicSystem_OutputRef_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CBaseInspector : UnityEditor.Editor</code></pre>
+    <pre><code class="lang-csharp hljs">public class OutputRef</code></pre>
   </div>
-  <h3 id="fields">Fields
+  <h3 id="constructors">Constructors
   </h3>
   
   
-  <h4 id="LogicSystem_Editor_CBaseInspector__serializedCBase" data-uid="LogicSystem.Editor.CBaseInspector._serializedCBase">_serializedCBase</h4>
+  <a id="LogicSystem_OutputRef__ctor_" data-uid="LogicSystem.OutputRef.#ctor*"></a>
+  <h4 id="LogicSystem_OutputRef__ctor_System_String_Func_System_Object_LogicSystem_Output__" data-uid="LogicSystem.OutputRef.#ctor(System.String,Func{System.Object,LogicSystem.Output})">OutputRef(String, Func&lt;Object, Output&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">SerializedCBase _serializedCBase</code></pre>
+    <pre><code class="lang-csharp hljs">public OutputRef(string n, Func&lt;object, Output&gt; g)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">n</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Func</span>&lt;<span class="xref">System.Object</span>, <a class="xref" href="LogicSystem.Output.html">Output</a>&gt;</td>
+        <td><span class="parametername">g</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+  </h3>
+  
+  
+  <h4 id="LogicSystem_OutputRef__g" data-uid="LogicSystem.OutputRef._g">_g</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Func&lt;object, Output&gt; _g</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -117,43 +151,35 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="LogicSystem.Editor.SerializedCBase.html">SerializedCBase</a></td>
+        <td><span class="xref">Func</span>&lt;<span class="xref">System.Object</span>, <a class="xref" href="LogicSystem.Output.html">Output</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-  </h3>
   
   
-  <a id="LogicSystem_Editor_CBaseInspector_OnDisable_" data-uid="LogicSystem.Editor.CBaseInspector.OnDisable*"></a>
-  <h4 id="LogicSystem_Editor_CBaseInspector_OnDisable" data-uid="LogicSystem.Editor.CBaseInspector.OnDisable">OnDisable()</h4>
+  <h4 id="LogicSystem_OutputRef_Name" data-uid="LogicSystem.OutputRef.Name">Name</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void OnDisable()</code></pre>
+    <pre><code class="lang-csharp hljs">public string Name</code></pre>
   </div>
-  
-  
-  <a id="LogicSystem_Editor_CBaseInspector_OnEnable_" data-uid="LogicSystem.Editor.CBaseInspector.OnEnable*"></a>
-  <h4 id="LogicSystem_Editor_CBaseInspector_OnEnable" data-uid="LogicSystem.Editor.CBaseInspector.OnEnable">OnEnable()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">void OnEnable()</code></pre>
-  </div>
-  
-  
-  <a id="LogicSystem_Editor_CBaseInspector_OnInspectorGUI_" data-uid="LogicSystem.Editor.CBaseInspector.OnInspectorGUI*"></a>
-  <h4 id="LogicSystem_Editor_CBaseInspector_OnInspectorGUI" data-uid="LogicSystem.Editor.CBaseInspector.OnInspectorGUI">OnInspectorGUI()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override void OnInspectorGUI()</code></pre>
-  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
           
