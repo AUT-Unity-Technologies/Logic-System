@@ -889,6 +889,19 @@ references:
   isSpec: "True"
   fullName: LogicSystem.Editor.EntityEditor.OnInspectorGUI
   nameWithType: EntityEditor.OnInspectorGUI
+- uid: LogicSystem.Editor.EntityEditor.OnSceneGUI
+  name: OnSceneGUI()
+  href: api/LogicSystem.Editor.EntityEditor.html#LogicSystem_Editor_EntityEditor_OnSceneGUI
+  commentId: M:LogicSystem.Editor.EntityEditor.OnSceneGUI
+  fullName: LogicSystem.Editor.EntityEditor.OnSceneGUI()
+  nameWithType: EntityEditor.OnSceneGUI()
+- uid: LogicSystem.Editor.EntityEditor.OnSceneGUI*
+  name: OnSceneGUI
+  href: api/LogicSystem.Editor.EntityEditor.html#LogicSystem_Editor_EntityEditor_OnSceneGUI_
+  commentId: Overload:LogicSystem.Editor.EntityEditor.OnSceneGUI
+  isSpec: "True"
+  fullName: LogicSystem.Editor.EntityEditor.OnSceneGUI
+  nameWithType: EntityEditor.OnSceneGUI
 - uid: LogicSystem.Editor.EntityEditor.openComponents
   name: openComponents
   href: api/LogicSystem.Editor.EntityEditor.html#LogicSystem_Editor_EntityEditor_openComponents

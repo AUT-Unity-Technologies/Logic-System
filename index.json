@@ -82,7 +82,7 @@
   "api/LogicSystem.Editor.EntityEditor.html": {
     "href": "api/LogicSystem.Editor.EntityEditor.html",
     "title": "Class EntityEditor | Example Unity documentation",
-    "keywords": "Class EntityEditor Inheritance System.Object EntityEditor Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public class EntityEditor : UnityEditor.Editor Fields openComponents Declaration bool openComponents Field Value Type Description System.Boolean Methods BasicGizmo(Entity, GizmoType) Declaration public static void BasicGizmo(Entity node, GizmoType type) Parameters Type Name Description Entity node GizmoType type OnInspectorGUI() Declaration public override void OnInspectorGUI()"
+    "keywords": "Class EntityEditor Inheritance System.Object EntityEditor Namespace : LogicSystem.Editor Assembly : cs.temp.dll.dll Syntax public class EntityEditor : UnityEditor.Editor Fields openComponents Declaration bool openComponents Field Value Type Description System.Boolean Methods BasicGizmo(Entity, GizmoType) Declaration public static void BasicGizmo(Entity node, GizmoType type) Parameters Type Name Description Entity node GizmoType type OnInspectorGUI() Declaration public override void OnInspectorGUI() OnSceneGUI() Declaration void OnSceneGUI()"
   },
   "api/LogicSystem.Editor.GuidReferenceHelpers.html": {
     "href": "api/LogicSystem.Editor.GuidReferenceHelpers.html",
