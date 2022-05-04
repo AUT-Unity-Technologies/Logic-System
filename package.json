@@ -15,7 +15,7 @@
   },
   "hideInEditor": false,
   "dependencies": {
-    "com.dpeter99.utils": "0.0.5",
+    "com.dpeter99.utils": "0.0.6",
     "com.dpeter99.module-framework": "0.1.0",
     "com.malee.reorderablelist": "1.0.1"
   }
