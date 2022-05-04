@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Web.UI.WebControls;
-using Cinemachine.Editor;
-using LogicSystem.Editor.Util;
-//using Packages.ObjectPicker;
 using UnityEditor;
-using UnityEditor.Experimental;
 using UnityEditor.Experimental.GraphView;
-using UnityEditor.UIElements;
 using UnityEngine;
-using UnityEngine.UIElements;
-using WaresoftEditor.Common;
 using ReorderableList = Malee.List.ReorderableList;
 
 
@@ -141,8 +132,8 @@ namespace LogicSystem.Editor
                 entity = go.GetComponent<Entity>();
             }
 
-            var target = property.FindPropertyRelative(() => def.target);
-            var input = property.FindPropertyRelative(() => def.input);
+            var target = property.FindPropertyRelative("target");
+            var input = property.FindPropertyRelative("input");
 
             var pos = new Rect(position);
             {

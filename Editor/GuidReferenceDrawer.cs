@@ -1,14 +1,10 @@
-﻿using System.Text;
-using com.dpeter99.utils.editor.ObjectPicker;
-using Editor.InspectorExtensions;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 using LogicSystem;
 using LogicSystem.Editor;
-//using com.dpeter99.utils.ObjectPicker;
 using UnityEngine.SceneManagement;
-using WaresoftEditor.Common;
-
+using com.dpeter99.utils.editor.ObjectPicker;
+using UnityEditor.InspectorExtensions;
 
 // Using a property drawer to allow any class to have a field of type GuidRefernce and still get good UX
 // If you are writing your own inspector for a class that uses a GuidReference, drawing it with

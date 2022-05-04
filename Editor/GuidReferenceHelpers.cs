@@ -1,5 +1,4 @@
-﻿using Cinemachine.Editor;
-using UnityEditor;
+﻿using UnityEditor;
 
 namespace LogicSystem.Editor
 {
