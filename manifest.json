@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.CBase.html",
-          "hash": "NOco4RmC+vR1TR0RXmgN0nzoo3pL4UVS35BWtDeqmQQ="
+          "hash": "0CgZkV5N34djOuPGNizbh4p9WU4ptNzsZdOlxHwiCPs="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Components.DebugLogger.html",
-          "hash": "MEK++wJK5SjTJo5mdUgYfbswIm3O+zAhTd2CyVwfz3M="
+          "hash": "EBktxwYNz44SUhH4AtvZcwn88hho6nxLQwWoIbEAx4Q="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Components.LogicAuto.html",
-          "hash": "ybv+oIAUdyhdOPVkvDIGB/x38Rmd9R1mhAByKP+SHFw="
+          "hash": "s5Acncod+76NDvU1QZM70KrMEXx7e1cJIpKxUJjuYBg="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Components.MathCount.html",
-          "hash": "FS/Rsa83SHKN+LPRGCYLA3rVgofzNwytWaqPKpBsQd4="
+          "hash": "GKU3vo7vlHWqV/sjdqVjWZMzEfdhFvJKTqLWjdgqvOE="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Components.PropDoorRotating.html",
-          "hash": "q8GEgZ3OdmxpXNnHj1ujf0O7Ytst5aZBWH6z26tLs2M="
+          "hash": "FewqcuhqJBoHT0UzWv2nVlSGJjxjZTd51IUhFB0Yzrs="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Components.PropSwitcher.html",
-          "hash": "T4mkRwSVlYBYAuMy42wN9WEgb6GaXrR6doi2O4S8E2Y="
+          "hash": "EFX4N3uZtNSc0C8ZujHSqhLZJyTlt3MwKXM5OuyQSh0="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Components.Trigger.html",
-          "hash": "o399kVjyNX3xAhEN/h28mMBCYnjFpS1cKNk/bDN5rKA="
+          "hash": "amTdYPfoXdl6Bjp5Df/D93Ng8fBzgX6RrhLy8RXJlS0="
         }
       },
       "is_incremental": false,
@@ -318,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Entity.html",
-          "hash": "OUM8n/SijuvJhH3BwYPFrTWGJconJD4ZoZxFBgDTLjk="
+          "hash": "Cvb5YiYKHulyJLKHK9oai644l3P56ztwUylDHLhHksw="
         }
       },
       "is_incremental": false,
@@ -342,7 +342,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.EntityManager.html",
-          "hash": "LM+boJP/L/CqTN9Pj0y2vaslhNE+z/lqlCQydjVd1nA="
+          "hash": "eajoC1VLe9NpthGRylbi0tUCWKubEyjDS2JgO09xYOE="
         }
       },
       "is_incremental": false,
@@ -390,7 +390,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.GuidReference.html",
-          "hash": "zWt4Scah9ON++8MtYqij3AKSf0H5xDMQMdZn3OLXGjY="
+          "hash": "u2E9v5hAB7YkWUXoP79PoLeR/kk5zkQwXt3aK/ypOBM="
         }
       },
       "is_incremental": false,
@@ -426,7 +426,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.InputRef.html",
-          "hash": "fPeCDAy3F7Ctc7Aq+46BQqdzPYqO2D2/1Xh5DvbyJb0="
+          "hash": "NpfAjlGCXf5UY6xpjVp1j8doN1OwWH2cWNDddGYBw6A="
         }
       },
       "is_incremental": false,
@@ -450,7 +450,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.OutputRef.html",
-          "hash": "e/1S5KRVEnSDBykSanzDew7sdD0MSx7hGd///Qg90DM="
+          "hash": "VTH9eCT6hZru1KJvT0xL1GE11HqLG+aL7M+z05PpfnU="
         }
       },
       "is_incremental": false,
@@ -462,7 +462,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.TestComponent.html",
-          "hash": "UpkbPH4bwEdnitLapLn37JCnFYwaIC5WfA4pqO2l9EQ="
+          "hash": "Fh9a2rWDtiAgcuE/vBLZ7jnUgCjbqtIMa2dk7aGLZwE="
         }
       },
       "is_incremental": false,
@@ -486,7 +486,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.html",
-          "hash": "ydkQ3M3RUmFMhYS6J5ckLL+Xt78cmCyAPqf/6Y5X0Mw="
+          "hash": "E4qhhuglEfHhw5KvjpOymWOkKG7BuIpmdiW4+G/k9j4="
         }
       },
       "is_incremental": false,
@@ -530,11 +530,47 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "manual/Basics/Basics.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Basics/Basics.html",
+          "hash": "+7YOO8fRo73oixUEIUZGUQJ6Zb//TIKMk5OLRiVIxOU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Components/Component_MathCount.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Components/Component_MathCount.html",
+          "hash": "AgUIv03rA68Ktw3ifFVnWF/6GZSyCmyKdQYF/Zquj2I="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/Components/Component_Prop_Door_Rotating.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/Components/Component_Prop_Door_Rotating.html",
+          "hash": "7whqPcPuWdmdCIumesWsK/7wb+B5nnOFTZtHBfXgkT4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "manual/Components/Component_Trigger.md",
       "output": {
         ".html": {
           "relative_path": "manual/Components/Component_Trigger.html",
-          "hash": "E7GwIJ2SQIeT3lhnId1ulFV/jaus1wDzFYawk9+GIDI="
+          "hash": "kF70VBshWechclfUEmfzAUkBczrQiUZYS6fSg8n9HMU="
         }
       },
       "is_incremental": false,
@@ -542,22 +578,21 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "manual/Components/images/Unity_iNN8k37A4x.png",
+      "source_relative_path": "manual/Components/images/component_math_counter.png",
       "output": {
         "resource": {
-          "relative_path": "manual/Components/images/Unity_iNN8k37A4x.png"
+          "relative_path": "manual/Components/images/component_math_counter.png"
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "type": "Toc",
-      "source_relative_path": "manual/Components/toc.yml",
+      "type": "Resource",
+      "source_relative_path": "manual/Components/images/component_trigger.png",
       "output": {
-        ".html": {
-          "relative_path": "manual/Components/toc.html",
-          "hash": "iT1a7nRnqjErvo+DuviOFBPYJOxNfsAahq89WGFnbSs="
+        "resource": {
+          "relative_path": "manual/Components/images/component_trigger.png"
         }
       },
       "is_incremental": false,
@@ -569,7 +604,7 @@
       "output": {
         ".html": {
           "relative_path": "manual/toc.html",
-          "hash": "kuF7DYzGrxlJj+QlLpxoRpKG62YI8hHyN90M/fjCuPg="
+          "hash": "6ltBGDgTUDzfL2PfnFvlSKo0WYrdnbTVSLcbS/yYZ0U="
         }
       },
       "is_incremental": false,
@@ -581,7 +616,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "tY/D6XXQMnNgxzj5V+jlXgBccsxTtFiuUz8IiqD3gFs="
+          "hash": "ZYDZlpWsz6KgxFLNqOjU5+v3+Zf2BLGb+LxX6GF9tt8="
         }
       },
       "is_incremental": false,
@@ -602,7 +637,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 3,
+          "total_file_count": 6,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {

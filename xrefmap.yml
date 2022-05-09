@@ -55,6 +55,12 @@ references:
   commentId: F:LogicSystem.CBase._outputs
   fullName: LogicSystem.CBase._outputs
   nameWithType: CBase._outputs
+- uid: LogicSystem.CBase._staticOutputList
+  name: _staticOutputList
+  href: api/LogicSystem.CBase.html#LogicSystem_CBase__staticOutputList
+  commentId: F:LogicSystem.CBase._staticOutputList
+  fullName: LogicSystem.CBase._staticOutputList
+  nameWithType: CBase._staticOutputList
 - uid: LogicSystem.CBase.Awake
   name: Awake()
   href: api/LogicSystem.CBase.html#LogicSystem_CBase_Awake
@@ -246,19 +252,19 @@ references:
   commentId: F:LogicSystem.Components.MathCount._current
   fullName: LogicSystem.Components.MathCount._current
   nameWithType: MathCount._current
-- uid: LogicSystem.Components.MathCount.current
-  name: current
-  href: api/LogicSystem.Components.MathCount.html#LogicSystem_Components_MathCount_current
-  commentId: P:LogicSystem.Components.MathCount.current
-  fullName: LogicSystem.Components.MathCount.current
-  nameWithType: MathCount.current
-- uid: LogicSystem.Components.MathCount.current*
-  name: current
-  href: api/LogicSystem.Components.MathCount.html#LogicSystem_Components_MathCount_current_
-  commentId: Overload:LogicSystem.Components.MathCount.current
+- uid: LogicSystem.Components.MathCount.Current
+  name: Current
+  href: api/LogicSystem.Components.MathCount.html#LogicSystem_Components_MathCount_Current
+  commentId: P:LogicSystem.Components.MathCount.Current
+  fullName: LogicSystem.Components.MathCount.Current
+  nameWithType: MathCount.Current
+- uid: LogicSystem.Components.MathCount.Current*
+  name: Current
+  href: api/LogicSystem.Components.MathCount.html#LogicSystem_Components_MathCount_Current_
+  commentId: Overload:LogicSystem.Components.MathCount.Current
   isSpec: "True"
-  fullName: LogicSystem.Components.MathCount.current
-  nameWithType: MathCount.current
+  fullName: LogicSystem.Components.MathCount.Current
+  nameWithType: MathCount.Current
 - uid: LogicSystem.Components.MathCount.Decrement(Event)
   name: Decrement(Event)
   href: api/LogicSystem.Components.MathCount.html#LogicSystem_Components_MathCount_Decrement_Event_
@@ -328,6 +334,18 @@ references:
   commentId: T:LogicSystem.Components.PropDoorRotating
   fullName: LogicSystem.Components.PropDoorRotating
   nameWithType: PropDoorRotating
+- uid: LogicSystem.Components.PropDoorRotating._t
+  name: _t
+  href: api/LogicSystem.Components.PropDoorRotating.html#LogicSystem_Components_PropDoorRotating__t
+  commentId: F:LogicSystem.Components.PropDoorRotating._t
+  fullName: LogicSystem.Components.PropDoorRotating._t
+  nameWithType: PropDoorRotating._t
+- uid: LogicSystem.Components.PropDoorRotating._target
+  name: _target
+  href: api/LogicSystem.Components.PropDoorRotating.html#LogicSystem_Components_PropDoorRotating__target
+  commentId: F:LogicSystem.Components.PropDoorRotating._target
+  fullName: LogicSystem.Components.PropDoorRotating._target
+  nameWithType: PropDoorRotating._target
 - uid: LogicSystem.Components.PropDoorRotating.DoOpen
   name: DoOpen()
   href: api/LogicSystem.Components.PropDoorRotating.html#LogicSystem_Components_PropDoorRotating_DoOpen
@@ -408,18 +426,6 @@ references:
   commentId: F:LogicSystem.Components.PropDoorRotating.state
   fullName: LogicSystem.Components.PropDoorRotating.state
   nameWithType: PropDoorRotating.state
-- uid: LogicSystem.Components.PropDoorRotating.t
-  name: t
-  href: api/LogicSystem.Components.PropDoorRotating.html#LogicSystem_Components_PropDoorRotating_t
-  commentId: F:LogicSystem.Components.PropDoorRotating.t
-  fullName: LogicSystem.Components.PropDoorRotating.t
-  nameWithType: PropDoorRotating.t
-- uid: LogicSystem.Components.PropDoorRotating.target
-  name: target
-  href: api/LogicSystem.Components.PropDoorRotating.html#LogicSystem_Components_PropDoorRotating_target
-  commentId: F:LogicSystem.Components.PropDoorRotating.target
-  fullName: LogicSystem.Components.PropDoorRotating.target
-  nameWithType: PropDoorRotating.target
 - uid: LogicSystem.Components.PropDoorRotating.Update
   name: Update()
   href: api/LogicSystem.Components.PropDoorRotating.html#LogicSystem_Components_PropDoorRotating_Update
@@ -439,6 +445,12 @@ references:
   commentId: T:LogicSystem.Components.PropSwitcher
   fullName: LogicSystem.Components.PropSwitcher
   nameWithType: PropSwitcher
+- uid: LogicSystem.Components.PropSwitcher._switched
+  name: _switched
+  href: api/LogicSystem.Components.PropSwitcher.html#LogicSystem_Components_PropSwitcher__switched
+  commentId: F:LogicSystem.Components.PropSwitcher._switched
+  fullName: LogicSystem.Components.PropSwitcher._switched
+  nameWithType: PropSwitcher._switched
 - uid: LogicSystem.Components.PropSwitcher.material_A
   name: material_A
   href: api/LogicSystem.Components.PropSwitcher.html#LogicSystem_Components_PropSwitcher_material_A
@@ -464,12 +476,6 @@ references:
   isSpec: "True"
   fullName: LogicSystem.Components.PropSwitcher.Switch
   nameWithType: PropSwitcher.Switch
-- uid: LogicSystem.Components.PropSwitcher.switched
-  name: switched
-  href: api/LogicSystem.Components.PropSwitcher.html#LogicSystem_Components_PropSwitcher_switched
-  commentId: F:LogicSystem.Components.PropSwitcher.switched
-  fullName: LogicSystem.Components.PropSwitcher.switched
-  nameWithType: PropSwitcher.switched
 - uid: LogicSystem.Components.PropSwitcher.target
   name: target
   href: api/LogicSystem.Components.PropSwitcher.html#LogicSystem_Components_PropSwitcher_target
@@ -545,19 +551,6 @@ references:
   isSpec: "True"
   fullName: LogicSystem.Components.Trigger.OnTriggerExit
   nameWithType: Trigger.OnTriggerExit
-- uid: LogicSystem.Components.Trigger.OnTriggerStay(Collider)
-  name: OnTriggerStay(Collider)
-  href: api/LogicSystem.Components.Trigger.html#LogicSystem_Components_Trigger_OnTriggerStay_Collider_
-  commentId: M:LogicSystem.Components.Trigger.OnTriggerStay(Collider)
-  fullName: LogicSystem.Components.Trigger.OnTriggerStay(Collider)
-  nameWithType: Trigger.OnTriggerStay(Collider)
-- uid: LogicSystem.Components.Trigger.OnTriggerStay*
-  name: OnTriggerStay
-  href: api/LogicSystem.Components.Trigger.html#LogicSystem_Components_Trigger_OnTriggerStay_
-  commentId: Overload:LogicSystem.Components.Trigger.OnTriggerStay
-  isSpec: "True"
-  fullName: LogicSystem.Components.Trigger.OnTriggerStay
-  nameWithType: Trigger.OnTriggerStay
 - uid: LogicSystem.Editor
   name: LogicSystem.Editor
   href: api/LogicSystem.Editor.html
@@ -1290,6 +1283,12 @@ references:
   commentId: T:LogicSystem.Entity
   fullName: LogicSystem.Entity
   nameWithType: Entity
+- uid: LogicSystem.Entity._guid
+  name: _guid
+  href: api/LogicSystem.Entity.html#LogicSystem_Entity__guid
+  commentId: F:LogicSystem.Entity._guid
+  fullName: LogicSystem.Entity._guid
+  nameWithType: Entity._guid
 - uid: LogicSystem.Entity.AddComponent(LogicSystem.CBase)
   name: AddComponent(CBase)
   href: api/LogicSystem.Entity.html#LogicSystem_Entity_AddComponent_LogicSystem_CBase_
@@ -1348,12 +1347,6 @@ references:
   isSpec: "True"
   fullName: LogicSystem.Entity.GetGuid
   nameWithType: Entity.GetGuid
-- uid: LogicSystem.Entity.guid
-  name: guid
-  href: api/LogicSystem.Entity.html#LogicSystem_Entity_guid
-  commentId: F:LogicSystem.Entity.guid
-  fullName: LogicSystem.Entity.guid
-  nameWithType: Entity.guid
 - uid: LogicSystem.Entity.OnAfterDeserialize
   name: OnAfterDeserialize()
   href: api/LogicSystem.Entity.html#LogicSystem_Entity_OnAfterDeserialize
@@ -1457,19 +1450,6 @@ references:
   commentId: T:LogicSystem.EntityManager
   fullName: LogicSystem.EntityManager
   nameWithType: EntityManager
-- uid: LogicSystem.EntityManager.#cctor
-  name: .cctor()
-  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager__cctor
-  commentId: M:LogicSystem.EntityManager.#cctor
-  fullName: LogicSystem.EntityManager..cctor()
-  nameWithType: EntityManager..cctor()
-- uid: LogicSystem.EntityManager.#cctor*
-  name: .cctor
-  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager__cctor_
-  commentId: Overload:LogicSystem.EntityManager.#cctor
-  isSpec: "True"
-  fullName: LogicSystem.EntityManager..cctor
-  nameWithType: EntityManager..cctor
 - uid: LogicSystem.EntityManager.#ctor
   name: EntityManager()
   href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager__ctor
@@ -1603,11 +1583,11 @@ references:
   isSpec: "True"
   fullName: LogicSystem.EntityManager.InternalAdd
   nameWithType: EntityManager.InternalAdd
-- uid: LogicSystem.EntityManager.InternalRemove(System.Guid)
+- uid: LogicSystem.EntityManager.InternalRemove(Guid)
   name: InternalRemove(Guid)
-  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager_InternalRemove_System_Guid_
-  commentId: M:LogicSystem.EntityManager.InternalRemove(System.Guid)
-  fullName: LogicSystem.EntityManager.InternalRemove(System.Guid)
+  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager_InternalRemove_Guid_
+  commentId: M:LogicSystem.EntityManager.InternalRemove(Guid)
+  fullName: LogicSystem.EntityManager.InternalRemove(Guid)
   nameWithType: EntityManager.InternalRemove(Guid)
 - uid: LogicSystem.EntityManager.InternalRemove*
   name: InternalRemove
@@ -1616,11 +1596,11 @@ references:
   isSpec: "True"
   fullName: LogicSystem.EntityManager.InternalRemove
   nameWithType: EntityManager.InternalRemove
-- uid: LogicSystem.EntityManager.Remove(System.Guid)
+- uid: LogicSystem.EntityManager.Remove(Guid)
   name: Remove(Guid)
-  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager_Remove_System_Guid_
-  commentId: M:LogicSystem.EntityManager.Remove(System.Guid)
-  fullName: LogicSystem.EntityManager.Remove(System.Guid)
+  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager_Remove_Guid_
+  commentId: M:LogicSystem.EntityManager.Remove(Guid)
+  fullName: LogicSystem.EntityManager.Remove(Guid)
   nameWithType: EntityManager.Remove(Guid)
 - uid: LogicSystem.EntityManager.Remove*
   name: Remove
@@ -1629,25 +1609,25 @@ references:
   isSpec: "True"
   fullName: LogicSystem.EntityManager.Remove
   nameWithType: EntityManager.Remove
-- uid: LogicSystem.EntityManager.ResolveGuid(System.Guid)
+- uid: LogicSystem.EntityManager.ResolveGuid(Guid)
   name: ResolveGuid(Guid)
-  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager_ResolveGuid_System_Guid_
-  commentId: M:LogicSystem.EntityManager.ResolveGuid(System.Guid)
-  fullName: LogicSystem.EntityManager.ResolveGuid(System.Guid)
+  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager_ResolveGuid_Guid_
+  commentId: M:LogicSystem.EntityManager.ResolveGuid(Guid)
+  fullName: LogicSystem.EntityManager.ResolveGuid(Guid)
   nameWithType: EntityManager.ResolveGuid(Guid)
-- uid: LogicSystem.EntityManager.ResolveGuid(System.Guid,Action)
+- uid: LogicSystem.EntityManager.ResolveGuid(Guid,Action)
   name: ResolveGuid(Guid, Action)
-  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager_ResolveGuid_System_Guid_Action_
-  commentId: M:LogicSystem.EntityManager.ResolveGuid(System.Guid,Action)
-  fullName: LogicSystem.EntityManager.ResolveGuid(System.Guid, Action)
+  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager_ResolveGuid_Guid_Action_
+  commentId: M:LogicSystem.EntityManager.ResolveGuid(Guid,Action)
+  fullName: LogicSystem.EntityManager.ResolveGuid(Guid, Action)
   nameWithType: EntityManager.ResolveGuid(Guid, Action)
-- uid: LogicSystem.EntityManager.ResolveGuid(System.Guid,Action{GameObject},Action)
+- uid: LogicSystem.EntityManager.ResolveGuid(Guid,Action{GameObject},Action)
   name: ResolveGuid(Guid, Action<GameObject>, Action)
-  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager_ResolveGuid_System_Guid_Action_GameObject__Action_
-  commentId: M:LogicSystem.EntityManager.ResolveGuid(System.Guid,Action{GameObject},Action)
+  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager_ResolveGuid_Guid_Action_GameObject__Action_
+  commentId: M:LogicSystem.EntityManager.ResolveGuid(Guid,Action{GameObject},Action)
   name.vb: ResolveGuid(Guid, Action(Of GameObject), Action)
-  fullName: LogicSystem.EntityManager.ResolveGuid(System.Guid, Action<GameObject>, Action)
-  fullName.vb: LogicSystem.EntityManager.ResolveGuid(System.Guid, Action(Of GameObject), Action)
+  fullName: LogicSystem.EntityManager.ResolveGuid(Guid, Action<GameObject>, Action)
+  fullName.vb: LogicSystem.EntityManager.ResolveGuid(Guid, Action(Of GameObject), Action)
   nameWithType: EntityManager.ResolveGuid(Guid, Action<GameObject>, Action)
   nameWithType.vb: EntityManager.ResolveGuid(Guid, Action(Of GameObject), Action)
 - uid: LogicSystem.EntityManager.ResolveGuid*
@@ -1657,13 +1637,13 @@ references:
   isSpec: "True"
   fullName: LogicSystem.EntityManager.ResolveGuid
   nameWithType: EntityManager.ResolveGuid
-- uid: LogicSystem.EntityManager.ResolveGuidInternal(System.Guid,Action{GameObject},Action)
+- uid: LogicSystem.EntityManager.ResolveGuidInternal(Guid,Action{GameObject},Action)
   name: ResolveGuidInternal(Guid, Action<GameObject>, Action)
-  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager_ResolveGuidInternal_System_Guid_Action_GameObject__Action_
-  commentId: M:LogicSystem.EntityManager.ResolveGuidInternal(System.Guid,Action{GameObject},Action)
+  href: api/LogicSystem.EntityManager.html#LogicSystem_EntityManager_ResolveGuidInternal_Guid_Action_GameObject__Action_
+  commentId: M:LogicSystem.EntityManager.ResolveGuidInternal(Guid,Action{GameObject},Action)
   name.vb: ResolveGuidInternal(Guid, Action(Of GameObject), Action)
-  fullName: LogicSystem.EntityManager.ResolveGuidInternal(System.Guid, Action<GameObject>, Action)
-  fullName.vb: LogicSystem.EntityManager.ResolveGuidInternal(System.Guid, Action(Of GameObject), Action)
+  fullName: LogicSystem.EntityManager.ResolveGuidInternal(Guid, Action<GameObject>, Action)
+  fullName.vb: LogicSystem.EntityManager.ResolveGuidInternal(Guid, Action(Of GameObject), Action)
   nameWithType: EntityManager.ResolveGuidInternal(Guid, Action<GameObject>, Action)
   nameWithType.vb: EntityManager.ResolveGuidInternal(Guid, Action(Of GameObject), Action)
 - uid: LogicSystem.EntityManager.ResolveGuidInternal*
@@ -1949,12 +1929,12 @@ references:
   commentId: T:LogicSystem.InputRef
   fullName: LogicSystem.InputRef
   nameWithType: InputRef
-- uid: LogicSystem.InputRef.#ctor(LogicSystem.InputRef.Input)
-  name: InputRef(InputRef.Input)
-  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef__ctor_LogicSystem_InputRef_Input_
-  commentId: M:LogicSystem.InputRef.#ctor(LogicSystem.InputRef.Input)
-  fullName: LogicSystem.InputRef.InputRef(LogicSystem.InputRef.Input)
-  nameWithType: InputRef.InputRef(InputRef.Input)
+- uid: LogicSystem.InputRef.#ctor(System.String,LogicSystem.InputRef.Input)
+  name: InputRef(String, InputRef.Input)
+  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef__ctor_System_String_LogicSystem_InputRef_Input_
+  commentId: M:LogicSystem.InputRef.#ctor(System.String,LogicSystem.InputRef.Input)
+  fullName: LogicSystem.InputRef.InputRef(System.String, LogicSystem.InputRef.Input)
+  nameWithType: InputRef.InputRef(String, InputRef.Input)
 - uid: LogicSystem.InputRef.#ctor*
   name: InputRef
   href: api/LogicSystem.InputRef.html#LogicSystem_InputRef__ctor_
@@ -1968,25 +1948,38 @@ references:
   commentId: F:LogicSystem.InputRef._fn
   fullName: LogicSystem.InputRef._fn
   nameWithType: InputRef._fn
-- uid: LogicSystem.InputRef.Call(Event)
-  name: Call(Event)
-  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef_Call_Event_
-  commentId: M:LogicSystem.InputRef.Call(Event)
-  fullName: LogicSystem.InputRef.Call(Event)
-  nameWithType: InputRef.Call(Event)
-- uid: LogicSystem.InputRef.Call*
-  name: Call
-  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef_Call_
-  commentId: Overload:LogicSystem.InputRef.Call
-  isSpec: "True"
-  fullName: LogicSystem.InputRef.Call
-  nameWithType: InputRef.Call
 - uid: LogicSystem.InputRef.Input
   name: InputRef.Input
   href: api/LogicSystem.InputRef.Input.html
   commentId: T:LogicSystem.InputRef.Input
   fullName: LogicSystem.InputRef.Input
   nameWithType: InputRef.Input
+- uid: LogicSystem.InputRef.Invoke(Event)
+  name: Invoke(Event)
+  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef_Invoke_Event_
+  commentId: M:LogicSystem.InputRef.Invoke(Event)
+  fullName: LogicSystem.InputRef.Invoke(Event)
+  nameWithType: InputRef.Invoke(Event)
+- uid: LogicSystem.InputRef.Invoke*
+  name: Invoke
+  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef_Invoke_
+  commentId: Overload:LogicSystem.InputRef.Invoke
+  isSpec: "True"
+  fullName: LogicSystem.InputRef.Invoke
+  nameWithType: InputRef.Invoke
+- uid: LogicSystem.InputRef.Name
+  name: Name
+  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef_Name
+  commentId: P:LogicSystem.InputRef.Name
+  fullName: LogicSystem.InputRef.Name
+  nameWithType: InputRef.Name
+- uid: LogicSystem.InputRef.Name*
+  name: Name
+  href: api/LogicSystem.InputRef.html#LogicSystem_InputRef_Name_
+  commentId: Overload:LogicSystem.InputRef.Name
+  isSpec: "True"
+  fullName: LogicSystem.InputRef.Name
+  nameWithType: InputRef.Name
 - uid: LogicSystem.Output
   name: Output
   href: api/LogicSystem.Output.html
@@ -2040,12 +2033,25 @@ references:
   commentId: F:LogicSystem.OutputRef._g
   fullName: LogicSystem.OutputRef._g
   nameWithType: OutputRef._g
-- uid: LogicSystem.OutputRef.Name
-  name: Name
-  href: api/LogicSystem.OutputRef.html#LogicSystem_OutputRef_Name
-  commentId: F:LogicSystem.OutputRef.Name
-  fullName: LogicSystem.OutputRef.Name
-  nameWithType: OutputRef.Name
+- uid: LogicSystem.OutputRef.Get(LogicSystem.CBase)
+  name: Get(CBase)
+  href: api/LogicSystem.OutputRef.html#LogicSystem_OutputRef_Get_LogicSystem_CBase_
+  commentId: M:LogicSystem.OutputRef.Get(LogicSystem.CBase)
+  fullName: LogicSystem.OutputRef.Get(LogicSystem.CBase)
+  nameWithType: OutputRef.Get(CBase)
+- uid: LogicSystem.OutputRef.Get*
+  name: Get
+  href: api/LogicSystem.OutputRef.html#LogicSystem_OutputRef_Get_
+  commentId: Overload:LogicSystem.OutputRef.Get
+  isSpec: "True"
+  fullName: LogicSystem.OutputRef.Get
+  nameWithType: OutputRef.Get
+- uid: LogicSystem.OutputRef.name
+  name: name
+  href: api/LogicSystem.OutputRef.html#LogicSystem_OutputRef_name
+  commentId: F:LogicSystem.OutputRef.name
+  fullName: LogicSystem.OutputRef.name
+  nameWithType: OutputRef.name
 - uid: LogicSystem.TestComponent
   name: TestComponent
   href: api/LogicSystem.TestComponent.html

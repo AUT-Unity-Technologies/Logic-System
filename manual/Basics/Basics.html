@@ -5,21 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace LogicSystem
-   | Example Unity documentation </title>
+    <title>Entity References | Example Unity documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace LogicSystem
-   | Example Unity documentation ">
+    <meta name="title" content="Entity References | Example Unity documentation ">
     <meta name="generator" content="docfx 2.59.2.0">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
     
-    <meta property="docfx:rel" content="../">
+    <meta property="docfx:rel" content="../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -36,8 +34,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -78,48 +76,14 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="LogicSystem">
-  
-  <h1 id="LogicSystem" data-uid="LogicSystem" class="text-break">Namespace LogicSystem
-  </h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
-  </h3>
-      <h4><a class="xref" href="LogicSystem.Binding.html">Binding</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LogicSystem.CBase.html">CBase</a></h4>
-      <section><p>Base class for all components
-It provides reflected information and registration to the entity.</p>
-</section>
-      <h4><a class="xref" href="LogicSystem.Entity.html">Entity</a></h4>
-      <section><p>Marks a Game object that can be referenced cross scenes.</p>
-</section>
-      <h4><a class="xref" href="LogicSystem.EntityManager.html">EntityManager</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LogicSystem.GuidReference.html">GuidReference</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LogicSystem.InputAttribute.html">InputAttribute</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LogicSystem.InputRef.html">InputRef</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LogicSystem.Output.html">Output</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LogicSystem.OutputRef.html">OutputRef</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LogicSystem.TestComponent.html">TestComponent</a></h4>
-      <section></section>
-      <h4><a class="xref" href="LogicSystem.TestObject.html">TestObject</a></h4>
-      <section></section>
-    <h3 id="structs">Structs
-  </h3>
-      <h4><a class="xref" href="LogicSystem.EntityManager.GuidInfo.html">EntityManager.GuidInfo</a></h4>
-      <section></section>
-    <h3 id="delegates">Delegates
-  </h3>
-      <h4><a class="xref" href="LogicSystem.InputRef.Input.html">InputRef.Input</a></h4>
-      <section></section>
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="entity-references">Entity References</h1>
+
+<p>To give the ability to reference things across scenes you have to add the Entity component to the GameObject you wish to be able to reference.</p>
+<p>The Entity componet assigns the GameObject a GUID witch is aunique id allowing the cross scene references.</p>
+<h1 id="io-system">I/O system</h1>
+<p>The I/O system is modelled after what Valve&#39;s source engien uses. The core idea is that game objects can send events to each other. An event comes from an Output located on a c# script and is delivered to an Input on an other script.</p>
+<p>To create </p>
 </article>
           </div>
           
@@ -127,6 +91,9 @@ It provides reflected information and registration to the entity.</p>
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/AUT-Unity-Technologies/Logic-System/blob/main/Documentation~/manual/Basics/Basics.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
@@ -152,8 +119,8 @@ It provides reflected information and registration to the entity.</p>
       </footer>
     </div>
     
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
   </body>
 </html>
