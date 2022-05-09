@@ -41,6 +41,31 @@ public class GUIHelpers
             content = s_MixedValueContent;
         }
         
+        bool cachedGUIState = GUI.enabled;
+        //GUI.enabled = true;
+        var clicked = GUI.Button(img,content,style);
+        GUI.enabled = cachedGUIState;
+        
+        EditorGUI.EndProperty();
+        
+        return clicked;
+    }
+    
+    public static bool DoBasicPreview(Rect area, string label, Object obj)
+    {
+        var style = EditorStyles.objectField;
+        
+        var img = new Rect(area);
+        
+        GUIContent content = new GUIContent(label);
+        
+        content.image = EditorGUIUtility.GetIconForObject(obj);
+        
+        if (EditorGUI.showMixedValue)
+        {
+            content = s_MixedValueContent;
+        }
+
         var clicked = GUI.Button(img,content,style);
 
         EditorGUI.EndProperty();

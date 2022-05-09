@@ -1,9 +1,9 @@
-﻿using UnityEditor;
+﻿using com.dpeter99.utils.Editor.InspectorExtensions.AreaHelpers;
+using UnityEditor;
 using UnityEngine;
 using LogicSystem;
 using LogicSystem.Editor;
 using UnityEngine.SceneManagement;
-using com.dpeter99.utils.editor.ObjectPicker;
 using UnityEditor.InspectorExtensions;
 
 // Using a property drawer to allow any class to have a field of type GuidRefernce and still get good UX
@@ -32,7 +32,81 @@ public class GuidReferenceDrawer : PropertyDrawer
         guidProp = property.FindPropertyRelative("serializedGuid");
         nameProp = property.FindPropertyRelative("cachedName");
         sceneProp = property.FindPropertyRelative("cachedScene");
+        
+        System.Guid currentGuid;
+        GameObject currentGO = null;
 
+        // working with array properties is a bit unwieldy
+        // you have to get the property at each index manually
+        byte[] byteArray = new byte[16];
+        ParseGUIDFromProp(out byteArray);
+
+        currentGuid = new System.Guid(byteArray);
+        currentGO = EntityManager.ResolveGuid(currentGuid);
+        Entity currentGuidComponent = currentGO != null ? currentGO.GetComponent<Entity>() : null;
+
+        Entity component = null;
+
+        bool isNotLoaded = currentGuid != System.Guid.Empty && currentGuidComponent == null;
+        
+        
+        
+        // Using BeginProperty / EndProperty on the parent property means that
+        // prefab override logic works on the entire property.
+        EditorGUI.BeginProperty(position, label, property);
+        
+        
+        var area = new RectArea(position);
+        
+        area.AddLabelPrefix(label);
+
+        var mainArea = area.GetHorizontalArea(area.free.width - EditorGUIUtility.singleLineHeight*2);
+
+        {
+            var guidCompPosition = mainArea.GetHorizontalArea(mainArea.free.width / 2);
+            
+            EditorGUI.BeginChangeCheck();
+            
+            if (isNotLoaded)
+            {
+                // if our reference is set, but the target isn't loaded, we display the target and the scene it is in, and provide a way to clear the reference
+
+                bool guiEnabled = GUI.enabled;
+                GUI.enabled = false;
+                EditorGUI.LabelField(guidCompPosition, new GUIContent(nameProp.stringValue, "Target GameObject is not currently loaded."), EditorStyles.objectField);
+                GUI.enabled = guiEnabled;
+            }
+            else
+            {
+                // if our object is loaded, we can simply use an object field directly
+                component = EditorGUI.ObjectField(guidCompPosition, currentGuidComponent, typeof(Entity), true) as Entity;
+            }
+
+            var changed = EditorGUI.EndChangeCheck();
+        }
+
+        {
+            var scenePosition = mainArea;
+
+            var labelArea = scenePosition.GetHorizontalArea(18);
+            GUI.Label(labelArea,"in");
+            
+            
+            var propArea = scenePosition;
+            bool cachedGUIState = GUI.enabled;
+            GUI.enabled = false;
+
+            if (GUIHelpers.DoBasicPreview<SceneAsset>(propArea,sceneProp))
+            {
+                EditorGUIUtility.PingObject(sceneProp.objectReferenceValue);
+            }
+            GUI.enabled = cachedGUIState;
+            
+        }
+
+
+
+/*
         // Using BeginProperty / EndProperty on the parent property means that
         // prefab override logic works on the entire property.
         EditorGUI.BeginProperty(position, label, property);
@@ -175,6 +249,7 @@ public class GuidReferenceDrawer : PropertyDrawer
 
         
         EditorGUI.EndProperty();
+        */
     }
 
     protected void ParseGUIDFromProp(out byte[] byteArray)

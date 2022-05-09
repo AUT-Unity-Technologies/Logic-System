@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace LogicSystem.Components
 {
@@ -49,21 +48,16 @@ namespace LogicSystem.Components
             }
         }
 
-        private void OnTriggerStay(Collider other)
-        {
-            //throw new NotImplementedException();
-        }
-
         private void OnDrawGizmos()
         {
-            Collider collider = GetComponent<Collider>();
+            Collider colliderComp = GetComponent<Collider>();
 
             Gizmos.color = _visualizerColor;
             Gizmos.matrix = transform.localToWorldMatrix;
             
-            if (collider.isTrigger)
+            if (colliderComp.isTrigger)
             {
-                if (collider is BoxCollider box)
+                if (colliderComp is BoxCollider box)
                 {
                     Gizmos.DrawCube(box.center, box.size);
                 }

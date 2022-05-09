@@ -10,8 +10,8 @@ namespace LogicSystem.Components
         public float min;
         public float max;
 
-        float target;
-        float t;
+        private float _target;
+        private float _t;
 
         public enum DoorState
         {
@@ -45,15 +45,18 @@ namespace LogicSystem.Components
 
         private void DoOpen()
         {
-            t += Time.deltaTime;
+            _t += Time.deltaTime;
             
-            var rot = Mathf.LerpAngle(0, target, t);
-            
-            transform.eulerAngles = new Vector3(
-                transform.eulerAngles.x,
+            var rot = Mathf.LerpAngle(0, _target, _t);
+
+            var eulerAngles = transform.eulerAngles;
+                
+            eulerAngles = new Vector3(
+                eulerAngles.x,
                 rot,
-                transform.eulerAngles.z
+                eulerAngles.z
             );
+            transform.eulerAngles = eulerAngles;
         }
 
 
@@ -62,7 +65,7 @@ namespace LogicSystem.Components
         {
             //Debug.Log("opening");
 
-            target = max;
+            _target = max;
             state = DoorState.Opening;
         }
     }

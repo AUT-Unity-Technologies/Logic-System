@@ -20,7 +20,7 @@ namespace LogicSystem
     public class Entity : MonoBehaviour, ISerializationCallbackReceiver
     {
         // System guid we use for comparison and generation
-        System.Guid guid = System.Guid.Empty;
+        private Guid _guid = Guid.Empty;
 
         // Unity's serialization system doesn't know about System.Guid, so we convert to a byte array
         // Fun fact, we tried using strings at first, but that allocated memory and was twice as slow
@@ -29,7 +29,7 @@ namespace LogicSystem
         
         // When de-serializing or creating this component, we want to either restore our serialized GUID
         // or create a new one.
-        void CreateGuid()
+        private void CreateGuid()
         {
             // if our serialized data is invalid, then we are a new object and need a new GUID
             if (serializedGuid == null || serializedGuid.Length != 16)
@@ -43,8 +43,8 @@ namespace LogicSystem
 
                 Undo.RecordObject(this, "Added GUID");
 #endif
-                guid = System.Guid.NewGuid();
-                serializedGuid = guid.ToByteArray();
+                _guid = Guid.NewGuid();
+                serializedGuid = _guid.ToByteArray();
 
 #if UNITY_EDITOR
                 // If we are creating a new GUID for a prefab instance of a prefab, but we have somehow lost our prefab connection
@@ -55,14 +55,14 @@ namespace LogicSystem
                 }
 #endif
             }
-            else if (guid == System.Guid.Empty)
+            else if (_guid == Guid.Empty)
             {
                 // otherwise, we should set our system guid to our serialized guid
-                guid = new System.Guid(serializedGuid);
+                _guid = new Guid(serializedGuid);
             }
 
             // register with the GUID Manager so that other components can access this
-            if (guid != System.Guid.Empty)
+            if (_guid != Guid.Empty)
             {
                 //TODO: Add to a manager
                 
@@ -70,7 +70,7 @@ namespace LogicSystem
                 {
                     // if registration fails, we probably have a duplicate or invalid GUID, get us a new one.
                     serializedGuid = null;
-                    guid = System.Guid.Empty;
+                    _guid = Guid.Empty;
                     CreateGuid();
                 }
                 
@@ -118,14 +118,14 @@ namespace LogicSystem
             if (IsAssetOnDisk())
             {
                 serializedGuid = null;
-                guid = System.Guid.Empty;
+                _guid = System.Guid.Empty;
             }
             else
 #endif
             {
-                if (guid != System.Guid.Empty)
+                if (_guid != Guid.Empty)
                 {
-                    serializedGuid = guid.ToByteArray();
+                    serializedGuid = _guid.ToByteArray();
                 }
             }
         }
@@ -135,16 +135,16 @@ namespace LogicSystem
         {
             if (serializedGuid != null && serializedGuid.Length == 16)
             {
-                guid = new System.Guid(serializedGuid);
+                _guid = new Guid(serializedGuid);
             }
         }
 
-        void Awake()
+        private void Awake()
         {
             CreateGuid();
         }
 
-        void OnValidate()
+        private void OnValidate()
         {
 #if UNITY_EDITOR
             // similar to on Serialize, but gets called on Copying a Component or Applying a Prefab
@@ -152,7 +152,7 @@ namespace LogicSystem
             if (IsAssetOnDisk())
             {
                 serializedGuid = null;
-                guid = System.Guid.Empty;
+                _guid = System.Guid.Empty;
             }
             else
 #endif
@@ -162,20 +162,20 @@ namespace LogicSystem
         }
 
         // Never return an invalid GUID
-        public System.Guid GetGuid()
+        public Guid GetGuid()
         {
-            if (guid == System.Guid.Empty && serializedGuid != null && serializedGuid.Length == 16)
+            if (_guid == Guid.Empty && serializedGuid != null && serializedGuid.Length == 16)
             {
-                guid = new System.Guid(serializedGuid);
+                _guid = new Guid(serializedGuid);
             }
 
-            return guid;
+            return _guid;
         }
 
         // let the manager know we are gone, so other objects no longer find this
         public void OnDestroy()
         {
-            EntityManager.Remove(guid);
+            EntityManager.Remove(_guid);
         }
 
         /// <summary>
@@ -183,7 +183,7 @@ namespace LogicSystem
         /// This list is used to find the entity when an event is received.
         /// </summary>
         [NonSerialized]
-        public List<CBase> components = new();
+        public readonly List<CBase> components = new();
 
         /// <summary>
         /// Add a component to the entity
@@ -231,14 +231,11 @@ namespace LogicSystem
             var comp = this.components.Find(c => c.Name == ev.target.target);
             if (comp != null)
             {
-                var method =
-                    comp.GetType()
-                        .GetMethods()
-                        .FirstOrDefault(m => m.Name == ev.target.input);
-
-                if (method != null)
+                var input = comp.Inputs.FirstOrDefault(i => i.Name == ev.target.input);
+                
+                if (input != null)
                 {
-                    method.Invoke(comp, new[] { ev });
+                    input.Invoke(ev);
                 }
 
             }

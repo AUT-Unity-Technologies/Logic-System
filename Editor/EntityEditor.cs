@@ -70,7 +70,7 @@ namespace LogicSystem.Editor
                 
                 foreach (var outputRef in component.Outputs)
                 {
-                    var o = outputRef._g(component);
+                    Output o = outputRef.Get(component);
                     foreach (var target in o.targets)
                     {
                         var end_go = target.targetEntity.gameObject;

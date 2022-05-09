@@ -23,17 +23,18 @@ namespace LogicSystem.Editor
         public List<SearchTreeEntry> CreateSearchTree(SearchWindowContext context)
         {
             List<SearchTreeEntry> tree = new List<SearchTreeEntry>();
-            var root_content = new GUIContent(_entity.gameObject.name);
+            var root_content = new GUIContent(_entity.gameObject.name, IOConfig.Hexagon);
             
             tree.Add(new SearchTreeGroupEntry(root_content,0));
 
-            var components = _entity.gameObject.GetComponents<CBase>();
+            var components = _entity.components;
 
             foreach (var component in components)
             {
                 //var comp_content = EditorGUIUtility.ObjectContent(component, typeof(CBase));
                 var comp_content = new GUIContent(component.Name);
                 comp_content.text = component.Name;
+                comp_content.image = EditorGUIUtility.GetIconForObject(component);
                 tree.Add(new SearchTreeGroupEntry(comp_content,1));
 
                 var querry =

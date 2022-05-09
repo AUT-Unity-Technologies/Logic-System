@@ -1,5 +1,4 @@
 ﻿using LogicSystem.EventSystem;
-using UnityEngine.UIElements;
 
 namespace LogicSystem.Components
 {
@@ -14,7 +13,7 @@ namespace LogicSystem.Components
         
         public Output OnValueChanged;
         
-        public int current
+        public int Current
         {
             get => _current;
 
@@ -42,13 +41,13 @@ namespace LogicSystem.Components
         [Input]
         public void Increment(Event ev)
         {
-            current++;
+            Current++;
         }
 
         [Input]
         public void Decrement(Event ev)
         {
-            current--;
+            Current--;
         }
         
         

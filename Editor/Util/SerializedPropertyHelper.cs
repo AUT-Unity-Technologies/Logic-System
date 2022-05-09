@@ -43,7 +43,8 @@ namespace LogicSystem.Editor.Util
                     else
                     {
                         field = propertyObject.GetType().GetField(pathNode, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-                        propertyObject = field.GetValue(propertyObject);
+                        if (field != null) 
+                            propertyObject = field.GetValue(propertyObject);
                     }
                 }
             }

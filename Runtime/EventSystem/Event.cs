@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LogicSystem.EventSystem
+﻿namespace LogicSystem.EventSystem
 {
     public class Event
     {

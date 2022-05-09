@@ -16,8 +16,7 @@ namespace LogicSystem
 // or other methods to track down the specific objects need by any given system
 
 // Ideally this would be a struct, but we need the ISerializationCallbackReciever
-    [System.Serializable]
-    [assembly: InternalsVisibleTo("LogicSystem.Editor")]
+    [Serializable]
     public class GuidReference : ISerializationCallbackReceiver
     {
         // cache the referenced Game Object if we find one for performance
@@ -26,7 +25,7 @@ namespace LogicSystem
 
         // store our GUID in a form that Unity can save
         [SerializeField] private byte[] serializedGuid;
-        private System.Guid guid;
+        private Guid guid;
 
 #if UNITY_EDITOR
         // decorate with some extra info in Editor so we can inform a user of what that GUID means

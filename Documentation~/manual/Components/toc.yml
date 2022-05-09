@@ -1,2 +1,4 @@
 ﻿- name: Trigger
   href: Component_Trigger.md
+- name: Math Counter
+  href: Component_MathCount.md

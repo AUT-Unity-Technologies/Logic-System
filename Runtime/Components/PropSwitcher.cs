@@ -10,12 +10,12 @@ namespace LogicSystem.Components
         public Material material_A;
         public Material material_B;
 
-        private bool switched = false;
+        private bool _switched = false;
         
         [Input]
         public void Switch(LogicSystem.EventSystem.Event ev)
         {
-            if (!switched)
+            if (!_switched)
             {
                 target.material = material_B;
             }
@@ -24,7 +24,7 @@ namespace LogicSystem.Components
                 target.material = material_A;    
             }
 
-            switched = !switched;
+            _switched = !_switched;
 
         }
 

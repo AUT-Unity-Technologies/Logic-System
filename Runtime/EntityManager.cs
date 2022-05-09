@@ -1,12 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Linq;
-using System.Runtime.CompilerServices;
 using com.dpeter99.framework.src;
 using com.dpeter99.utils.Basic;
-using LogicSystem;
 using UnityEngine.SceneManagement;
 
 namespace LogicSystem
@@ -56,49 +52,40 @@ namespace LogicSystem
             }
         }
 
-        // Singleton interface
-        //static EntityManager Instance;
-
-        static EntityManager()
-        {
-            //new EntityManager();
-        }
-        
         public EntityManager()
         {
             Debug.Log("Inst");
-            guidToObjectMap = new Dictionary<System.Guid, GuidInfo>();
+            guidToObjectMap = new Dictionary<Guid, GuidInfo>();
         }
 
-        
         // All the public API is static so you need not worry about creating an instance
         public static bool Add(Entity entity)
         {
             return Instance.InternalAdd(entity);
         }
 
-        public static void Remove(System.Guid guid)
+        public static void Remove(Guid guid)
         {
             Instance.InternalRemove(guid);
         }
 
-        public static GameObject ResolveGuid(System.Guid guid, Action<GameObject> onAddCallback, Action onRemoveCallback)
+        public static GameObject ResolveGuid(Guid guid, Action<GameObject> onAddCallback, Action onRemoveCallback)
         {
             return Instance.ResolveGuidInternal(guid, onAddCallback, onRemoveCallback);
         }
 
-        public static GameObject ResolveGuid(System.Guid guid, Action onDestroyCallback)
+        public static GameObject ResolveGuid(Guid guid, Action onDestroyCallback)
         {
             return Instance.ResolveGuidInternal(guid, null, onDestroyCallback);
         }
 
-        public static GameObject ResolveGuid(System.Guid guid)
+        public static GameObject ResolveGuid(Guid guid)
         {
             return Instance.ResolveGuidInternal(guid, null, null);
         }
 
         // instance data
-        private Dictionary<System.Guid, GuidInfo> guidToObjectMap;
+        private Dictionary<Guid, GuidInfo> guidToObjectMap;
 
 
         private bool InternalAdd(Entity entity)
@@ -141,7 +128,7 @@ namespace LogicSystem
             return true;
         }
 
-        private void InternalRemove(System.Guid guid)
+        private void InternalRemove(Guid guid)
         {
             GuidInfo info;
             if (guidToObjectMap.TryGetValue(guid, out info))
@@ -156,7 +143,7 @@ namespace LogicSystem
         // nice easy api to find a GUID, and if it works, register an on destroy callback
         // this should be used to register functions to cleanup any data you cache on finding
         // your target. Otherwise, you might keep components in memory by referencing them
-        private GameObject ResolveGuidInternal(System.Guid guid, Action<GameObject> onAddCallback, Action onRemoveCallback)
+        private GameObject ResolveGuidInternal(Guid guid, Action<GameObject> onAddCallback, Action onRemoveCallback)
         {
             GuidInfo info;
             if (guidToObjectMap.TryGetValue(guid, out info))

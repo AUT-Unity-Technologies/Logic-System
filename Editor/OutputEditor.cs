@@ -1,9 +1,9 @@
 ﻿using System;
+using com.dpeter99.utils.Editor.InspectorExtensions.AreaHelpers;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using ReorderableList = Malee.List.ReorderableList;
-
 
 namespace LogicSystem.Editor
 {
@@ -44,8 +44,7 @@ namespace LogicSystem.Editor
             targets.isExpanded = property.isExpanded;
             
             var list = GetList(targets);
-            
-            
+
             var line = position;
             //line.height = LINE_HEIGHT;
             
@@ -119,12 +118,10 @@ namespace LogicSystem.Editor
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            //base.OnGUI(position,property,label);
-            
             var targetEnt = property.FindPropertyRelative("targetEntity");
             
             var guid = GuidReferenceHelpers.GetGuidFromProperty(targetEnt);
-
+            
             Entity? entity = null;
             if (guid != Guid.Empty)
             {
@@ -134,46 +131,63 @@ namespace LogicSystem.Editor
 
             var target = property.FindPropertyRelative("target");
             var input = property.FindPropertyRelative("input");
-
-            var pos = new Rect(position);
-            {
-                pos.height = EditorGUIUtility.singleLineHeight;
-
-                EditorGUI.PropertyField(pos, targetEnt, new GUIContent(IOConfig.Hexagon));
-            }
-            pos.y += EditorGUIUtility.singleLineHeight + EditorGUIUtility.standardVerticalSpacing;
-
-            var componentRect = new Rect(pos);
-            componentRect.width = pos.width / 2;
-
-            GUIHelpers.DoBasicPreview<string>(componentRect, target);
-
-            var targetRect = new Rect(pos);
-            targetRect.x += pos.width / 2;
-            targetRect.width = pos.width / 2;
             
-            if (GUI.Button(targetRect,input.stringValue))
+            
+            
+            var area = new RectArea(position);
+            
             {
-                var data = ScriptableObject.CreateInstance<SearchTreeContextTest>();
-                //var data = new SearchTreeContextTest();
+                var line = area.GetNextLine();
                 
-                Debug.Log(entity?.name);
-                if (entity is not null)
+                EditorGUI.PropertyField(line, targetEnt, new GUIContent(IOConfig.Hexagon));
+            }
+            
+            {
+                var pos = area.GetNextLine();
+
+                pos.AddLabelPrefix(new GUIContent(IOConfig.ArrowOut));
+                
                 {
-                    data.Init(entity, s =>
+                    var comp_name_area = pos.GetHorizontalArea(pos.free.width / 2);
+
+                    var componentTarget = entity.components.Find(c => c.Name == target.stringValue);
+
+                    if (GUIHelpers.DoBasicPreview(comp_name_area, componentTarget.Name, componentTarget))
                     {
-                        target.stringValue = s.Split("#")[0];
-                        input.stringValue = s.Split("#")[1];
+                        EditorGUIUtility.PingObject(componentTarget);
+                    }
+                }
+                
+                {
+                    var inputButtonArea = pos.GetHorizontalArea(pos.free.width);
+                    var serachWindoePos = inputButtonArea.free;
+                    
+                    if (GUI.Button(inputButtonArea, input.stringValue))
+                    {
+                        if (entity is not null)
+                        {
+                            var data = ScriptableObject.CreateInstance<SearchTreeContextTest>();
+                            data.hideFlags = HideFlags.HideAndDontSave;
+                            
+                            data.Init(entity, s =>
+                            {
+                                target.stringValue = s.Split("#")[0];
+                                input.stringValue = s.Split("#")[1];
 
-                        target.serializedObject.ApplyModifiedProperties();
-                    });
-                    data.hideFlags = HideFlags.HideAndDontSave;
+                                target.serializedObject.ApplyModifiedProperties();
+                            });
 
-                    SearchWindow.Open(new SearchWindowContext(EditorGUIUtility.GUIToScreenPoint(new Vector2(pos.xMax, pos.yMax + pos.height))), data);
+                            SearchWindow.Open(
+                                new SearchWindowContext(EditorGUIUtility.GUIToScreenPoint(new Vector2(serachWindoePos.xMax, serachWindoePos.yMax + serachWindoePos.height))),
+                                data
+                                );
+                        }
+                    }
                 }
             }
-
+            
         }
+        
+        
     }
-    
 }

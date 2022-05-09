@@ -1,2 +1,4 @@
-﻿- name: Components
-  href: components/
+﻿- name: Basics
+  href: basics/toc.yml
+- name: Components
+  href: components/toc.yml
