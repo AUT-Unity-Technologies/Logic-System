@@ -78,7 +78,7 @@ namespace LogicSystem
                 {
                     b.Append($"{inp.Name}\n");
                 }
-                Debug.Log(b.ToString());
+                //Debug.Log(b.ToString());
             }
             
             return res;
@@ -148,7 +148,7 @@ namespace LogicSystem
                     b.Append($"{inp.name}\n");
                 }
 
-                Debug.Log(b.ToString());
+                //Debug.Log(b.ToString());
             }
             
             return res;

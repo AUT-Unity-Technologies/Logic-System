@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using com.dpeter99.framework.src;
+using com.dpeter99.framework.Runtime;
 using com.dpeter99.utils;
 using UnityEngine;
 using UnityEngine.LowLevel;
 
 namespace LogicSystem.EventSystem
 {
-    [Manager]
+    [AutoService]
     public class EventBus : MonoBehaviour, IModule
     {
         private PriorityQueue<Event, int> events = new();

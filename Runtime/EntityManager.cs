@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System;
-using com.dpeter99.framework.src;
+using com.dpeter99.framework.Runtime;
 using com.dpeter99.utils.Basic;
 using UnityEngine.SceneManagement;
 
 namespace LogicSystem
 {
     // Class to handle registering and accessing objects by GUID
-    [Manager]
+    [AutoService]
     [InstantiateIfMissing]
     public class EntityManager : Singleton<EntityManager>, IModule
     {
