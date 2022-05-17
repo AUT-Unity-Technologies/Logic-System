@@ -18,7 +18,19 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Binding.html",
-          "hash": "2oizmHkFgl1+eVigy3J47XFAU99cOCJadgqm/npw7VA="
+          "hash": "cNOn1OKgWAFLKHTlbxNEfXL1B+zR4Pz1/yVLeYQj1CY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LogicSystem.BindingType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LogicSystem.BindingType.html",
+          "hash": "tdNyCRIsY7Uvr4NIPaLqEW3q5AjQextsdyHLt9UFVEY="
         }
       },
       "is_incremental": false,
@@ -30,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.CBase.html",
-          "hash": "0CgZkV5N34djOuPGNizbh4p9WU4ptNzsZdOlxHwiCPs="
+          "hash": "NIksNt9GO8psA04sKzDs4EL9mrJpZJrQJZlzXm0octY="
         }
       },
       "is_incremental": false,
@@ -138,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Editor.BindingEditor.html",
-          "hash": "gGt/pMXP0AfQmGj4fJRinR8Sl9oWtHfAIPRF4KXWzaE="
+          "hash": "kRa/4TLMD0tLhJ4038QEWOu5EtjSReGFDL/MfAV/P7Q="
         }
       },
       "is_incremental": false,
@@ -162,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Editor.CBaseUI.Expandable.html",
-          "hash": "2k+9JMqCSOxT+aoDOR9ZnM97J7NdUEDNWh0yJGywb3M="
+          "hash": "V6cECsTt1RQlt4c9ZA+d5TvvXZNxZbuMuGaPNhne/ZM="
         }
       },
       "is_incremental": false,
@@ -186,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Editor.EntityDebugger.SimpleTreeView.html",
-          "hash": "lJYOwYyOMdDpzz9Up87plU3mKiUj/xuJLIS91r01jGo="
+          "hash": "LmQBye80uvC5Lf0BXa/zlLrtpGsNKR6K7cXqN/yPKxI="
         }
       },
       "is_incremental": false,
@@ -234,7 +246,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Editor.IOConfig.html",
-          "hash": "vuEtM4Bn4+VtukybUHZ5cejt/Yt0G9EhSJVPBiv5jdQ="
+          "hash": "crl7ZPI1xTXMhq+6oWTa72RIWf/vK0QKhMHfQVZ2QBk="
         }
       },
       "is_incremental": false,
@@ -258,7 +270,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Editor.SearchTreeContextTest.html",
-          "hash": "KNvbu1am7FTr8Pnuwn3ovTSC0xc7f6lXdHlBCrwbDUA="
+          "hash": "Zo7yjIc6jgJQDFOw6P9TRS6tBtc1/ghujEVmp/eHAuM="
         }
       },
       "is_incremental": false,
@@ -270,7 +282,43 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Editor.SerializedCBase.html",
-          "hash": "jIBAZXmLPbRH8Af0mhzPG/A3zpaSk29sim/5CZkcM28="
+          "hash": "xicjfjvQqWitkIku77EVZoFJPOMBwi/u3iy5ttzN294="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LogicSystem.Editor.Settings.LogicSystemSettingsHelper.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LogicSystem.Editor.Settings.LogicSystemSettingsHelper.html",
+          "hash": "l+aycc7PPtVWF6cR6yadP/IJUig4KFu+T8rXc6Qrq4s="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LogicSystem.Editor.Settings.MyCustomSettingsIMGUIRegister.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LogicSystem.Editor.Settings.MyCustomSettingsIMGUIRegister.html",
+          "hash": "4jmwKR54O9OpFKRXFmEXrM07gR4PIh+DCDaHxt/ewok="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/LogicSystem.Editor.Settings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LogicSystem.Editor.Settings.html",
+          "hash": "4eTj4PC7xHmdhqpBLq1Ehk6IeKADC5bnyl8jlPt4DLU="
         }
       },
       "is_incremental": false,
@@ -318,7 +366,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Entity.html",
-          "hash": "Cvb5YiYKHulyJLKHK9oai644l3P56ztwUylDHLhHksw="
+          "hash": "jYjG27LW2YSB23XpL2c+ZydOyijYf8QqZf4RCqH9Di0="
         }
       },
       "is_incremental": false,
@@ -330,7 +378,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.EntityManager.GuidInfo.html",
-          "hash": "EXDWJhGXoB4uIap9UL5Uig0DDoGsMcrhvXmfX0cwMDU="
+          "hash": "4J15Gn/DCGlb1HWjDyOPI0wFck+6wshCa38NR2udCD8="
         }
       },
       "is_incremental": false,
@@ -342,7 +390,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.EntityManager.html",
-          "hash": "eajoC1VLe9NpthGRylbi0tUCWKubEyjDS2JgO09xYOE="
+          "hash": "F7xS9y2gz3nI6bDRjSNMo/WszRfUxwk6rAEidIWAlLo="
         }
       },
       "is_incremental": false,
@@ -366,7 +414,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.EventSystem.EventBus.html",
-          "hash": "sBMqZ1a4FG2/9wPw0U3OUkrwV0IQkRmeW9lFoT7Xiak="
+          "hash": "9kwm6moeqMW3CsWDVNgaYxVVKJlHeJYhISKggrSOHHY="
         }
       },
       "is_incremental": false,
@@ -390,7 +438,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.GuidReference.html",
-          "hash": "u2E9v5hAB7YkWUXoP79PoLeR/kk5zkQwXt3aK/ypOBM="
+          "hash": "6icZZ5XruOReiMLrjEyBx2IsmS1o4kaLJ6OUhP/cXaI="
         }
       },
       "is_incremental": false,
@@ -402,7 +450,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.InputAttribute.html",
-          "hash": "MWLTNNHZuqF3m1r67JgGupdVk3fjb1garaEq79cyiIQ="
+          "hash": "hFWszVUSF9HWQ22nnoZRbm8TrLPZDBS3OtQa6EQWer0="
         }
       },
       "is_incremental": false,
@@ -434,11 +482,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/LogicSystem.LogicSystemSettings.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/LogicSystem.LogicSystemSettings.html",
+          "hash": "VoMcnsNh752V/4ImhYWtzCI7w4eQqtp5+8gk8NhATa8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/LogicSystem.Output.yml",
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.Output.html",
-          "hash": "i9hO+mE7y7yv9/aaLd7aS/PdlNeQBHWYtUVYLJ8KT2Q="
+          "hash": "qhjACr8oN4+wKNSST2OmHsRccPgtNWCfWwqnrO7k1jY="
         }
       },
       "is_incremental": false,
@@ -450,7 +510,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.OutputRef.html",
-          "hash": "VTH9eCT6hZru1KJvT0xL1GE11HqLG+aL7M+z05PpfnU="
+          "hash": "dLKXMNjq+OdlcWjRow6CcdmlqLLccE+TrtVZDzwtOrI="
         }
       },
       "is_incremental": false,
@@ -474,7 +534,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.TestObject.html",
-          "hash": "4KV/k2zc0/1IUna/7HQFSGr8N37vT0P2oqAwfQnJdog="
+          "hash": "w5LY5MNzzR2JBStSD59NHMV/X0B7AdvzgvKaoKAheSs="
         }
       },
       "is_incremental": false,
@@ -486,7 +546,7 @@
       "output": {
         ".html": {
           "relative_path": "api/LogicSystem.html",
-          "hash": "E4qhhuglEfHhw5KvjpOymWOkKG7BuIpmdiW4+G/k9j4="
+          "hash": "ArFDkiMsEVCT/xsd8rkod6/Pdf3XzsRGEKo/R/sj930="
         }
       },
       "is_incremental": false,
@@ -498,7 +558,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "Qih1TcSRXUg2BVRq2hyBvl337U4T/RmQU9p71LkyeOc="
+          "hash": "lGjMFKY+TIXaRFTUgUS/qCo5Mm7DWsazGxk5uOXkPrY="
         }
       },
       "is_incremental": false,
@@ -643,7 +703,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 40,
+          "total_file_count": 45,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
