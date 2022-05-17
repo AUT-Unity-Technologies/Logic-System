@@ -185,6 +185,16 @@ namespace LogicSystem
         [NonSerialized]
         public readonly List<CBase> components = new();
 
+        internal void ForceCollectComponents()
+        {
+            components.Clear();
+            foreach (var cBase in GetComponents<CBase>())
+            {
+                
+                components.Add(cBase);
+            }
+        }
+
         /// <summary>
         /// Add a component to the entity
         /// This is needed for a component to get events.
@@ -205,12 +215,7 @@ namespace LogicSystem
         {
             components.Remove(cBase);
         }
-
-        [Obsolete]
-        public void UpdateComponentName(CBase cBase)
-        {
-            
-        }
+        
 
         /// <summary>
         /// Propagates an event to the entity for processing
@@ -228,7 +233,7 @@ namespace LogicSystem
         /// </example>
         public void ProcessEvent(Event ev)
         {
-            var comp = this.components.Find(c => c.Name == ev.target.target);
+            var comp = this.components.Find(c => c.Name == ev.target.targetComponent);
             if (comp != null)
             {
                 var input = comp.Inputs.FirstOrDefault(i => i.Name == ev.target.input);

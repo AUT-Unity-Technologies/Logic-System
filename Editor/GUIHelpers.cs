@@ -59,7 +59,8 @@ public class GUIHelpers
         
         GUIContent content = new GUIContent(label);
         
-        content.image = EditorGUIUtility.GetIconForObject(obj);
+        if(obj != null)
+            content.image = EditorGUIUtility.GetIconForObject(obj);
         
         if (EditorGUI.showMixedValue)
         {
@@ -68,7 +69,7 @@ public class GUIHelpers
 
         var clicked = GUI.Button(img,content,style);
 
-        EditorGUI.EndProperty();
+        //EditorGUI.EndProperty();
         
         return clicked;
     }

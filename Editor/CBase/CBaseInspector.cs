@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using com.dpeter99.utils.Editor.InspectorExtensions.AreaHelpers;
 using UnityEditor.Rendering;
 //using Cinemachine.Editor;
 using UnityEditor;
@@ -84,6 +85,20 @@ namespace LogicSystem.Editor
         static void Drawer_Settings(SerializedCBase p, UnityEditor.Editor owner)
         {
             EditorGUI.BeginChangeCheck();
+
+            {
+                var nameRect = new RectArea(EditorGUILayout.GetControlRect(true));
+
+                var nameprop = nameRect.GetHorizontalArea(nameRect.free.width - 20);
+
+                EditorGUI.PropertyField(nameprop,p.name,new GUIContent("Component Name"));
+
+                if (GUI.Button(nameRect, new GUIContent("Reset")))
+                {
+                    p.name.stringValue = p.serializedObject.targetObject.GetType().Name;
+                }
+            }
+            
             
             foreach (SerializedProperty s in p.props)
                 EditorGUILayout.PropertyField(s);

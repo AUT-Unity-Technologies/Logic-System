@@ -26,7 +26,7 @@ namespace LogicSystem.Editor
                 foreach (var component in t.components)
                 {
                     var a = EditorGUIUtility.ObjectContent(component, typeof(CBase));
-                    a.text = component.name;
+                    a.text = component.Name;
                     
                     EditorGUILayout.LabelField(a);
                 }    

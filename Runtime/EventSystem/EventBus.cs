@@ -4,6 +4,7 @@ using com.dpeter99.framework.Runtime;
 using com.dpeter99.utils;
 using UnityEngine;
 using UnityEngine.LowLevel;
+using Object = UnityEngine.Object;
 
 namespace LogicSystem.EventSystem
 {
@@ -39,8 +40,28 @@ namespace LogicSystem.EventSystem
             {
                 var ev = events.Dequeue();
                 Debug.Log(ev.ToString(),this);
-                ev.target.targetEntity.entity.ProcessEvent(ev);
+
+                switch (ev.target.type)
+                {
+                    case BindingType.Direct:
+                        ev.target.targetEntity.entity.ProcessEvent(ev);
+                        break;
+                    case BindingType.System:
+                        break;
+                    case BindingType.Player:
+                        DispatcToPlayer(ev);
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
+        }
+
+        private void DispatcToPlayer(Event ev)
+        {
+            var player = ModuleProvider.Get<PlayGameModeBase>().players[ev.target.playerId] as MonoBehaviour;
+            player.GetComponent<Entity>().ProcessEvent(ev);
+
         }
     }
 }

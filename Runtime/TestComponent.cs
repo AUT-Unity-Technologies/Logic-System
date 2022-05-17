@@ -18,14 +18,6 @@ namespace LogicSystem
         
     }
 
-    [Serializable]
-    public class Binding
-    {
-        public GuidReference targetEntity;
-        public string target;
-        public string input;
-    }
-
 
     public class InputAttribute : Attribute
     {

@@ -17,8 +17,7 @@
         public override string ToString()
         {
             return
-                "(" + trigger.name + ") => " +
-                target.targetEntity.entity.name + "::" + target.target + "::" + target.input;
+                "(" + trigger.name + ") => " + target;
         }
     }
 }
